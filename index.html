@@ -13,13 +13,59 @@
         <a href="contacto.html">Contacto</a>
     </nav>
 
-    <section style="text-align: center; background: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80') center/cover; color: white; display: flex; flex-direction: column; justify-content: center;">
-        <div class="animar" style="background: rgba(0,0,0,0.4); padding: 50px; border-radius: 20px;">
-            <h1>Bienvenidos a la Finca</h1>
-            <p>Un paraíso natural para desconectar del mundo.</p>
+    <header style="text-align: center; background: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80') center/cover; color: white; height: 80vh; display: flex; flex-direction: column; justify-content: center;">
+        <div class="animar" style="background: rgba(0,0,0,0.5); padding: 50px; backdrop-filter: blur(5px);">
+            <h1>Ejemplo de titulo</h1>
+            <p>Ejemplo de descripción.</p>
             <br>
-            <a href="servicios.html" class="btn">Explorar Servicios</a>
+            <a href="servicios.html" class="btn">Ver lo que ofrecemos</a>
+        </div>
+    </header>
+
+    <section class="section-description">
+        <div class="desc-texto animar">
+            <h2>Ejemplo de texto:</h2>
+            <p>Llevamos décadas cuidando este terreno para ofrecer una experiencia auténtica. Aquí, el tiempo se detiene y la naturaleza toma el control.</p>
+            <br>
+            <p>Un espacio familiar, recuperado con mimo para que tu estancia sea inolvidable.</p>
+            <br>
+            <a href="lugar.html" class="btn" style="background: var(--primario);">Saber más sobre el lugar</a>
+        </div>
+        <div class="desc-imagen animar" style="animation-delay: 0.3s;">
+            <span>[Imagen de la Finca]</span>
         </div>
     </section>
+
+    <div class="quick-nav">
+        <a href="servicios.html" class="btn">Reservar Evento</a>
+        <a href="contacto.html" class="btn" style="background: transparent; border: 1px solid white;">Pedir Presupuesto</a>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div style="flex: 1; min-width: 250px;">
+                <h3>La Finca del Amigo</h3>
+                <p>Un lugar donde la tradición y la comodidad se encuentran.</p>
+            </div>
+            
+            <div style="flex: 1; min-width: 250px;">
+                <h4>Enlaces</h4>
+                <p><a href="servicios.html" style="color: #ccc; text-decoration: none;">Servicios</a></p>
+                <p><a href="lugar.html" style="color: #ccc; text-decoration: none;">Cómo llegar</a></p>
+                <p><a href="contacto.html" style="color: #ccc; text-decoration: none;">Trabaja con nosotros</a></p>
+            </div>
+
+            <div style="flex: 1; min-width: 250px;">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="#" class="social-icon">IG</a> <a href="#" class="social-icon">FB</a> <a href="#" class="social-icon">WA</a> </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2026 La Finca - Todos los derechos reservados.
+        </div>
+    </footer>
+
 </body>
 </html>

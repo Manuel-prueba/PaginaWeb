@@ -103,3 +103,82 @@ h1 { font-size: 3.5rem; color: var(--primario); margin-bottom: 20px; }
     transition: 0.4s;
 }
 .card:hover { transform: translateY(-10px); border-bottom: 4px solid var(--secundario); }
+
+/* --- Nuevas Secciones de Inicio --- */
+.section-description {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background: white;
+}
+
+.desc-texto { flex: 1; }
+.desc-imagen { 
+    flex: 1; 
+    height: 350px; 
+    background: #e9ecef; 
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    border: 2px dashed #ccc;
+}
+
+/* --- Botonera de navegación rápida --- */
+.quick-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    background: var(--primario);
+}
+
+/* --- Pie de Página (Footer) --- */
+footer {
+    background: #111;
+    color: white;
+    padding: 60px 10% 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    color: var(--secundario);
+    text-decoration: none;
+    font-size: 0.8rem;
+    border: 1px solid var(--secundario);
+}
+
+.social-icon:hover {
+    background: var(--secundario);
+    color: white;
+    transform: translateY(-5px);
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    font-size: 0.9rem;
+    color: #888;
+}
