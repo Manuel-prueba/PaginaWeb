@@ -182,3 +182,141 @@ footer {
     font-size: 0.9rem;
     color: #888;
 }
+
+/* --- Estilos para los Marcos de Eventos --- */
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.event-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden; /* Para que la imagen no se salga de las esquinas redondeadas */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid rgba(212, 163, 115, 0.2); /* Borde dorado muy suave */
+}
+
+.event-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(27, 67, 50, 0.2);
+}
+
+.event-frame {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.event-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen al marco sin deformarla */
+    transition: transform 0.6s ease;
+}
+
+.event-card:hover .event-frame img {
+    transform: scale(1.1); /* Efecto zoom al pasar el ratón */
+}
+
+.event-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.event-info h3 {
+    color: var(--primario);
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+/* Línea decorativa bajo el título del evento */
+.event-info h3::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 2px;
+    background: var(--secundario);
+    margin: 8px auto 0;
+}
+
+.event-info p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Estilo para el marcador de posición de la imagen */
+.placeholder-img {
+    width: 100%;
+    height: 100%;
+    background: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #adb5bd;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* --- Estilos para la página El Lugar --- */
+.lugar-seccion {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
+}
+
+.lugar-seccion.reverse {
+    flex-direction: row-reverse;
+}
+
+.lugar-contenido {
+    flex: 1;
+    min-width: 300px;
+}
+
+.lugar-box-imagen {
+    flex: 1;
+    min-width: 300px;
+    height: 400px;
+    background: #e9ecef;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #ccc;
+    color: #999;
+    font-weight: bold;
+}
+
+/* Contenedor del Mapa */
+.mapa-container {
+    width: 100%;
+    height: 450px;
+    background: #dee2e6;
+    border-radius: 20px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+    position: relative;
+    overflow: hidden;
+}
+
+.mapa-pin {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
