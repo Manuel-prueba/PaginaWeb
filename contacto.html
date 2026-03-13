@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Contacto | Finca</title>
+    <title>Contacto | La Finca</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,14 +13,83 @@
         <a href="contacto.html">Contacto</a>
     </nav>
 
-    <section style="max-width: 600px; margin: auto;">
-        <h1 class="animar">Contáctanos</h1>
-        <form class="animar" style="display: flex; flex-direction: column; gap: 15px;">
-            <input type="text" placeholder="Tu Nombre" style="padding: 15px; border: 1px solid #ddd; border-radius: 5px;">
-            <input type="email" placeholder="Correo Electrónico" style="padding: 15px; border: 1px solid #ddd; border-radius: 5px;">
-            <textarea placeholder="Mensaje" rows="5" style="padding: 15px; border: 1px solid #ddd; border-radius: 5px;"></textarea>
-            <button type="button" class="btn">Enviar Consulta</button>
-        </form>
+    <section>
+        <div style="text-align: center; margin-bottom: 60px;" class="animar">
+            <h1>Contacta con nosotros</h1>
+            <p>Ejemplo de texto: Cuéntanos tu idea y te ayudaremos a hacerla realidad en nuestro espacio.</p>
+        </div>
+
+        <div class="contacto-container animar">
+            <div class="contacto-info">
+                <h2>Ejemplo de información</h2>
+                <div class="info-item">
+                    <div class="info-icon">📞</div>
+                    <div>
+                        <strong>Teléfono</strong>
+                        <p>+34 000 000 000</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">✉️</div>
+                    <div>
+                        <strong>Email</strong>
+                        <p>info@ejemplo.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">🕒</div>
+                    <div>
+                        <strong>Horario de visitas</strong>
+                        <p>Lunes a Viernes: 10:00 - 19:00</p>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contacto-form">
+                <div class="form-group">
+                    <label>Nombre completo</label>
+                    <input type="text" class="form-control" placeholder="Ej: Juan Pérez">
+                </div>
+                
+                <div class="form-group">
+                    <label>Correo electrónico</label>
+                    <input type="email" class="form-control" placeholder="juan@correo.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Tipo de Evento (ejemplos)</label>
+                    <select class="form-control">
+                        <option value="">Selecciona una opción</option>
+                        <option value="1">Tipo de Evento Ejemplo A</option>
+                        <option value="2">Tipo de Evento Ejemplo B</option>
+                        <option value="3">Tipo de Evento Ejemplo C</option>
+                        <option value="otro">Otro (especificar en mensaje)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Mensaje o dudas</label>
+                    <textarea class="form-control" rows="4" placeholder="Cuéntanos más sobre lo que necesitas..."></textarea>
+                </div>
+
+                <button type="button" class="btn" style="width: 100%;">Enviar Solicitud</button>
+            </form>
+        </div>
     </section>
+
+    <footer>
+        <div class="footer-content">
+            <div style="flex: 1; min-width: 250px;">
+                <h3>La Finca de Juan Jesús</h3>
+                <p>Tu evento en un entorno inolvidable.</p>
+            </div>
+            <div style="flex: 1; min-width: 250px;">
+                <h4>Redes</h4>
+                <div class="social-links">
+                    <a href="#" class="social-icon">IG</a> <a href="#" class="social-icon">FB</a> <a href="#" class="social-icon">TK</a> 
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
