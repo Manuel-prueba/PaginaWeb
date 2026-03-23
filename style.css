@@ -1,65 +1,76 @@
 /* =========================================
-   1. VARIABLES Y BASE (ORIGINAL RESTAURADO)
+   1. VARIABLES Y BASE
    ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&family=Playfair+Display:wght@500;700;800&display=swap');
+
 :root {
     --primario: #1b4332;   /* Verde bosque */
     --secundario: #d4a373;  /* Dorado tierra */
     --fondo: #f8f9fa;
     --texto: #2d2d2d;
+    --texto-suave: #666;
     --blanco: #ffffff;
+    
+    --fuente-titulos: 'Playfair Display', serif;
+    --fuente-texto: 'Mulish', sans-serif;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif; /* Tu fuente original */
 }
 
 body {
     background-color: var(--fondo);
     color: var(--texto);
     overflow-x: hidden;
+    font-family: var(--fuente-texto);
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 /* =========================================
-   2. NAVEGACIÓN (ACTUALIZADA PARA LOGO)
+   2. NAVEGACIÓN (CORREGIDA CON LOGO CENTRAL)
    ========================================= */
 nav {
     display: flex;
-    justify-content: space-between; /* Tres columnas: izq, logo, der */
+    justify-content: space-between;
     align-items: center;
-    background: var(--primario); /* Tu verde original */
-    padding: 10px 5%; /* Un poco más de aire a los lados */
+    background: var(--primario);
+    padding: 10px 5%;
     position: sticky;
     top: 0;
     z-index: 1000;
+    min-height: 90px;
 }
 
-/* Contenedores de enlaces */
-.nav-izq, .nav-der {
+/* Contenedores laterales para centrar el logo */
+.nav-links-izq, .nav-links-der {
     display: flex;
-    gap: 30px; /* Espacio entre enlaces */
-    flex: 1; /* Ocupan el mismo espacio para centrar el logo */
+    gap: 25px;
+    flex: 1; /* Esto es lo que centra el logo perfectamente */
 }
 
-.nav-der {
-    justify-content: flex-end; /* Alinea los enlaces derechos a la derecha */
+.nav-links-der {
+    justify-content: flex-end;
 }
 
-/* Estilo de los enlaces (Originales) */
 nav a {
     color: var(--blanco);
     text-decoration: none;
-    font-weight: bold;
-    font-size: 1rem; /* Tu tamaño original */
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     transition: 0.3s;
     position: relative;
+    white-space: nowrap;
 }
 
 nav a:hover { color: var(--secundario); }
 
-/* Línea animada bajo los enlaces del menú (Original) */
+/* Línea animada */
 nav a::after {
     content: '';
     position: absolute;
@@ -70,29 +81,40 @@ nav a::after {
 }
 nav a:hover::after { width: 100%; }
 
-/* Contenedor del Logo central */
+/* Contenedor del Logo */
 .nav-logo {
-    flex: 0 0 auto; /* El logo no se estira */
+    flex: 0 0 auto;
     text-align: center;
     padding: 0 20px;
 }
 
 .nav-logo img {
-    height: 70px; /* Ajusta el tamaño de tu logo blanco aquí */
+    height: 80px; /* Tamaño ideal del logo */
     width: auto;
+    display: block;
 }
 
 /* =========================================
-   3. ELEMENTOS COMUNES (ORIGINALES)
+   3. ELEMENTOS COMUNES (BOTONES Y TÍTULOS)
    ========================================= */
 section {
     padding: 80px 10%;
     min-height: 80vh;
 }
 
-h1 { font-size: 3.5rem; color: var(--primario); margin-bottom: 20px; }
+h1, h2, h3, h4 {
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    color: var(--primario);
+    line-height: 1.2;
+}
 
-/* Botones Originales */
+h1 { font-size: 3rem; margin-bottom: 25px; font-weight: 800; }
+h2 { font-size: 2.2rem; margin-bottom: 20px; }
+h3 { font-size: 1.8rem; margin-bottom: 15px; }
+
+p { margin-bottom: 15px; color: var(--texto); }
+
 .btn {
     display: inline-block;
     padding: 12px 30px;
@@ -100,10 +122,13 @@ h1 { font-size: 3.5rem; color: var(--primario); margin-bottom: 20px; }
     color: white;
     border-radius: 5px;
     text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     transition: 0.3s;
     border: none;
     cursor: pointer;
-    font-weight: normal; /* Tu peso original */
 }
 
 .btn:hover { 
@@ -112,8 +137,15 @@ h1 { font-size: 3.5rem; color: var(--primario); margin-bottom: 20px; }
 }
 
 /* =========================================
-   4. PÁGINA DE INICIO (ORIGINALES)
+   4. SECCIONES ESPECÍFICAS (HOME / LUGAR)
    ========================================= */
+header p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: white !important; /* Forzado para el hero */
+}
+
 .section-description {
     display: flex;
     align-items: center;
@@ -122,6 +154,7 @@ h1 { font-size: 3.5rem; color: var(--primario); margin-bottom: 20px; }
 }
 
 .desc-texto { flex: 1; }
+.desc-texto p { color: var(--texto-suave); font-size: 1.1rem; }
 
 .desc-imagen { 
     flex: 1; 
@@ -133,6 +166,7 @@ h1 { font-size: 3.5rem; color: var(--primario); margin-bottom: 20px; }
     justify-content: center;
     color: #999;
     border: 2px dashed #ccc;
+    font-weight: 700;
 }
 
 .quick-nav {
@@ -144,7 +178,42 @@ h1 { font-size: 3.5rem; color: var(--primario); margin-bottom: 20px; }
 }
 
 /* =========================================
-   8. PIE DE PÁGINA (ORIGINAL)
+   5. GALERÍA (ESTILO POLAROID)
+   ========================================= */
+.seccion-galeria { padding: 40px 10% 80px; }
+
+.grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.item-galeria {
+    background: white;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 1px solid rgba(212, 163, 115, 0.3);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.item-galeria:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 10px 25px rgba(27, 67, 50, 0.2);
+}
+
+.marco-foto {
+    width: 100%;
+    height: 250px;
+    background: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.marco-foto img { width: 100%; height: 100%; object-fit: cover; }
+
+/* =========================================
+   6. FOOTER
    ========================================= */
 footer {
     background: #111;
@@ -157,39 +226,26 @@ footer {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 40px;
-    margin-bottom: 40px;
 }
+
+.footer-content h3, .footer-content h4 { color: var(--secundario); }
 
 .social-links { display: flex; gap: 15px; }
 
 .social-icon {
     width: 40px; height: 40px;
-    background: rgba(255,255,255,0.1);
-    display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--secundario);
     border-radius: 50%;
-    transition: 0.3s;
+    display: flex; align-items: center; justify-content: center;
     color: var(--secundario);
     text-decoration: none;
-    font-size: 0.8rem;
-    border: 1px solid var(--secundario);
+    transition: 0.3s;
 }
 
-.social-icon:hover {
-    background: var(--secundario);
-    color: white;
-    transform: translateY(-5px);
-}
-
-.copyright {
-    text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 20px;
-    font-size: 0.9rem;
-    color: #888;
-}
+.social-icon:hover { background: var(--secundario); color: white; transform: translateY(-5px); }
 
 /* =========================================
-   9. ANIMACIONES (ORIGINALES)
+   7. ANIMACIONES
    ========================================= */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(30px); }
