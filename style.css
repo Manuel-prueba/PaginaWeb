@@ -355,3 +355,61 @@ footer {
 }
 
 .animar { animation: fadeInUp 0.8s ease-out forwards; }
+
+/* 10. ESTILOS DE LA GALERÍA */
+
+/* Título y descripción de la cabecera */
+.header-interno {
+    text-align: center;
+    padding: 60px 10% 20px;
+    background: white;
+}
+
+.seccion-galeria {
+    padding: 40px 10% 80px;
+}
+
+/* Grid que organiza las fotos automáticamente */
+.grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px; /* Espacio entre fotos */
+}
+
+/* El contenedor de cada foto (El "Marco") */
+.item-galeria {
+    background: white;
+    padding: 12px; /* Espacio blanco alrededor de la foto tipo Polaroid */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 1px solid rgba(212, 163, 115, 0.3); /* Borde dorado suave */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.item-galeria:hover {
+    transform: scale(1.05) rotate(2deg); /* Se agranda y gira un pelo */
+    box-shadow: 0 10px 25px rgba(27, 67, 50, 0.2);
+    z-index: 10;
+}
+
+/* El hueco gris donde irá la imagen real */
+.marco-foto {
+    width: 100%;
+    height: 250px;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #bbb;
+    font-weight: bold;
+    text-transform: uppercase;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.marco-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Para que la foto real no se deforme */
+}
