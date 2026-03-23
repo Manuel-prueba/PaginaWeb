@@ -1,24 +1,35 @@
 /* 1. VARIABLES Y BASE
-   Colores globales y configuración de texto. */
+   Importación de Google Fonts: Playfair Display (Títulos) y Mulish (Texto)
+   --------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&family=Playfair+Display:wght@500;700;800&display=swap');
+
 :root {
     --primario: #1b4332;   /* Verde bosque */
     --secundario: #d4a373;  /* Dorado tierra */
     --fondo: #f8f9fa;
     --texto: #2d2d2d;
+    --texto-suave: #666; /* Nuevo gris para textos secundarios */
     --blanco: #ffffff;
+    
+    /* Variables de Fuente para fácil mantenimiento */
+    --fuente-titulos: 'Playfair Display', serif;
+    --fuente-texto: 'Mulish', sans-serif;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
 }
 
 body {
     background-color: var(--fondo);
     color: var(--texto);
     overflow-x: hidden;
+    /* Fuente principal para todo el sitio */
+    font-family: var(--fuente-texto);
+    font-size: 16px; /* Base sólida */
+    line-height: 1.6; /* Mejora la legibilidad */
 }
 
 /* 2. NAVEGACIÓN (Menú) */
@@ -27,7 +38,7 @@ nav {
     justify-content: space-around;
     align-items: center;
     background: var(--primario);
-    padding: 1rem;
+    padding: 1.2rem; /* Ligeramente más padding para airear */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -36,7 +47,10 @@ nav {
 nav a {
     color: var(--blanco);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600; /* Peso Mulish: Semibold */
+    font-size: 0.95rem;
+    text-transform: uppercase; /* Toque profesional */
+    letter-spacing: 1px;
     transition: 0.3s;
     position: relative;
 }
@@ -60,7 +74,40 @@ section {
     min-height: 80vh;
 }
 
-h1 { font-size: 3.5rem; color: var(--primario); margin-bottom: 20px; }
+/* Configuración global de Títulos (Serif) */
+h1, h2, h3, h4 {
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    color: var(--primario);
+    line-height: 1.2;
+}
+
+h1 { 
+    font-size: 3rem; /* Ajuste para evitar desbordamientos, de 3.5rem */
+    margin-bottom: 25px; 
+    font-weight: 800; /* Extra bold para el H1 */
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+h4 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+/* Textos de párrafo genéricos */
+p {
+    margin-bottom: 15px;
+    color: var(--texto);
+}
 
 .btn {
     display: inline-block;
@@ -69,6 +116,11 @@ h1 { font-size: 3.5rem; color: var(--primario); margin-bottom: 20px; }
     color: white;
     border-radius: 5px;
     text-decoration: none;
+    font-family: var(--fuente-texto); /* Aseguramos que el botón use Mulish */
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     transition: 0.3s;
     border: none;
     cursor: pointer;
@@ -80,6 +132,16 @@ h1 { font-size: 3.5rem; color: var(--primario); margin-bottom: 20px; }
 }
 
 /* 4. PÁGINA DE INICIO (Secciones específicas) */
+
+/* Hero Text Style */
+header p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .section-description {
     display: flex;
     align-items: center;
@@ -88,6 +150,11 @@ h1 { font-size: 3.5rem; color: var(--primario); margin-bottom: 20px; }
 }
 
 .desc-texto { flex: 1; }
+
+.desc-texto p {
+    color: var(--texto-suave);
+    font-size: 1.1rem;
+}
 
 .desc-imagen { 
     flex: 1; 
@@ -99,6 +166,9 @@ h1 { font-size: 3.5rem; color: var(--primario); margin-bottom: 20px; }
     justify-content: center;
     color: #999;
     border: 2px dashed #ccc;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
 }
 
 .quick-nav {
@@ -172,7 +242,8 @@ h1 { font-size: 3.5rem; color: var(--primario); margin-bottom: 20px; }
 .event-info h3 {
     color: var(--primario);
     margin-bottom: 10px;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 700;
     position: relative;
     display: inline-block;
 }
@@ -187,14 +258,19 @@ h1 { font-size: 3.5rem; color: var(--primario); margin-bottom: 20px; }
     margin: 8px auto 0;
 }
 
-.event-info p { color: #666; line-height: 1.6; font-size: 0.95rem; }
+.event-info p { 
+    color: var(--texto-suave); 
+    line-height: 1.6; 
+    font-size: 0.95rem; 
+    margin-bottom: 0;
+}
 
 /* Placeholder de imagen (el cuadro gris) */
 .placeholder-img {
     width: 100%; height: 100%;
     background: #e9ecef;
     display: flex; align-items: center; justify-content: center;
-    color: #adb5bd; font-weight: bold; text-transform: uppercase;
+    color: #adb5bd; font-weight: 700; text-transform: uppercase;
     font-size: 0.8rem; letter-spacing: 2px; border-bottom: 1px solid #ddd;
 }
 
@@ -222,7 +298,9 @@ h1 { font-size: 3.5rem; color: var(--primario); margin-bottom: 20px; }
     justify-content: center;
     border: 2px dashed #ccc;
     color: #999;
-    font-weight: bold;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
 }
 
 .mapa-container {
@@ -253,7 +331,7 @@ h1 { font-size: 3.5rem; color: var(--primario); margin-bottom: 20px; }
     box-shadow: 0 20px 40px rgba(0,0,0,0.05);
 }
 
-.contacto-info h2 { color: var(--primario); margin-bottom: 20px; }
+.contacto-info h2 { color: var(--primario); margin-bottom: 25px; }
 
 .info-item {
     display: flex;
@@ -271,12 +349,14 @@ h1 { font-size: 3.5rem; color: var(--primario); margin-bottom: 20px; }
     font-size: 1.2rem;
 }
 
+.info-item p { margin-bottom: 0; color: var(--texto-suave); }
+
 .form-group { margin-bottom: 20px; }
 
 .form-group label {
     display: block;
     margin-bottom: 8px;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.9rem;
     color: var(--primario);
 }
@@ -289,6 +369,8 @@ h1 { font-size: 3.5rem; color: var(--primario); margin-bottom: 20px; }
     outline: none;
     transition: all 0.3s ease;
     background: #fdfdfd;
+    font-family: var(--fuente-texto); /* Aseguramos que el input use Mulish */
+    font-size: 1rem;
 }
 
 .form-control:focus {
@@ -315,6 +397,12 @@ footer {
     margin-bottom: 40px;
 }
 
+.footer-content h3, .footer-content h4 {
+    color: var(--secundario);
+}
+
+.footer-content p { color: #ccc; font-size: 0.95rem; }
+
 .social-links { display: flex; gap: 15px; }
 
 .social-icon {
@@ -339,8 +427,9 @@ footer {
     text-align: center;
     border-top: 1px solid rgba(255,255,255,0.1);
     padding-top: 20px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #888;
+    margin-bottom: 0;
 }
 
 /* 9. ANIMACIONES*/
