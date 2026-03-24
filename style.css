@@ -4,16 +4,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Raleway:wght@300;400;600&display=swap');
 
 :root {
-    --primario: #1b4332;   /* Verde bosque (para detalles) */
-    --secundario: #d4a373;  /* Dorado tierra (botones y acentos) */
+    --primario: #1b4332;
+    /* Verde bosque (para detalles) */
+    --secundario: #d4a373;
+    /* Dorado tierra (botones y acentos) */
     --fondo: #f8f9fa;
     --blanco: #ffffff;
     --fuente-titulos: 'Playfair Display', serif;
     --fuente-texto: 'Raleway', sans-serif;
-    --sombra: 0 10px 30px rgba(0,0,0,0.1);
+    --sombra: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     background-color: var(--fondo);
@@ -28,15 +34,18 @@ body {
    ============================================================ */
 .nav-principal {
     position: absolute;
-    top: 0; left: 0; width: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 50px; /* Espacio entre bloques y logo */
+    gap: 50px;
+    /* Espacio entre bloques y logo */
     padding: 30px 5%;
     /* Degradado sutil arriba para que las letras blancas siempre se lean */
-    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
 }
 
 .nav-bloque {
@@ -59,14 +68,21 @@ body {
 .nav-bloque a::after {
     content: '';
     position: absolute;
-    width: 0; height: 1px;
-    bottom: -5px; left: 0;
+    width: 0;
+    height: 1px;
+    bottom: -5px;
+    left: 0;
     background: var(--secundario);
     transition: 0.3s;
 }
 
-.nav-bloque a:hover::after { width: 100%; }
-.nav-bloque a:hover { color: var(--secundario) !important; }
+.nav-bloque a:hover::after {
+    width: 100%;
+}
+
+.nav-bloque a:hover {
+    color: var(--secundario) !important;
+}
 
 /* LOGO CENTRAL */
 .logo-central {
@@ -85,7 +101,7 @@ body {
 }
 
 .sub-logo {
-    border-top: 1px solid rgba(255,255,255,0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
     margin-top: 8px;
     padding-top: 4px;
 }
@@ -100,7 +116,8 @@ body {
 /* ============================================================
    3. CABECERAS (HEADERS) CON FOTOS AJUSTADAS
    ============================================================ */
-.header-inicio, .header-interno {
+.header-inicio,
+.header-interno {
     width: 100%;
     background-size: cover;
     background-position: center;
@@ -116,7 +133,7 @@ body {
 /* El Inicio ocupa toda la pantalla */
 .header-inicio {
     height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('Imagenes/Atico.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('Imagenes/Patio_para_fondo.jpeg');
 }
 
 /* Las páginas internas ocupan la mitad */
@@ -125,10 +142,21 @@ body {
 }
 
 /* Asignamos las fotos a cada página específica */
-.header-servicios { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('Imagenes/Salon-con-vista.jpeg'); }
-.header-galeria-foto { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('Imagenes/Atico.jpeg'); }
-.header-contacto { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('Imagenes/Atico.jpeg'); }
-.header-lugar { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('Imagenes/Salon-con-vista.jpeg'); }
+.header-servicios {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Imagenes/Salon-con-vista.jpeg');
+}
+
+.header-galeria-foto {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Imagenes/Atico.jpeg');
+}
+
+.header-contacto {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Imagenes/Atico.jpeg');
+}
+
+.header-lugar {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Imagenes/Salon-con-vista.jpeg');
+}
 
 .titulo-pagina {
     font-family: var(--fuente-titulos);
@@ -173,17 +201,19 @@ h2 {
 .btn:hover {
     background: #c28e5a;
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Estilo para las tarjetas de servicios y galería */
-.event-grid, .grid-mural {
+.event-grid,
+.grid-mural {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
-.event-card, .marco-foto {
+.event-card,
+.marco-foto {
     background: white;
     border-radius: 10px;
     overflow: hidden;
@@ -191,9 +221,21 @@ h2 {
     transition: 0.4s;
 }
 
-.marco-foto { height: 350px; cursor: pointer; }
-.marco-foto img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
-.marco-foto:hover img { transform: scale(1.08); }
+.marco-foto {
+    height: 350px;
+    cursor: pointer;
+}
+
+.marco-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.6s;
+}
+
+.marco-foto:hover img {
+    transform: scale(1.08);
+}
 
 /* ============================================================
    5. CONTACTO Y FORMULARIOS
@@ -221,8 +263,15 @@ h2 {
    6. ANIMACIONES
    ============================================================ */
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .animar {
@@ -238,7 +287,7 @@ h2 {
     position: fixed;
     z-index: 3000;
     inset: 0;
-    background: rgba(0,0,0,0.95);
+    background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
     align-items: center;
     justify-content: center;
@@ -252,8 +301,11 @@ h2 {
 
 .cerrar-modal {
     position: absolute;
-    top: 30px; right: 40px;
-    color: white; font-size: 40px; cursor: pointer;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
 }
 
 /* ============================================================
@@ -261,16 +313,29 @@ h2 {
    ============================================================ */
 footer {
     background: #111;
-    color: rgba(255,255,255,0.6);
+    color: rgba(255, 255, 255, 0.6);
     padding: 80px 10% 40px;
     text-align: center;
 }
 
-footer h3 { color: white; margin-bottom: 20px; font-family: var(--fuente-titulos); }
+footer h3 {
+    color: white;
+    margin-bottom: 20px;
+    font-family: var(--fuente-titulos);
+}
 
 /* Responsive para móviles */
 @media (max-width: 768px) {
-    .nav-principal { flex-direction: column; gap: 20px; }
-    .titulo-pagina { font-size: 2.5rem; }
-    .contacto-container { grid-template-columns: 1fr; }
+    .nav-principal {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .titulo-pagina {
+        font-size: 2.5rem;
+    }
+
+    .contacto-container {
+        grid-template-columns: 1fr;
+    }
 }
