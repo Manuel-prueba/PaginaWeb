@@ -125,16 +125,18 @@ body {
 }
 
 /* Asignamos las fotos a cada página específica */
-.header-servicios { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('Imagenes/Salon-con-vista.jpeg'); }
-.header-galeria-foto { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('Imagenes/Atico.jpeg'); }
-.header-contacto { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('Imagenes/Atico.jpeg'); }
-.header-lugar { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('Imagenes/Salon-con-vista.jpeg'); }
+.header-servicios { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('Imagenes/Salon-con-vista.jpeg'); }
+.header-galeria-foto { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('Imagenes/Atico.jpeg'); }
+.header-contacto { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('Imagenes/Atico.jpeg'); }
+.header-lugar { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('Imagenes/Salon-con-vista.jpeg'); }
 
 .titulo-pagina {
     font-family: var(--fuente-titulos);
     font-size: 3.5rem;
-    margin-top: 60px; /* Para que no choque con el menú */
-    text-shadow: 2px 4px 15px rgba(0,0,0,0.4);
+    color: var(--primario);
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 /* ============================================================
