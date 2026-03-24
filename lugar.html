@@ -4,76 +4,60 @@
     <meta charset="UTF-8">
     <title>El Lugar | La Finca</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-       <a href="index.html">Inicio</a>
-        <a href="informacion.html">Información</a>
-        <a href="lugar.html">Lugar</a>
-        <a href="galeria.html">Galeria</a>
-        <a href="contacto.html">Contacto</a>
-    </nav>
 
-    <section>
-        <div style="text-align: center; margin-bottom: 80px;" class="animar">
-            <h1>Explora nuestras instalaciones</h1>
-            <p>Ejemplo de descripción: Un espacio diseñado para ofrecer comodidad en cada rincón.</p>
-        </div>
-
-        <div class="lugar-seccion animar">
-            <div class="lugar-contenido">
-                <h2>Espacios Exteriores</h2>
-                <p>Ejemplo de mencionar las zonas. Mencionamos la amplitud y las posibilidades de personalización para el evento a gusto del cliente.</p>
-                <ul style="margin-top: 20px; color: #555; line-height: 2;">
-                    <li>Característica de ejemplo A</li>
-                    <li>Característica de ejemplo B</li>
-                    <li>Característica de ejemplo C</li>
-                </ul>
-            </div>
-            <div class="lugar-box-imagen">
-                <span>Ejemplo de Imagen (Zona Exterior)</span>
-            </div>
-        </div>
-
-        <div class="lugar-seccion reverse animar">
-            <div class="lugar-contenido">
-                <h2>Espacios Cubiertos</h2>
-                <p>Ejemplo de si la finca cuenta con carpas, salones o zonas techadas, este es el lugar para explicar su capacidad y estilo decorativo.</p>
-                <br>
-                <a href="contacto.html" class="btn" style="background: var(--primario);">Consultar capacidad total</a>
-            </div>
-            <div class="lugar-box-imagen">
-                <span>Ejemplo de Imagen (Zonas Cubiertas)</span>
-            </div>
-        </div>
-
-        <div style="margin-top: 100px;" class="animar">
-            <div style="text-align: center; margin-bottom: 40px;">
-                <h2>¿Dónde nos encontramos?</h2>
-                <p>Ejemplo de dirección, Ciudad, Código Postal.</p>
+    <header class="header-interno header-lugar">
+        <nav class="nav-principal">
+            <div class="nav-bloque">
+                <a href="index.html">Inicio</a>
+                <a href="informacion.html">Información</a>
             </div>
             
-            <div class="mapa-container">
-                <div class="mapa-pin">📍</div>
-                <p><strong>Espacio Reservado para Google Maps</strong></p>
-                <p style="font-size: 0.8rem;">(Aquí se pondrá el mapa interactivo una vez se sepa la ubicación)</p>
+            <div class="logo-central">
+                <h1>LOS ARCOS</h1>
+                <div class="sub-logo"><span>FINCA</span></div>
+            </div>
+
+            <div class="nav-bloque">
+                <a href="galeria.html">Galería</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+        </nav>
+        <h2 class="titulo-pagina animar">El Entorno</h2>
+    </header>
+
+    <section>
+        <div class="lugar-seccion animar">
+            <div class="desc-texto">
+                <h2>Un oasis de paz</h2>
+                <p>Nuestra finca se encuentra en una ubicación privilegiada, rodeada de vegetación autóctona y vistas despejadas. Es el lugar ideal para quienes buscan exclusividad y una conexión real con la naturaleza sin alejarse de la comodidad.</p>
+                <br>
+                <p>Disponemos de amplias zonas ajardinadas, espacios abiertos y rincones con encanto diseñados para ser el escenario de tus mejores recuerdos.</p>
+            </div>
+            <div class="desc-imagen" style="background: url('Imagenes/Salon-con-vista.jpeg') center/cover; border: none; height: 400px;">
+                </div>
+        </div>
+
+        <div class="mapa-container animar" style="margin-top: 50px; background: #eee; overflow: hidden;">
+            <div style="padding: 100px; text-align: center; color: #666;">
+                <h3>Ubicación</h3>
+                <p>A tan solo 15 minutos del centro de la ciudad.</p>
+                <br>
+                <div style="width: 100px; height: 2px; background: var(--secundario); margin: 0 auto;"></div>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="footer-content">
-            <div style="flex: 1; min-width: 250px;">
-                <h3>La Finca de Juan Jesús</h3>
-                <p>Prototipo de página web profesional.</p>
-            </div>
-            <div style="flex: 1; min-width: 250px;">
-                <h4>Síguenos</h4>
-                <div class="social-links">
-                    <a href="#" class="social-icon">IG</a> <a href="#" class="social-icon">FB</a> <a href="#" class="social-icon">TK</a> 
-                </div>
-            </div>
+        <div class="footer-content" style="text-align: center;">
+            <h3>La Finca de Juan Jesús</h3>
+            <p>Donde los eventos se vuelven inolvidables.</p>
         </div>
     </footer>
+
 </body>
 </html>

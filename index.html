@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <title>La Finca | Inicio</title>
@@ -9,73 +8,60 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="informacion.html">Información</a>
-        <a href="lugar.html">Lugar</a>
-        <a href="galeria.html">Galeria</a>
-        <a href="contacto.html">Contacto</a>
-    </nav>
 
-    <header
-        style="text-align: center; background: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80') center/cover; color: white; height: 80vh; display: flex; flex-direction: column; justify-content: center;">
-        <div class="animar" style="background: rgba(0,0,0,0.5); padding: 50px; backdrop-filter: blur(5px);">
-            <h1>LOS ARCOS</h1>
-            <p>El lugar perfecto para tu evento, descubre un entorno único donde la elegancia se encuentra en la
-                naturaleza.</p>
+    <header class="header-inicio">
+        <nav class="nav-principal">
+            <div class="nav-bloque">
+                <a href="index.html">Inicio</a>
+                <a href="informacion.html">Información</a>
+            </div>
+            
+            <div class="logo-central">
+                <h1>LOS ARCOS</h1>
+                <div class="sub-logo"><span>CASA RURAL</span></div>
+            </div>
+
+            <div class="nav-bloque">
+                <a href="galeria.html">Galería</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+        </nav>
+        
+        <div class="animar" style="text-align: center; background: rgba(0,0,0,0.3); padding: 40px; backdrop-filter: blur(3px); border-radius: 15px;">
+            <p style="font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase;">Un entorno único para momentos inolvidables</p>
             <br>
-            <a href="informacion.html" class="btn">Más información</a>
+            <a href="informacion.html" class="btn">Descubrir más</a>
         </div>
     </header>
 
     <section class="section-description">
         <div class="desc-texto animar">
-            <h2>Ejemplo de texto:</h2>
-            <p>(Ejemplo) Cuidamos este terreno para ofrecer una experiencia auténtica. Aquí puedes tener tu espacio
-                exclusivo sin molestias.</p>
+            <h2>Nuestra Esencia</h2>
+            <p>Cuidamos cada detalle de este terreno para ofrecer una experiencia auténtica. Un espacio exclusivo donde la privacidad y la elegancia se encuentran en plena naturaleza.</p>
             <br>
-            <p>Una zona a las afueras de la ciudad para que tu estancia sea inolvidable.</p>
+            <p>Ubicada a las afueras, nuestra finca es el refugio perfecto para que tu celebración sea exactamente como la imaginaste.</p>
             <br>
-            <a href="lugar.html" class="btn" style="background: var(--primario);">Saber más sobre el lugar</a>
+            <a href="lugar.html" class="btn" style="background: var(--primario);">Explorar el lugar</a>
         </div>
-        <div class="desc-imagen animar" style="animation-delay: 0.3s;">
-            <span>Imagen de la Finca</span>
-        </div>
+        <div class="desc-imagen animar" style="animation-delay: 0.3s; background: url('Imagenes/Salon-con-vista.jpeg') center/cover;">
+            </div>
     </section>
 
     <div class="quick-nav">
         <a href="servicios.html" class="btn">Reservar Evento</a>
-        <a href="contacto.html" class="btn" style="background: transparent; border: 1px solid white;">Pedir
-            Presupuesto</a>
+        <a href="contacto.html" class="btn" style="background: transparent; border: 1px solid white;">Pedir Presupuesto</a>
     </div>
 
     <footer>
         <div class="footer-content">
-            <div style="flex: 1; min-width: 250px;">
-                <h3>La Finca de Juan Jesús</h3>
-                <p>Prototipo de página web profesional</p>
-            </div>
-
-            <div style="flex: 1; min-width: 250px;">
-                <h4>Enlaces</h4>
-                <p><a href="servicios.html" style="color: #ccc; text-decoration: none;">Servicios</a></p>
-                <p><a href="lugar.html" style="color: #ccc; text-decoration: none;">Cómo llegar</a></p>
-                <p><a href="contacto.html" style="color: #ccc; text-decoration: none;">Trabaja con nosotros</a></p>
-            </div>
-
-            <div style="flex: 1; min-width: 250px;">
-                <h4>Síguenos</h4>
-                <div class="social-links">
-                    <a href="#" class="social-icon">IG</a> <a href="#" class="social-icon">FB</a> <a href="#"
-                        class="social-icon">TK</a>
-                </div>
+            <h3>La Finca de Juan Jesús</h3>
+            <p>Prototipo de página web profesional</p>
+            <div class="social-links" style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
+                <a href="#" class="social-icon">IG</a> <a href="#" class="social-icon">FB</a> <a href="#" class="social-icon">TK</a>
             </div>
         </div>
-
     </footer>
 
 </body>
-
 </html>

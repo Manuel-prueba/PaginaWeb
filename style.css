@@ -1,328 +1,274 @@
-/* 1. VARIABLES Y BASE
-   Importación de Google Fonts: Playfair Display (Títulos) y Raleway (Texto)
-   --------------------------------------------------------------------- */
+/* ============================================================
+   1. VARIABLES Y CONFIGURACIÓN BASE
+   ============================================================ */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Raleway:wght@300;400;600&display=swap');
 
 :root {
-    --primario: #1b4332;   /* Verde bosque */
-    --secundario: #d4a373;  /* Dorado tierra */
+    --primario: #1b4332;   /* Verde bosque (para detalles) */
+    --secundario: #d4a373;  /* Dorado tierra (botones y acentos) */
     --fondo: #f8f9fa;
-    --texto: #2d2d2d;
-    --texto-suave: #666; 
     --blanco: #ffffff;
-    
-    /* Variables de Fuente */
     --fuente-titulos: 'Playfair Display', serif;
     --fuente-texto: 'Raleway', sans-serif;
-    --transicion: 0.3s ease;
+    --sombra: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     background-color: var(--fondo);
-    color: var(--texto);
-    overflow-x: hidden;
     font-family: var(--fuente-texto);
-    font-size: 16px;
-    line-height: 1.8;
+    color: #333;
+    overflow-x: hidden;
+    line-height: 1.6;
 }
 
-/* 2. NAVEGACIÓN (Menú) */
-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: var(--primario);
-    padding: 1.2rem;
-    position: sticky;
-    top: 0;
+/* ============================================================
+   2. NAVEGACIÓN PREMIUM (CENTRADA Y TRANSPARENTE)
+   ============================================================ */
+.nav-principal {
+    position: absolute;
+    top: 0; left: 0; width: 100%;
     z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Espacio entre bloques y logo */
+    padding: 30px 5%;
+    /* Degradado sutil arriba para que las letras blancas siempre se lean */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 100%);
 }
 
-nav a {
-    color: var(--blanco);
+.nav-bloque {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-bloque a {
     text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
+    color: white !important;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: 0.3s;
+    letter-spacing: 2px;
+    font-weight: 600;
+    transition: 0.3s ease;
     position: relative;
 }
 
-nav a:hover { color: var(--secundario); }
-
-nav a::after {
+/* Línea animada bajo los enlaces */
+.nav-bloque a::after {
     content: '';
     position: absolute;
-    width: 0; height: 2px;
+    width: 0; height: 1px;
     bottom: -5px; left: 0;
-    background-color: var(--secundario);
+    background: var(--secundario);
     transition: 0.3s;
 }
-nav a:hover::after { width: 100%; }
 
-/* 3. ELEMENTOS COMUNES */
-section {
-    padding: 80px 10%;
-    min-height: 80vh;
+.nav-bloque a:hover::after { width: 100%; }
+.nav-bloque a:hover { color: var(--secundario) !important; }
+
+/* LOGO CENTRAL */
+.logo-central {
+    text-align: center;
+    color: white;
+    min-width: 220px;
 }
 
-h1, h2, h3, h4 {
+.logo-central h1 {
     font-family: var(--fuente-titulos);
-    font-weight: 700;
-    color: var(--primario);
-    line-height: 1.2;
+    font-size: 2.4rem;
+    margin: 0;
+    letter-spacing: 5px;
+    line-height: 1;
+    color: white;
 }
 
-h1 { font-size: 3rem; margin-bottom: 25px; font-weight: 800; }
-h2 { font-size: 2.2rem; margin-bottom: 20px; }
-h3 { font-size: 1.8rem; margin-bottom: 15px; }
+.sub-logo {
+    border-top: 1px solid rgba(255,255,255,0.4);
+    margin-top: 8px;
+    padding-top: 4px;
+}
+
+.sub-logo span {
+    font-size: 9px;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    display: block;
+}
+
+/* ============================================================
+   3. CABECERAS (HEADERS) CON FOTOS AJUSTADAS
+   ============================================================ */
+.header-inicio, .header-interno {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+/* El Inicio ocupa toda la pantalla */
+.header-inicio {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('Imagenes/Atico.jpeg');
+}
+
+/* Las páginas internas ocupan la mitad */
+.header-interno {
+    height: 55vh;
+}
+
+/* Asignamos las fotos a cada página específica */
+.header-servicios { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('Imagenes/Salon-con-vista.jpeg'); }
+.header-galeria-foto { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('Imagenes/Atico.jpeg'); }
+.header-contacto { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('Imagenes/Atico.jpeg'); }
+.header-lugar { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('Imagenes/Salon-con-vista.jpeg'); }
+
+.titulo-pagina {
+    font-family: var(--fuente-titulos);
+    font-size: 3.5rem;
+    margin-top: 60px; /* Para que no choque con el menú */
+    text-shadow: 2px 4px 15px rgba(0,0,0,0.4);
+}
+
+/* ============================================================
+   4. SECCIONES Y CONTENIDO
+   ============================================================ */
+section {
+    padding: 100px 10%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 2.5rem;
+    color: var(--primario);
+    margin-bottom: 25px;
+}
 
 .btn {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 15px 40px;
     background: var(--secundario);
     color: white;
-    border-radius: 5px;
     text-decoration: none;
     font-weight: 700;
-    font-size: 0.9rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: 0.3s;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    transition: 0.4s;
     border: none;
     cursor: pointer;
 }
 
-.btn:hover { 
-    transform: translateY(-3px); 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+.btn:hover {
+    background: #c28e5a;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-/* 4. PÁGINA DE INICIO */
-.section-description {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    background: white;
-}
-
-.desc-texto { flex: 1; }
-.desc-imagen { 
-    flex: 1; 
-    height: 350px; 
-    background: #e9ecef; 
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #999;
-    border: 2px dashed #ccc;
-}
-
-.quick-nav {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 40px;
-    background: var(--primario);
-}
-
-/* 5. PÁGINA DE SERVICIOS */
-.event-grid {
+/* Estilo para las tarjetas de servicios y galería */
+.event-grid, .grid-mural {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    margin-top: 50px;
+    gap: 30px;
 }
 
-.event-card {
+.event-card, .marco-foto {
     background: white;
-    border-radius: 15px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    border: 1px solid rgba(212, 163, 115, 0.2);
+    box-shadow: var(--sombra);
+    transition: 0.4s;
 }
 
-.event-card:hover {
-    transform: translateY(-15px);
-}
+.marco-foto { height: 350px; cursor: pointer; }
+.marco-foto img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
+.marco-foto:hover img { transform: scale(1.08); }
 
-.event-frame {
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
-}
-
-.event-frame img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    transition: 0.6s ease;
-}
-
-.event-card:hover .event-frame img { transform: scale(1.1); }
-
-/* 6. PÁGINA EL LUGAR */
-.lugar-seccion {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    margin-bottom: 80px;
-    flex-wrap: wrap;
-}
-.lugar-seccion.reverse { flex-direction: row-reverse; }
-
-.mapa-container {
-    width: 100%;
-    height: 450px;
-    background: #dee2e6;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-/* 7. PÁGINA DE CONTACTO */
+/* ============================================================
+   5. CONTACTO Y FORMULARIOS
+   ============================================================ */
 .contacto-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 50px;
     background: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: var(--sombra);
 }
 
 .form-control {
     width: 100%;
-    padding: 12px 15px;
-    border: 2px solid #eee;
-    border-radius: 8px;
-    outline: none;
-    transition: 0.3s ease;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
 }
 
-.form-control:focus {
-    border-color: var(--secundario);
-}
-
-/* 8. FOOTER */
-footer {
-    background: #111;
-    color: white;
-    padding: 60px 10% 20px;
-}
-
-.social-icon {
-    width: 40px; height: 40px;
-    border: 1px solid var(--secundario);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    color: var(--secundario);
-    transition: 0.3s;
-}
-
-.social-icon:hover {
-    background: var(--secundario);
-    color: white;
-    transform: translateY(-5px);
-}
-
-/* 9. ANIMACIONES */
+/* ============================================================
+   6. ANIMACIONES
+   ============================================================ */
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
+    from { opacity: 0; transform: translateY(40px); }
     to { opacity: 1; transform: translateY(0); }
 }
-.animar { animation: fadeInUp 0.8s ease-out forwards; }
 
-/* 10. GALERÍA ESTILO MURAL (Compacto) */
-.header-galeria {
-    text-align: center;
-    padding: 40px 0 20px;
-    background: var(--blanco);
-}
-
-.grid-mural {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
-}
-
-.marco-foto {
-    position: relative;
-    height: 250px;
-    background: #eee;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 3px solid white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    cursor: pointer;
-    transition: var(--transicion);
-}
-
-.marco-foto img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    transition: 0.5s ease;
-}
-
-.marco-foto:hover img { transform: scale(1.1); }
-
-.overlay-foto {
-    position: absolute;
-    inset: 0;
-    background: rgba(27, 67, 50, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
+.animar {
     opacity: 0;
-    transition: 0.3s;
+    animation: fadeInUp 1s ease-out forwards;
 }
 
-.marco-foto:hover .overlay-foto { opacity: 1; }
-
-/* 11. LIGHTBOX (IMAGEN AMPLIADA) */
+/* ============================================================
+   7. MODAL GALERÍA
+   ============================================================ */
 .modal {
     display: none;
     position: fixed;
-    z-index: 2000;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.9);
-    flex-direction: column;
+    z-index: 3000;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    backdrop-filter: blur(10px);
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    backdrop-filter: blur(5px);
 }
 
 .contenido-modal {
-    max-width: 90%;
-    max-height: 80vh;
-    border-radius: 10px;
-    animation: zoom 0.3s ease-out;
-}
-
-@keyframes zoom {
-    from { transform: scale(0.7); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+    max-width: 85%;
+    max-height: 85vh;
+    border: 3px solid white;
 }
 
 .cerrar-modal {
     position: absolute;
-    top: 20px; right: 35px;
-    color: white;
-    font-size: 50px;
-    font-weight: bold;
-    cursor: pointer;
+    top: 30px; right: 40px;
+    color: white; font-size: 40px; cursor: pointer;
+}
+
+/* ============================================================
+   8. FOOTER
+   ============================================================ */
+footer {
+    background: #111;
+    color: rgba(255,255,255,0.6);
+    padding: 80px 10% 40px;
+    text-align: center;
+}
+
+footer h3 { color: white; margin-bottom: 20px; font-family: var(--fuente-titulos); }
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .nav-principal { flex-direction: column; gap: 20px; }
+    .titulo-pagina { font-size: 2.5rem; }
+    .contacto-container { grid-template-columns: 1fr; }
 }

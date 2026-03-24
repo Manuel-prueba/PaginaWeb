@@ -4,93 +4,45 @@
     <meta charset="UTF-8">
     <title>Contacto | La Finca</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-     <a href="index.html">Inicio</a>
-        <a href="informacion.html">Información</a>
-        <a href="lugar.html">Lugar</a>
-        <a href="galeria.html">Galeria</a>
-        <a href="contacto.html">Contacto</a>
-    </nav>
+
+    <header class="header-interno header-contacto">
+        <nav class="nav-principal">
+            <div class="nav-bloque">
+                <a href="index.html">Inicio</a>
+                <a href="informacion.html">Información</a>
+            </div>
+            <div class="logo-central">
+                <h1>LOS ARCOS</h1>
+                <div class="sub-logo"><span>FINCA</span></div>
+            </div>
+            <div class="nav-bloque">
+                <a href="galeria.html">Galería</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+        </nav>
+        <h2 class="titulo-pagina animar">Contacto</h2>
+    </header>
 
     <section>
-        <div style="text-align: center; margin-bottom: 60px;" class="animar">
-            <h1>Contacta con nosotros</h1>
-            <p>Ejemplo de texto: Cuéntanos tu idea y te ayudaremos a hacerla realidad en nuestro espacio.</p>
-        </div>
-
         <div class="contacto-container animar">
             <div class="contacto-info">
-                <h2>Ejemplo de información</h2>
-                <div class="info-item">
-                    <div class="info-icon">📞</div>
-                    <div>
-                        <strong>Teléfono</strong>
-                        <p>+34 000 000 000</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <div class="info-icon">✉️</div>
-                    <div>
-                        <strong>Email</strong>
-                        <p>info@ejemplo.com</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <div class="info-icon">🕒</div>
-                    <div>
-                        <strong>Horario de visitas</strong>
-                        <p>Lunes a Viernes: 10:00 - 19:00</p>
-                    </div>
-                </div>
+                <h2>Hablemos</h2>
+                <p>📞 +34 000 000 000</p>
+                <p>✉️ info@losarcosfinca.com</p>
             </div>
 
             <form class="contacto-form">
-                <div class="form-group">
-                    <label>Nombre completo</label>
-                    <input type="text" class="form-control" placeholder="Ej: Juan Pérez">
-                </div>
-                
-                <div class="form-group">
-                    <label>Correo electrónico</label>
-                    <input type="email" class="form-control" placeholder="juan@correo.com">
-                </div>
-
-                <div class="form-group">
-                    <label>Tipo de Evento (ejemplos)</label>
-                    <select class="form-control">
-                        <option value="">Selecciona una opción</option>
-                        <option value="1">Tipo de Evento Ejemplo A</option>
-                        <option value="2">Tipo de Evento Ejemplo B</option>
-                        <option value="3">Tipo de Evento Ejemplo C</option>
-                        <option value="otro">Otro (especificar en mensaje)</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Mensaje o dudas</label>
-                    <textarea class="form-control" rows="4" placeholder="Cuéntanos más sobre lo que necesitas..."></textarea>
-                </div>
-
-                <button type="button" class="btn" style="width: 100%;">Enviar Solicitud</button>
+                <input type="text" class="form-control" placeholder="Nombre" style="margin-bottom:15px">
+                <input type="email" class="form-control" placeholder="Email" style="margin-bottom:15px">
+                <textarea class="form-control" rows="4" placeholder="Tu mensaje"></textarea>
+                <br>
+                <button type="button" class="btn" style="width: 100%;">Enviar</button>
             </form>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <div style="flex: 1; min-width: 250px;">
-                <h3>La Finca de Juan Jesús</h3>
-                <p>Prototipo de página web profesional.</p>
-            </div>
-            <div style="flex: 1; min-width: 250px;">
-                <h4>Redes</h4>
-                <div class="social-links">
-                    <a href="#" class="social-icon">IG</a> <a href="#" class="social-icon">FB</a> <a href="#" class="social-icon">TK</a> 
-                </div>
-            </div>
-        </div>
-    </footer>
 </body>
 </html>
