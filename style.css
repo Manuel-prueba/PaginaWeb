@@ -231,6 +231,13 @@ h2 {
     cursor: pointer;
 }
 
+.marco-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
 .marco-foto:hover img {
     transform: scale(1.08);
 }
@@ -299,9 +306,9 @@ h2 {
 }
 
 .btn-premium:hover {
-    background: white;
-    color: #333;
-    border-color: white;
+    background: var(--secundario);
+    color: white;
+    border-color: var(--secundario);
     transform: translateY(-3px);
 }
 
