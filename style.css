@@ -425,3 +425,26 @@ footer h3 {
         grid-template-columns: 1fr;
     }
 }
+
+.lista-lujo {
+    list-style: none; /* Quitamos los puntos negros feos */
+    padding: 0;
+    margin: 20px 0;
+}
+
+.lista-lujo li {
+    padding-left: 25px;
+    position: relative;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #444;
+}
+
+/* Ponemos un detalle elegante (un guion dorado o punto) antes de cada frase */
+.lista-lujo li::before {
+    content: "—"; 
+    position: absolute;
+    left: 0;
+    color: var(--secundario); /* Usará tu color dorado/marrón */
+    font-weight: bold;
+}
