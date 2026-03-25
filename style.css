@@ -426,11 +426,11 @@ footer h3 {
     }
 }
 /* ============================================================
-   9. Relacionado al lugar
+    9. Relacionado al lugar (MODIFICADO PARA UNIFICAR FOTOS)
    ============================================================ */
 /* Contenedor Principal */
 .seccion-lugar-premium {
-    padding: 0; /* Quitamos el padding para que las fotos lleguen al borde si queremos */
+    padding: 0;
     background-color: #fff;
 }
 
@@ -446,23 +446,51 @@ footer h3 {
 }
 
 /* Cajas de Contenido */
-.mosaico-texto, .mosaico-imagen {
+.mosaico-texto {
     flex: 1;
     min-width: 50%;
-}
-
-.mosaico-texto {
     padding: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: #f9f7f5; /* Color crema suave */
+    z-index: 2;
 }
 
+/* NUEVO: Contenedor para unificar imágenes */
+.contenedor-imagen-mosaico {
+    flex: 1;
+    min-width: 50%;
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* La imagen propiamente dicha */
 .mosaico-imagen {
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center;
-    min-height: 400px;
+    transition: transform 0.6s ease; /* Efecto zoom suave */
+}
+
+/* CAPA MÁGICA: Filtro unificador de tonalidad */
+.contenedor-imagen-mosaico::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    /* Tinte basado en tu color secundario con baja opacidad */
+    background-color: rgba(212, 163, 115, 0.15); 
+    /* Fusiona los colores para que no parezcan parches */
+    mix-blend-mode: multiply; 
+    pointer-events: none;
+}
+
+/* Efecto al pasar el ratón */
+.contenedor-imagen-mosaico:hover .mosaico-imagen {
+    transform: scale(1.05);
 }
 
 /* Detalles del Texto */
@@ -528,6 +556,7 @@ footer h3 {
 
 /* Móvil */
 @media (max-width: 900px) {
-    .mosaico-texto, .mosaico-imagen { min-width: 100%; }
+    .mosaico-texto, .contenedor-imagen-mosaico { min-width: 100%; }
     .mosaico-texto { padding: 40px 20px; }
+    .contenedor-imagen-mosaico { height: 350px; }
 }
