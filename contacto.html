@@ -35,12 +35,18 @@
                 <p>✉️ info@losarcosfinca.com</p>
             </div>
 
-            <form class="contacto-form">
-                <input type="text" class="form-control" placeholder="Nombre" style="margin-bottom:15px">
-                <input type="email" class="form-control" placeholder="Email" style="margin-bottom:15px">
-                <textarea class="form-control" rows="4" placeholder="Tu mensaje"></textarea>
+            <form action="https://formspree.io/f/meepjpbe" method="POST" class="contacto-form">
+                
+                <input type="text" name="Nombre" class="form-control" placeholder="Nombre" style="margin-bottom:15px" required>
+                
+                <input type="email" name="Email" class="form-control" placeholder="Email" style="margin-bottom:15px" required>
+                
+                <textarea name="Mensaje" class="form-control" rows="4" placeholder="Tu mensaje" required></textarea>
+                
                 <br>
-                <button type="button" class="btn" style="width: 100%;">Enviar</button>
+                
+                <button type="submit" class="btn" style="width: 100%;">Enviar</button>
+                
             </form>
         </div>
     </section>
