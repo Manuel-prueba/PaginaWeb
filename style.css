@@ -425,6 +425,9 @@ footer h3 {
         grid-template-columns: 1fr;
     }
 }
+/* ============================================================
+   9. Relacionado al lugar
+   ============================================================ */
 /* Contenedor Principal */
 .seccion-lugar-premium {
     padding: 0; /* Quitamos el padding para que las fotos lleguen al borde si queremos */
