@@ -425,26 +425,106 @@ footer h3 {
         grid-template-columns: 1fr;
     }
 }
-
-.lista-lujo {
-    list-style: none; /* Quitamos los puntos negros feos */
-    padding: 0;
-    margin: 20px 0;
+/* Contenedor Principal */
+.seccion-lugar-premium {
+    padding: 0; /* Quitamos el padding para que las fotos lleguen al borde si queremos */
+    background-color: #fff;
 }
 
-.lista-lujo li {
-    padding-left: 25px;
+/* Filas del Mosaico */
+.bloque-mosaico {
+    display: flex;
+    min-height: 550px;
+    flex-wrap: wrap;
+}
+
+.bloque-mosaico.invertido {
+    flex-direction: row-reverse;
+}
+
+/* Cajas de Contenido */
+.mosaico-texto, .mosaico-imagen {
+    flex: 1;
+    min-width: 50%;
+}
+
+.mosaico-texto {
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f9f7f5; /* Color crema suave */
+}
+
+.mosaico-imagen {
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
+}
+
+/* Detalles del Texto */
+.tag {
+    color: var(--secundario);
+    letter-spacing: 3px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.mosaico-texto h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--primario);
+}
+
+.divisor {
+    width: 60px;
+    height: 3px;
+    background: var(--secundario);
+    margin-top: 20px;
+}
+
+/* Listado de Puntos */
+.puntos-lujo {
+    list-style: none;
+    margin-top: 30px;
+}
+
+.puntos-lujo li {
+    margin-bottom: 12px;
+    padding-left: 30px;
     position: relative;
-    margin-bottom: 10px;
-    font-size: 1rem;
-    color: #444;
+    font-weight: 500;
 }
 
-/* Ponemos un detalle elegante (un guion dorado o punto) antes de cada frase */
-.lista-lujo li::before {
-    content: "—"; 
+.puntos-lujo li::before {
+    content: "•";
     position: absolute;
     left: 0;
-    color: var(--secundario); /* Usará tu color dorado/marrón */
-    font-weight: bold;
+    color: var(--secundario);
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+/* Botón Especial */
+.btn-dorado {
+    align-self: flex-start;
+    margin-top: 40px;
+    padding: 15px 40px;
+    background: var(--primario);
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.btn-dorado:hover { background: var(--secundario); }
+
+/* Móvil */
+@media (max-width: 900px) {
+    .mosaico-texto, .mosaico-imagen { min-width: 100%; }
+    .mosaico-texto { padding: 40px 20px; }
 }
