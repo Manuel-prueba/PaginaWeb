@@ -442,167 +442,129 @@ footer h3 {
 }
 
 /* ============================================================
-    9. EL LUGAR: DISEÑO FINAL (UNIFICADO Y ESTÉTICO)
+    9. EL LUGAR Y SECCIONES MOSAICO (CORRECCIÓN TOTAL)
    ============================================================ */
 
-/* Contenedor principal con márgenes para que respire y no ocupe el 100% */
-.seccion-lugar-premium {
-    padding: 80px 5%; 
-    background-color: #fff;
-    max-width: 1300px; 
-    margin: 0 auto;    
+.seccion-lugar-premium,
+.seccion-grid-premium {
+    padding: 60px 5%;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
-/* Cada fila del mosaico */
-.bloque-mosaico {
+.bloque-mosaico,
+.grid-premium {
     display: flex;
-    min-height: 500px;
-    margin-bottom: 50px; /* Separación entre bloques */
+    flex-wrap: wrap;
+    margin-bottom: 40px;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+    background-color: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .bloque-mosaico.invertido {
     flex-direction: row-reverse;
 }
 
-/* Contenedor de la imagen con el FILTRO UNIFICADOR */
-.contenedor-imagen-mosaico {
+/* Contenedor de Imagen */
+.contenedor-imagen-mosaico,
+.celda-imagen {
     flex: 1;
     min-width: 50%;
+    min-height: 450px;
     position: relative;
-    overflow: hidden;
-    background-color: #000; /* Fondo base para la fusión */
 }
 
 .mosaico-imagen {
     width: 100%;
     height: 100%;
+    min-height: 450px;
     background-size: cover;
     background-position: center;
-    transition: transform 1.2s ease;
+    display: block;
 }
 
-/* CAPA MÁGICA: Quita el efecto parche */
-.contenedor-imagen-mosaico::after {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    /* Tinte sutil basado en tu dorado tierra */
-    background-color: rgba(212, 163, 115, 0.12); 
-    mix-blend-mode: multiply;
-    pointer-events: none;
-}
-
-.contenedor-imagen-mosaico:hover .mosaico-imagen {
-    transform: scale(1.08);
-}
-
-/* Bloque de texto */
-.mosaico-texto {
+/* Texto */
+.mosaico-texto,
+.celda-texto {
     flex: 1;
     min-width: 50%;
     padding: 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #fcfaf8;
 }
 
-.tag {
-    color: var(--secundario);
-    letter-spacing: 3px;
-    font-size: 0.7rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-}
+/* --- RECONSTRUCCIÓN DEL BOTÓN (Para que no salga el enlace azul) --- */
 
-.mosaico-texto h2 {
-    font-family: var(--fuente-titulos);
-    font-size: 2.2rem;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    color: var(--primario);
-}
-
-.mosaico-texto p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.8;
-}
-
-.divisor {
-    width: 50px;
-    height: 2px;
-    background: var(--secundario);
-    margin-top: 20px;
-}
-
-/* Listado de Puntos */
-.puntos-lujo {
-    list-style: none;
-    margin-top: 25px;
-}
-
-.puntos-lujo li {
-    margin-bottom: 10px;
-    padding-left: 25px;
-    position: relative;
-    font-size: 0.95rem;
-    color: #444;
-}
-
-.puntos-lujo li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: var(--secundario);
-    font-weight: bold;
-}
-
-/* Botón Dorado */
+.btn,
+.btn-premium,
 .btn-dorado {
-    align-self: flex-start;
-    margin-top: 35px;
-    padding: 14px 35px;
-    background: var(--primario);
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    transition: 0.3s;
-    border-radius: 4px;
+    display: inline-block !important;
+    padding: 15px 35px !important;
+    background-color: var(--secundario) !important;
+    /* Dorado tierra */
+    color: #ffffff !important;
+    text-decoration: none !important;
+    /* Quita el subrayado azul */
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    font-size: 0.8rem !important;
+    border-radius: 4px !important;
+    margin-top: 25px !important;
+    transition: 0.3s all ease !important;
+    border: none !important;
+    text-align: center !important;
 }
 
-.btn-dorado:hover {
-    background: var(--secundario);
-    transform: translateY(-3px);
+/* Botón cuando está en el bloque verde */
+.celda-texto.verde .btn-premium {
+    background-color: #ffffff !important;
+    color: var(--primario) !important;
 }
 
-/* --- AJUSTES PARA MÓVIL (MUY IMPORTANTE) --- */
+.btn:hover,
+.btn-premium:hover {
+    background-color: var(--primario) !important;
+    color: #ffffff !important;
+    transform: translateY(-3px) !important;
+}
+
+/* --- AJUSTE MÓVIL --- */
 @media (max-width: 900px) {
-    .seccion-lugar-premium {
-        padding: 40px 15px;
-    }
-    
-    .bloque-mosaico {
-        flex-direction: column !important; /* Imagen arriba, texto abajo */
-        min-height: auto;
-    }
-    
-    .contenedor-imagen-mosaico {
-        height: 300px; /* Altura fija para que la foto se vea en el móvil */
-    }
-    
-    .mosaico-texto {
-        padding: 40px 25px;
+
+    .bloque-mosaico,
+    .grid-premium {
+        flex-direction: column !important;
     }
 
-    .mosaico-texto h2 {
-        font-size: 1.8rem;
+    .contenedor-imagen-mosaico,
+    .celda-imagen,
+    .mosaico-imagen {
+        width: 100% !important;
+        height: 300px !important;
+        min-height: 300px !important;
     }
+
+    .mosaico-texto,
+    .celda-texto {
+        width: 100% !important;
+        padding: 40px 25px !important;
+    }
+
+    .btn,
+    .btn-premium {
+        width: 100% !important;
+    }
+}
+
+/* --- EL EFECTO HOVER VA AQUÍ AFUERA --- */
+.btn:hover,
+.btn-premium:hover,
+.btn-dorado:hover {
+    background-color: var(--primario) !important;
+    transform: translateY(-5px) scale(1.02) !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
 }
