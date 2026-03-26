@@ -410,35 +410,82 @@ h2 {
 }
 
 /* ============================================================
-   8. FOOTER
+    8. FOOTER PREMIUM (DISEÑO FINAL UNIFICADO)
    ============================================================ */
-footer {
-    background: #111;
-    color: rgba(255, 255, 255, 0.6);
-    padding: 80px 10% 40px;
-    text-align: center;
-}
 
-footer h3 {
+.footer-premium {
+    background-color: var(--primario); /* Verde Bosque */
     color: white;
-    margin-bottom: 20px;
-    font-family: var(--fuente-titulos);
+    padding: 80px 5% 40px;
+    text-align: center;
+    margin-top: 50px;
 }
 
-/* Responsive para móviles */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo-contenedor {
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-footer-img {
+    max-width: 180px; /* Tamaño ideal */
+    height: auto;
+    /* Este filtro vuelve tu logo blanco automáticamente si es oscuro */
+    filter: brightness(0) invert(1); 
+    opacity: 0.9;
+    transition: 0.4s ease;
+}
+
+.logo-footer-img:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+.footer-copyright {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    opacity: 0.6;
+}
+
+/* Ajuste para que en móvil el footer no agobie */
 @media (max-width: 768px) {
-    .nav-principal {
-        flex-direction: column;
-        gap: 20px;
+    .footer-premium {
+        padding: 60px 10% 30px;
     }
+    .logo-footer-img {
+        max-width: 140px;
+    }
+}
+/* --- ARREGLO DE EMERGENCIA PARA ENLACES AZULES EN EL FOOTER --- */
 
-    .titulo-pagina {
-        font-size: 2.5rem;
-    }
+.footer-social a, 
+.footer-social a:visited, 
+.footer-social a:active {
+    color: #ffffff !important; /* Fuerza el blanco absoluto */
+    text-decoration: none !important; /* Quita el subrayado feo */
+    font-family: var(--fuente-texto) !important;
+    font-size: 0.8rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    opacity: 0.7 !important; /* Les da un toque suave para no distraer */
+    transition: 0.4s ease !important;
+    display: inline-block !important;
+    margin: 0 15px !important;
+}
 
-    .contacto-container {
-        grid-template-columns: 1fr;
-    }
+/* El efecto al pasar el ratón (Hover) */
+.footer-social a:hover {
+    color: var(--secundario) !important; /* Cambia a dorado */
+    opacity: 1 !important;
+    transform: translateY(-2px) !important;
 }
 
 /* ============================================================
