@@ -442,96 +442,101 @@ footer h3 {
 }
 
 /* ============================================================
-    9. Relacionado al lugar (MODIFICADO PARA UNIFICAR FOTOS)
+    9. EL LUGAR: DISEÑO FINAL (UNIFICADO Y ESTÉTICO)
    ============================================================ */
-/* Contenedor Principal */
+
+/* Contenedor principal con márgenes para que respire y no ocupe el 100% */
 .seccion-lugar-premium {
-    padding: 0;
+    padding: 80px 5%; 
     background-color: #fff;
+    max-width: 1300px; 
+    margin: 0 auto;    
 }
 
-/* Filas del Mosaico */
+/* Cada fila del mosaico */
 .bloque-mosaico {
     display: flex;
-    min-height: 550px;
-    flex-wrap: wrap;
+    min-height: 500px;
+    margin-bottom: 50px; /* Separación entre bloques */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.04);
 }
 
 .bloque-mosaico.invertido {
     flex-direction: row-reverse;
 }
 
-/* Cajas de Contenido */
-.mosaico-texto {
-    flex: 1;
-    min-width: 50%;
-    padding: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #f9f7f5;
-    /* Color crema suave */
-    z-index: 2;
-}
-
-/* NUEVO: Contenedor para unificar imágenes */
+/* Contenedor de la imagen con el FILTRO UNIFICADOR */
 .contenedor-imagen-mosaico {
     flex: 1;
     min-width: 50%;
-    min-height: 400px;
     position: relative;
     overflow: hidden;
+    background-color: #000; /* Fondo base para la fusión */
 }
 
-/* La imagen propiamente dicha */
 .mosaico-imagen {
     width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
-    transition: transform 0.6s ease;
-    /* Efecto zoom suave */
+    transition: transform 1.2s ease;
 }
 
-/* CAPA MÁGICA: Filtro unificador de tonalidad */
+/* CAPA MÁGICA: Quita el efecto parche */
 .contenedor-imagen-mosaico::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Tinte basado en tu color secundario con baja opacidad */
-    background-color: rgba(212, 163, 115, 0.15);
-    /* Fusiona los colores para que no parezcan parches */
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    /* Tinte sutil basado en tu dorado tierra */
+    background-color: rgba(212, 163, 115, 0.12); 
     mix-blend-mode: multiply;
     pointer-events: none;
 }
 
-/* Efecto al pasar el ratón */
 .contenedor-imagen-mosaico:hover .mosaico-imagen {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
-/* Detalles del Texto */
+/* Bloque de texto */
+.mosaico-texto {
+    flex: 1;
+    min-width: 50%;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fcfaf8;
+}
+
 .tag {
     color: var(--secundario);
     letter-spacing: 3px;
     font-size: 0.7rem;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
 }
 
 .mosaico-texto h2 {
     font-family: var(--fuente-titulos);
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    line-height: 1.2;
     margin-bottom: 20px;
     color: var(--primario);
 }
 
+.mosaico-texto p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.8;
+}
+
 .divisor {
-    width: 60px;
-    height: 3px;
+    width: 50px;
+    height: 2px;
     background: var(--secundario);
     margin-top: 20px;
 }
@@ -539,14 +544,15 @@ footer h3 {
 /* Listado de Puntos */
 .puntos-lujo {
     list-style: none;
-    margin-top: 30px;
+    margin-top: 25px;
 }
 
 .puntos-lujo li {
-    margin-bottom: 12px;
-    padding-left: 30px;
+    margin-bottom: 10px;
+    padding-left: 25px;
     position: relative;
-    font-weight: 500;
+    font-size: 0.95rem;
+    color: #444;
 }
 
 .puntos-lujo li::before {
@@ -554,15 +560,14 @@ footer h3 {
     position: absolute;
     left: 0;
     color: var(--secundario);
-    font-size: 1.5rem;
-    line-height: 1;
+    font-weight: bold;
 }
 
-/* Botón Especial */
+/* Botón Dorado */
 .btn-dorado {
     align-self: flex-start;
-    margin-top: 40px;
-    padding: 15px 40px;
+    margin-top: 35px;
+    padding: 14px 35px;
     background: var(--primario);
     color: white;
     text-decoration: none;
@@ -570,45 +575,34 @@ footer h3 {
     font-size: 0.8rem;
     letter-spacing: 2px;
     transition: 0.3s;
+    border-radius: 4px;
 }
 
 .btn-dorado:hover {
     background: var(--secundario);
+    transform: translateY(-3px);
 }
 
-/* Móvil */
+/* --- AJUSTES PARA MÓVIL (MUY IMPORTANTE) --- */
 @media (max-width: 900px) {
-
-    .mosaico-texto,
-    .contenedor-imagen-mosaico {
-        min-width: 100%;
-    }
-
-    .mosaico-texto {
-        padding: 40px 20px;
-    }
-
-    .contenedor-imagen-mosaico {
-        height: 350px;
-    }
-}
-
-/* Ajustes específicos para móviles */
-@media (max-width: 600px) {
-    body {
-        font-size: 16px; /* Forzamos un tamaño de lectura cómodo */
-    }
-
-    h2 {
-        font-size: 1.8rem !important; /* Hacemos los títulos un poco más pequeños para que no corten */
-    }
-
-    .mosaico-texto p {
-        font-size: 1.1rem !important; /* El texto de las celdas de Monachil se leerá mejor */
-        padding: 0; 
+    .seccion-lugar-premium {
+        padding: 40px 15px;
     }
     
-    .nav-principal {
-        padding: 15px 5%; /* Estrechamos el menú para que no coma mucha pantalla */
+    .bloque-mosaico {
+        flex-direction: column !important; /* Imagen arriba, texto abajo */
+        min-height: auto;
+    }
+    
+    .contenedor-imagen-mosaico {
+        height: 300px; /* Altura fija para que la foto se vea en el móvil */
+    }
+    
+    .mosaico-texto {
+        padding: 40px 25px;
+    }
+
+    .mosaico-texto h2 {
+        font-size: 1.8rem;
     }
 }
