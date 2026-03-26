@@ -1,19 +1,20 @@
 /* ============================================================
-   1. VARIABLES Y CONFIGURACIÓN BASE
+   1. VARIABLES Y RESET TOTAL
    ============================================================ */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Raleway:wght@300;400;600&display=swap');
 
 :root {
     --primario: #1b4332;
+    /* Verde Bosque */
     --secundario: #d4a373;
+    /* Dorado Arcos */
     --fondo: #f8f9fa;
     --blanco: #ffffff;
     --fuente-titulos: 'Playfair Display', serif;
     --fuente-texto: 'Raleway', sans-serif;
-    --sombra: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --sombra: 0 10px 30px rgba(0, 0, 0, 0.15);
     --grid-verde: #3d5245;
     --grid-naranja: #fdf2e9;
-    --text-oscuro: #2c2c2c;
 }
 
 * {
@@ -22,37 +23,49 @@
     box-sizing: border-box;
 }
 
+html,
 body {
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
     background-color: var(--fondo);
     font-family: var(--fuente-texto);
-    color: #333;
-    overflow-x: hidden;
-    line-height: 1.6;
 }
 
 /* ============================================================
-   2. MENÚ (NAV) - OPTIMIZADO PARA MÓVIL
+   2. NAVEGACIÓN (UNIFICADA)
    ============================================================ */
 .nav-principal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 15px 20px;
-    background: rgba(0, 0, 0, 0.7); /* Un poco más oscuro para leer mejor */
-    backdrop-filter: blur(8px);
+    padding: 15px 5%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 9000; /* Debajo del modal */
+    z-index: 9000;
+}
+
+.logo-central {
+    text-align: center;
 }
 
 .logo-central h1 {
     font-family: var(--fuente-titulos);
     font-size: 1.6rem;
     color: white;
-    margin: 0;
     letter-spacing: 3px;
+    margin: 0;
+}
+
+.sub-logo span {
+    font-size: 8px;
+    color: white;
+    letter-spacing: 4px;
+    text-transform: uppercase;
 }
 
 .nav-bloque {
@@ -65,23 +78,34 @@ body {
     color: white;
     font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
     font-weight: 600;
+    letter-spacing: 1px;
+    transition: 0.3s;
 }
 
-@media (max-width: 768px) {
+.nav-bloque a:hover {
+    color: var(--secundario);
+}
+
+@media (max-width: 900px) {
     .nav-principal {
         flex-direction: column;
-        padding: 10px;
+        gap: 15px;
+        padding: 15px;
     }
-    .logo-central h1 { font-size: 1.2rem; }
-    .nav-bloque { gap: 10px; flex-wrap: wrap; justify-content: center; }
+
+    .nav-bloque {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 /* ============================================================
-   3. CABECERAS
+   3. HEADERS Y TÍTULOS
    ============================================================ */
-.header-inicio, .header-interno {
+.header-inicio,
+.header-interno {
     width: 100%;
     background-size: cover;
     background-position: center;
@@ -90,24 +114,136 @@ body {
     justify-content: center;
     align-items: center;
     color: white;
+    text-align: center;
 }
 
-.header-inicio { height: 100vh; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('Imagenes/Patio_para_fondo.jpeg'); }
-.header-interno { height: 40vh; } /* Altura reducida para que el logo suba */
+.header-inicio {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('Imagenes/Patio_para_fondo.jpeg');
+}
 
-.header-servicios { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('Imagenes/Salon-con-vista.jpeg'); }
-.header-galeria-foto, .header-contacto { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('Imagenes/Atico.jpeg'); }
+.header-interno {
+    height: 45vh;
+}
+
+.header-servicios {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Imagenes/Salon-con-vista.jpeg');
+}
+
+.header-galeria-foto,
+.header-contacto {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Imagenes/Atico.jpeg');
+}
+
+.header-lugar {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Imagenes/Patio_para_fondo_2.jpeg');
+}
 
 .titulo-pagina {
     font-family: var(--fuente-titulos);
-    font-size: clamp(2rem, 8vw, 3.5rem);
+    font-size: clamp(2rem, 7vw, 3.5rem);
     color: var(--primario);
+    margin: 50px 0;
     text-align: center;
-    margin: 40px 0;
 }
 
 /* ============================================================
-   4. GALERÍA REPARADA (EL FALLO DE TU COLEGA)
+   4. SISTEMA DE MOSAICOS (FILOSOFÍA, LUGAR, EVENTOS)
+   ============================================================ */
+.seccion-lugar-premium {
+    padding: 40px 0;
+    width: 100%;
+}
+
+.bloque-mosaico {
+    display: flex;
+    flex-wrap: wrap;
+    background: white;
+    width: 100%;
+    min-height: 500px;
+    margin-bottom: 0;
+}
+
+.bloque-mosaico.invertido {
+    flex-direction: row-reverse;
+}
+
+.contenedor-imagen-mosaico,
+.mosaico-texto {
+    flex: 1;
+    min-width: 50%;
+    min-height: 450px;
+}
+
+.mosaico-imagen {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.mosaico-texto {
+    padding: 80px 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+}
+
+.tag {
+    color: var(--secundario);
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.divisor {
+    width: 60px;
+    height: 2px;
+    background: var(--secundario);
+    margin: 25px 0;
+}
+
+.puntos-lujo {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.puntos-lujo li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.puntos-lujo li::before {
+    content: "•";
+    color: var(--secundario);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+@media (max-width: 900px) {
+
+    .contenedor-imagen-mosaico,
+    .mosaico-texto {
+        min-width: 100%;
+    }
+
+    .mosaico-texto {
+        padding: 50px 8%;
+        text-align: center;
+    }
+
+    .bloque-mosaico {
+        flex-direction: column !important;
+    }
+}
+
+/* ============================================================
+   5. GALERÍA (MANTENIDA SEGÚN PETICIÓN)
    ============================================================ */
 .seccion-mural {
     padding: 40px 5%;
@@ -117,14 +253,13 @@ body {
 
 .grid-mural {
     display: grid;
-    /* 3 columnas en PC, se adapta solo */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
 .marco-foto {
     position: relative;
-    height: 300px; 
+    height: 300px;
     border-radius: 12px;
     overflow: hidden;
     cursor: pointer;
@@ -134,11 +269,13 @@ body {
 .marco-foto img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Esto evita que se vean estiradas */
+    object-fit: cover;
     transition: 0.5s;
 }
 
-.marco-foto:hover img { transform: scale(1.1); }
+.marco-foto:hover img {
+    transform: scale(1.1);
+}
 
 .overlay-foto {
     position: absolute;
@@ -151,18 +288,18 @@ body {
     transition: 0.3s;
     color: white;
     font-weight: bold;
-    text-transform: uppercase;
 }
 
-.marco-foto:hover .overlay-foto { opacity: 1; }
+.marco-foto:hover .overlay-foto {
+    opacity: 1;
+}
 
-/* MODAL DE GALERÍA (ZOOM) */
 .modal {
     display: none;
     position: fixed;
-    z-index: 10000; /* Por encima de todo */
+    z-index: 10000;
     inset: 0;
-    background: rgba(0,0,0,0.9);
+    background: rgba(0, 0, 0, 0.9);
     backdrop-filter: blur(10px);
     align-items: center;
     justify-content: center;
@@ -185,59 +322,42 @@ body {
 }
 
 /* ============================================================
-   5. DISEÑO DE CUADRÍCULA (INICIO / LUGAR)
+   6. CONTACTO (GLASSMORPHISM)
    ============================================================ */
-.grid-premium {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    background: white;
-}
-
-.celda-texto, .celda-imagen {
-    flex: 1;
-    min-width: 50%;
-    min-height: 450px;
-}
-
-.celda-texto {
-    padding: 60px 10%;
+.seccion-contacto-foto {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Imagenes/Patio_para_fondo.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 100px 5%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
-.celda-texto.verde { background: var(--primario); color: white; }
-.celda-texto.naranja { background: var(--grid-naranja); color: #333; }
-
-.celda-imagen { background-size: cover; background-position: center; }
-
-@media (max-width: 900px) {
-    .celda-texto, .celda-imagen { min-width: 100%; min-height: 350px; }
-    .grid-mural { grid-template-columns: 1fr; } /* Galería a 1 columna en móvil */
-}
-
-/* ============================================================
-   6. CONTACTO
-   ============================================================ */
-.seccion-contacto-foto {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('Imagenes/Patio_para_fondo.jpeg');
-    background-size: cover; background-position: center; background-attachment: fixed;
-    padding: 100px 5%;
-    min-height: 100vh;
-    display: flex; flex-direction: column; align-items: center;
-}
-
 .contacto-container {
-    background: rgba(255,255,255,0.9);
-    backdrop-filter: blur(10px);
-    padding: 40px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 50px;
     border-radius: 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    gap: 40px;
     width: 100%;
-    max-width: 900px;
+    max-width: 1000px;
+    box-shadow: var(--sombra);
+}
+
+.form-control {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
 }
 
 /* ============================================================
@@ -246,40 +366,88 @@ body {
 .footer-premium {
     background: var(--primario);
     color: white;
-    padding: 60px 5%;
+    padding: 60px 5% 30px;
     text-align: center;
+    width: 100%;
 }
 
 .logo-footer-img {
     max-width: 150px;
     filter: brightness(0) invert(1);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    transition: 0.3s;
 }
 
-.btn, .btn-premium {
+.logo-footer-img:hover {
+    transform: scale(1.05);
+}
+
+.footer-social {
+    margin-bottom: 30px;
+}
+
+.footer-social a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+.footer-social a:hover {
+    color: var(--secundario);
+    opacity: 1;
+}
+
+.footer-copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 25px;
+    font-size: 0.75rem;
+    opacity: 0.6;
+}
+
+.btn,
+.btn-dorado,
+.btn-premium {
     display: inline-block;
-    padding: 14px 30px;
+    padding: 16px 35px;
     background: var(--secundario);
     color: white;
     text-decoration: none;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
     border-radius: 4px;
-    transition: 0.3s;
+    transition: 0.4s;
     border: none;
     cursor: pointer;
+    text-align: center;
 }
 
-.btn:hover { background: #b0845a; transform: translateY(-3px); }
+.btn:hover,
+.btn-dorado:hover,
+.btn-premium:hover {
+    background: #b0845a;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
 
-/* ANIMACIÓN */
+/* ANIMACIONES */
 .animar {
     opacity: 0;
     animation: fadeInUp 1s ease-out forwards;
 }
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
