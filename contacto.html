@@ -6,64 +6,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacto | La Finca</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet">
   <style>
     /* RESET TOTAL Y FLEX LAYOUT (MUY IMPORTANTE) */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    html, body {
-      height: 100%; /* El body debe ocupar el 100% de la altura */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      /* El body debe ocupar el 100% de la altura */
       margin: 0;
       font-family: 'Raleway', sans-serif;
       color: #333;
       display: flex;
-      flex-direction: column; /* Diseño en columna para empujar el footer */
-      overflow-x: hidden; /* Evita movimientos raros laterales */
+      flex-direction: column;
+      /* Diseño en columna para empujar el footer */
+      overflow-x: hidden;
+      /* Evita movimientos raros laterales */
     }
 
     /* AJUSTE CABECERA: Más compacta y logo más arriba */
-    .header-interno { 
-      height: 40vh !important; 
+    .header-interno {
+      height: 40vh !important;
     }
-    .nav-principal { 
-      padding: 15px 5% !important; 
+
+    .nav-principal {
+      padding: 15px 5% !important;
     }
 
     /* SECCIÓN DE CONTACTO: Ocupa todo el espacio restante */
     .seccion-contacto-foto {
       /* Fondo con degradado que se funde con el verde final */
-      background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 80%, #1b4332 100%), url('Imagenes/Patio_para_fondo.jpeg'); 
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 80%, #1b4332 100%), url('Imagenes/Patio_para_fondo.jpeg');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      padding: 80px 0; /* Espacio para respirar verticalmente */
+      padding: 80px 0;
+      /* Espacio para respirar verticalmente */
       width: 100%;
-      flex-grow: 1; /* Esto hace que la sección crezca y empuje el footer */
+      flex-grow: 1;
+      /* Esto hace que la sección crezca y empuje el footer */
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center; /* Centra la tarjeta */
+      justify-content: center;
+      /* Centra la tarjeta */
     }
 
     /* TARJETA CRISTAL (Glassmorphism): Mismo estilo premium */
     .contacto-container {
-      background: rgba(255, 255, 255, 0.85); 
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px); /* Para iPhone/Safari */
+      -webkit-backdrop-filter: blur(12px);
+      /* Para iPhone/Safari */
       border: 1px solid rgba(255, 255, 255, 0.3);
       max-width: 900px;
-      width: 92%; /* Se adapta a móvil */
+      width: 92%;
+      /* Se adapta a móvil */
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 30px;
       padding: 60px;
       border-radius: 20px;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
     }
 
     .titulo-contacto-blanco {
       color: white !important;
-      text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
       margin-bottom: 40px;
       font-size: 3rem;
       text-align: center;
@@ -71,7 +87,8 @@
 
     /* FOOTER VERDE CORPORATIVO INTEGRADO */
     .footer-premium {
-      background-color: #1b4332; /* Verde bosque profundo */
+      background-color: #1b4332;
+      /* Verde bosque profundo */
       padding: 60px 0 30px 0;
       width: 100%;
       color: white;
@@ -81,7 +98,8 @@
     .logo-footer-img {
       max-width: 150px;
       margin-bottom: 20px;
-      filter: brightness(0) invert(1); /* Pone el logo en blanco */
+      filter: brightness(0) invert(1);
+      /* Pone el logo en blanco */
     }
 
     .footer-copyright {
@@ -89,18 +107,25 @@
       opacity: 0.7;
       letter-spacing: 1px;
       margin-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
       padding-top: 20px;
     }
 
     /* AJUSTES RESPONSIVE MÓVIL (MUY IMPORTANTE) */
     @media (max-width: 768px) {
-      .header-interno { height: 35vh !important; }
-      .titulo-contacto-blanco { font-size: 2.2rem; }
+      .header-interno {
+        height: 35vh !important;
+      }
+
+      .titulo-contacto-blanco {
+        font-size: 2.2rem;
+      }
+
       .contacto-container {
         grid-template-columns: 1fr;
         padding: 30px 20px;
       }
+
       .seccion-contacto-foto {
         padding: 60px 0;
       }
@@ -129,13 +154,15 @@
     </nav>
   </header>
 
-  <main> <section class="seccion-contacto-foto">
+  <main>
+    <section class="seccion-contacto-foto">
       <h2 class="titulo-pagina animar titulo-contacto-blanco">Contacto</h2>
-      
+
       <div class="contacto-container animar">
         <div class="contacto-info">
           <h2 style="font-family: 'Playfair Display'; margin-bottom: 20px; color: #1b4332;">Hablemos</h2>
-          <p style="color: #444;">¿Tienes alguna duda o quieres reservar una fecha? Estamos encantados de ayudarte a organizar tu evento ideal.</p>
+          <p style="color: #444;">¿Tienes alguna duda o quieres reservar una fecha? Estamos encantados de ayudarte a
+            organizar tu evento ideal.</p>
           <br>
           <p><strong>Teléfono:</strong><br><span style="color: #1b4332;">📞 +34 000 000 000</span></p>
           <br>
@@ -143,10 +170,12 @@
         </div>
 
         <form id="my-form" action="https://formspree.io/f/meepjpbe" method="POST" class="contacto-form">
-          <input type="text" name="Nombre" class="form-control" placeholder="Nombre" style="margin-bottom:15px" required>
+          <input type="text" name="Nombre" class="form-control" placeholder="Nombre" style="margin-bottom:15px"
+            required>
           <input type="email" name="Email" class="form-control" placeholder="Email" style="margin-bottom:15px" required>
           <textarea name="Mensaje" class="form-control" rows="4" placeholder="Tu mensaje" required></textarea>
-          <button id="my-form-button" type="submit" class="btn" style="width: 100%; margin-top: 15px;">Enviar Mensaje</button>
+          <button id="my-form-button" type="submit" class="btn" style="width: 100%; margin-top: 15px;">Enviar
+            Mensaje</button>
           <p id="my-form-status" style="margin-top: 10px; font-weight: bold;"></p>
         </form>
       </div>
@@ -196,4 +225,5 @@
     form.addEventListener("submit", handleSubmit)
   </script>
 </body>
+
 </html>

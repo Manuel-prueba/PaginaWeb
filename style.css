@@ -41,7 +41,7 @@ body {
     left: 0;
     width: 100%;
     padding: 15px 20px;
-    background: rgba(0,0,0,0.45);
+    background: rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(6px);
     display: flex;
     justify-content: space-between;
@@ -408,6 +408,7 @@ h2 {
     .footer-premium {
         padding: 60px 10% 30px;
     }
+
     .logo-footer-img {
         max-width: 140px;
     }
