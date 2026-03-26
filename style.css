@@ -5,20 +5,15 @@
 
 :root {
     --primario: #1b4332;
-    /* Verde bosque (para detalles) */
     --secundario: #d4a373;
-    /* Dorado tierra (botones y acentos) */
     --fondo: #f8f9fa;
     --blanco: #ffffff;
     --fuente-titulos: 'Playfair Display', serif;
     --fuente-texto: 'Raleway', sans-serif;
     --sombra: 0 10px 30px rgba(0, 0, 0, 0.1);
 
-    /* Colores Cuadrícula Premium */
     --grid-verde: #3d5245;
-    /* Verde bosque profundo */
     --grid-naranja: #fdf2e9;
-    /* Naranja pastel muy suave / crema */
     --text-oscuro: #2c2c2c;
 }
 
@@ -37,91 +32,87 @@ body {
 }
 
 /* ============================================================
-   2. NAVEGACIÓN PREMIUM (CENTRADA Y TRANSPARENTE)
+   2. MENÚ NUEVO — SIMPLE, LIMPIO Y RESPONSIVE
    ============================================================ */
+
 .nav-principal {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    padding: 15px 20px;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(6px);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 50px;
-    /* Espacio entre bloques y logo */
-    padding: 30px 5%;
-    /* Degradado sutil arriba para que las letras blancas siempre se lean */
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
+    z-index: 9999;
 }
 
+/* LOGO */
+.logo-central h1 {
+    font-family: var(--fuente-titulos);
+    font-size: 1.8rem;
+    color: white;
+    margin: 0;
+    letter-spacing: 4px;
+}
+
+.sub-logo span {
+    font-size: 8px;
+    letter-spacing: 4px;
+    color: white;
+}
+
+/* ENLACES */
 .nav-bloque {
     display: flex;
-    gap: 30px;
+    gap: 20px;
 }
 
 .nav-bloque a {
     text-decoration: none;
-    color: white !important;
+    color: white;
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 600;
-    transition: 0.3s ease;
-    position: relative;
 }
 
-/* Línea animada bajo los enlaces */
-.nav-bloque a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 1px;
-    bottom: -5px;
-    left: 0;
-    background: var(--secundario);
-    transition: 0.3s;
-}
+/* ============================
+   MÓVIL
+   ============================ */
+@media (max-width: 768px) {
 
-.nav-bloque a:hover::after {
-    width: 100%;
-}
+    .nav-principal {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 10px;
+    }
 
-.nav-bloque a:hover {
-    color: var(--secundario) !important;
-}
+    .logo-central h1 {
+        font-size: 1.4rem;
+    }
 
-/* LOGO CENTRAL */
-.logo-central {
-    text-align: center;
-    color: white;
-    min-width: 220px;
-}
+    .nav-bloque {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
 
-.logo-central h1 {
-    font-family: var(--fuente-titulos);
-    font-size: 2.4rem;
-    margin: 0;
-    letter-spacing: 5px;
-    line-height: 1;
-    color: white;
-}
+    .nav-bloque a {
+        font-size: 0.8rem;
+    }
 
-.sub-logo {
-    border-top: 1px solid rgba(255, 255, 255, 0.4);
-    margin-top: 8px;
-    padding-top: 4px;
-}
-
-.sub-logo span {
-    font-size: 9px;
-    letter-spacing: 7px;
-    text-transform: uppercase;
-    display: block;
+    .header-inicio {
+        padding-top: 150px !important;
+        height: auto !important;
+        min-height: 100vh;
+    }
 }
 
 /* ============================================================
-   3. CABECERAS (HEADERS) CON FOTOS AJUSTADAS
+   3. CABECERAS (HEADERS)
    ============================================================ */
 .header-inicio,
 .header-interno {
@@ -137,26 +128,20 @@ body {
     text-align: center;
 }
 
-/* El Inicio ocupa toda la pantalla */
 .header-inicio {
     height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('Imagenes/Patio_para_fondo.jpeg');
 }
 
-/* Las páginas internas ocupan la mitad */
 .header-interno {
     height: 55vh;
 }
 
-/* Asignamos las fotos a cada página específica */
 .header-servicios {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Imagenes/Salon-con-vista.jpeg');
 }
 
-.header-galeria-foto {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Imagenes/Atico.jpeg');
-}
-
+.header-galeria-foto,
 .header-contacto {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Imagenes/Atico.jpeg');
 }
@@ -211,47 +196,13 @@ h2 {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Estilo para las tarjetas de servicios y galería */
-.event-grid,
-.grid-mural {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.event-card,
-.marco-foto {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--sombra);
-    transition: 0.4s;
-}
-
-.marco-foto {
-    height: 350px;
-    cursor: pointer;
-}
-
-.marco-foto img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s;
-}
-
-.marco-foto:hover img {
-    transform: scale(1.08);
-}
-
 /* ============================================================
-   4.1 CUADRÍCULA PREMIUM (ZIG-ZAG)
+   4.1 CUADRÍCULA PREMIUM
    ============================================================ */
 .seccion-grid-premium {
     padding: 0;
     max-width: 100%;
     margin: 0 0 80px 0;
-    /* Añadido margen inferior para separarlo del footer */
 }
 
 .grid-premium {
@@ -410,11 +361,10 @@ h2 {
 }
 
 /* ============================================================
-    8. FOOTER PREMIUM (DISEÑO FINAL UNIFICADO)
+   8. FOOTER PREMIUM
    ============================================================ */
-
 .footer-premium {
-    background-color: var(--primario); /* Verde Bosque */
+    background-color: var(--primario);
     color: white;
     padding: 80px 5% 40px;
     text-align: center;
@@ -433,10 +383,9 @@ h2 {
 }
 
 .logo-footer-img {
-    max-width: 180px; /* Tamaño ideal */
+    max-width: 180px;
     height: auto;
-    /* Este filtro vuelve tu logo blanco automáticamente si es oscuro */
-    filter: brightness(0) invert(1); 
+    filter: brightness(0) invert(1);
     opacity: 0.9;
     transition: 0.4s ease;
 }
@@ -455,7 +404,6 @@ h2 {
     opacity: 0.6;
 }
 
-/* Ajuste para que en móvil el footer no agobie */
 @media (max-width: 768px) {
     .footer-premium {
         padding: 60px 10% 30px;
@@ -464,34 +412,29 @@ h2 {
         max-width: 140px;
     }
 }
-/* --- ARREGLO DE EMERGENCIA PARA ENLACES AZULES EN EL FOOTER --- */
 
-.footer-social a, 
-.footer-social a:visited, 
-.footer-social a:active {
-    color: #ffffff !important; /* Fuerza el blanco absoluto */
-    text-decoration: none !important; /* Quita el subrayado feo */
+.footer-social a {
+    color: #ffffff !important;
+    text-decoration: none !important;
     font-family: var(--fuente-texto) !important;
     font-size: 0.8rem !important;
     text-transform: uppercase !important;
     letter-spacing: 2px !important;
-    opacity: 0.7 !important; /* Les da un toque suave para no distraer */
+    opacity: 0.7 !important;
     transition: 0.4s ease !important;
     display: inline-block !important;
     margin: 0 15px !important;
 }
 
-/* El efecto al pasar el ratón (Hover) */
 .footer-social a:hover {
-    color: var(--secundario) !important; /* Cambia a dorado */
+    color: var(--secundario) !important;
     opacity: 1 !important;
     transform: translateY(-2px) !important;
 }
 
 /* ============================================================
-    9. EL LUGAR Y SECCIONES MOSAICO (CORRECCIÓN TOTAL)
+   9. MOSAICO / LUGAR
    ============================================================ */
-
 .seccion-lugar-premium,
 .seccion-grid-premium {
     padding: 60px 5%;
@@ -514,7 +457,6 @@ h2 {
     flex-direction: row-reverse;
 }
 
-/* Contenedor de Imagen */
 .contenedor-imagen-mosaico,
 .celda-imagen {
     flex: 1;
@@ -532,7 +474,6 @@ h2 {
     display: block;
 }
 
-/* Texto */
 .mosaico-texto,
 .celda-texto {
     flex: 1;
@@ -543,17 +484,14 @@ h2 {
     justify-content: center;
 }
 
-/* --- RECONSTRUCCIÓN DEL BOTÓN (Para que no salga el enlace azul) --- */
 .btn,
 .btn-premium,
 .btn-dorado {
     display: inline-block !important;
     padding: 15px 35px !important;
     background-color: var(--secundario) !important;
-    /* Dorado tierra */
     color: #ffffff !important;
     text-decoration: none !important;
-    /* Quita el subrayado azul */
     font-weight: 700 !important;
     text-transform: uppercase !important;
     letter-spacing: 2px !important;
@@ -565,20 +503,19 @@ h2 {
     text-align: center !important;
 }
 
-/* Botón cuando está en el bloque verde */
 .celda-texto.verde .btn-premium {
     background-color: #ffffff !important;
     color: var(--primario) !important;
 }
 
 .btn:hover,
-.btn-premium:hover {
+.btn-premium:hover,
+.btn-dorado:hover {
     background-color: var(--primario) !important;
-    color: #ffffff !important;
-    transform: translateY(-3px) !important;
+    transform: translateY(-5px) scale(1.02) !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* --- AJUSTE MÓVIL --- */
 @media (max-width: 900px) {
 
     .bloque-mosaico,
@@ -604,13 +541,4 @@ h2 {
     .btn-premium {
         width: 100% !important;
     }
-}
-
-/* --- EL EFECTO HOVER VA AQUÍ AFUERA --- */
-.btn:hover,
-.btn-premium:hover,
-.btn-dorado:hover {
-    background-color: var(--primario) !important;
-    transform: translateY(-5px) scale(1.02) !important;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
 }
