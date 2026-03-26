@@ -8,47 +8,101 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
-    /* Estilos específicos para darle vida a esta página */
+    /* RESET TOTAL Y FLEX LAYOUT (MUY IMPORTANTE) */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    html, body {
+      height: 100%; /* El body debe ocupar el 100% de la altura */
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      color: #333;
+      display: flex;
+      flex-direction: column; /* Diseño en columna para empujar el footer */
+      overflow-x: hidden; /* Evita movimientos raros laterales */
+    }
+
+    /* AJUSTE CABECERA: Más compacta y logo más arriba */
+    .header-interno { 
+      height: 40vh !important; 
+    }
+    .nav-principal { 
+      padding: 15px 5% !important; 
+    }
+
+    /* SECCIÓN DE CONTACTO: Ocupa todo el espacio restante */
     .seccion-contacto-foto {
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('Imagenes/Patio_para_fondo.jpeg'); /* FOTO DE FONDO */
+      /* Fondo con degradado que se funde con el verde final */
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 80%, #1b4332 100%), url('Imagenes/Patio_para_fondo.jpeg'); 
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      padding: 80px 5%;
-      min-height: 100vh;
+      padding: 80px 0; /* Espacio para respirar verticalmente */
+      width: 100%;
+      flex-grow: 1; /* Esto hace que la sección crezca y empuje el footer */
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center; /* Centra la tarjeta */
     }
 
+    /* TARJETA CRISTAL (Glassmorphism): Mismo estilo premium */
     .contacto-container {
-      background: rgba(255, 255, 255, 0.9); /* Blanco semitransparente */
-      backdrop-filter: blur(10px); /* Desenfoque del fondo (efecto cristal) */
+      background: rgba(255, 255, 255, 0.85); 
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px); /* Para iPhone/Safari */
       border: 1px solid rgba(255, 255, 255, 0.3);
       max-width: 900px;
-      width: 100%;
+      width: 92%; /* Se adapta a móvil */
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      gap: 30px;
       padding: 60px;
       border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.3);
     }
 
     .titulo-contacto-blanco {
       color: white !important;
-      text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
       margin-bottom: 40px;
+      font-size: 3rem;
+      text-align: center;
     }
 
-    .contacto-info h2, .contacto-info p {
-      color: var(--primario);
+    /* FOOTER VERDE CORPORATIVO INTEGRADO */
+    .footer-premium {
+      background-color: #1b4332; /* Verde bosque profundo */
+      padding: 60px 0 30px 0;
+      width: 100%;
+      color: white;
+      text-align: center;
     }
 
+    .logo-footer-img {
+      max-width: 150px;
+      margin-bottom: 20px;
+      filter: brightness(0) invert(1); /* Pone el logo en blanco */
+    }
+
+    .footer-copyright {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      letter-spacing: 1px;
+      margin-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+    }
+
+    /* AJUSTES RESPONSIVE MÓVIL (MUY IMPORTANTE) */
     @media (max-width: 768px) {
+      .header-interno { height: 35vh !important; }
+      .titulo-contacto-blanco { font-size: 2.2rem; }
       .contacto-container {
         grid-template-columns: 1fr;
-        padding: 30px;
+        padding: 30px 20px;
+      }
+      .seccion-contacto-foto {
+        padding: 60px 0;
       }
     }
   </style>
@@ -75,33 +129,45 @@
     </nav>
   </header>
 
-  <section class="seccion-contacto-foto">
-    <h2 class="titulo-pagina animar titulo-contacto-blanco">Contacto</h2>
-    
-    <div class="contacto-container animar">
-      <div class="contacto-info">
-        <h2>Hablemos</h2>
-        <p>¿Tienes alguna duda o quieres reservar una fecha? Estamos encantados de ayudarte a organizar tu evento ideal.</p>
-        <br>
-        <p><strong>Teléfono:</strong><br>📞 +34 000 000 000</p>
-        <br>
-        <p><strong>Email:</strong><br>✉️ info@losarcosfinca.com</p>
-      </div>
+  <main> <section class="seccion-contacto-foto">
+      <h2 class="titulo-pagina animar titulo-contacto-blanco">Contacto</h2>
+      
+      <div class="contacto-container animar">
+        <div class="contacto-info">
+          <h2 style="font-family: 'Playfair Display'; margin-bottom: 20px; color: #1b4332;">Hablemos</h2>
+          <p style="color: #444;">¿Tienes alguna duda o quieres reservar una fecha? Estamos encantados de ayudarte a organizar tu evento ideal.</p>
+          <br>
+          <p><strong>Teléfono:</strong><br><span style="color: #1b4332;">📞 +34 000 000 000</span></p>
+          <br>
+          <p><strong>Email:</strong><br><span style="color: #1b4332;">✉️ info@losarcosfinca.com</span></p>
+        </div>
 
-      <form id="my-form" action="https://formspree.io/f/meepjpbe" method="POST" class="contacto-form">
-        <input type="text" name="Nombre" class="form-control" placeholder="Nombre" style="margin-bottom:15px" required>
-        <input type="email" name="Email" class="form-control" placeholder="Email" style="margin-bottom:15px" required>
-        <textarea name="Mensaje" class="form-control" rows="4" placeholder="Tu mensaje" required></textarea>
-        <br>
-        <button id="my-form-button" type="submit" class="btn" style="width: 100%;">Enviar Mensaje</button>
-        <p id="my-form-status" style="margin-top: 10px; font-weight: bold;"></p>
-      </form>
+        <form id="my-form" action="https://formspree.io/f/meepjpbe" method="POST" class="contacto-form">
+          <input type="text" name="Nombre" class="form-control" placeholder="Nombre" style="margin-bottom:15px" required>
+          <input type="email" name="Email" class="form-control" placeholder="Email" style="margin-bottom:15px" required>
+          <textarea name="Mensaje" class="form-control" rows="4" placeholder="Tu mensaje" required></textarea>
+          <button id="my-form-button" type="submit" class="btn" style="width: 100%; margin-top: 15px;">Enviar Mensaje</button>
+          <p id="my-form-status" style="margin-top: 10px; font-weight: bold;"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-premium">
+    <div class="footer-content">
+      <div class="footer-logo-contenedor">
+        <a href="index.html">
+          <img src="Imagenes/arcos_logo.png" alt="Logo Los Arcos" class="logo-footer-img">
+        </a>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; 2026 Finca Los Arcos. Todos los derechos reservados.</p>
+      </div>
     </div>
-  </section>
+  </footer>
 
   <script>
     var form = document.getElementById("my-form");
-
     async function handleSubmit(event) {
       event.preventDefault();
       var status = document.getElementById("my-form-status");
@@ -113,46 +179,21 @@
       fetch(event.target.action, {
         method: form.method,
         body: data,
-        headers: {
-          'Accept': 'application/json'
-        }
+        headers: { 'Accept': 'application/json' }
       }).then(response => {
         if (response.ok) {
           window.location.href = "gracias.html";
         } else {
-          response.json().then(data => {
-            if (Object.hasOwn(data, 'errors')) {
-              status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
-            } else {
-              status.innerHTML = "¡Ups! Hubo un problema al enviar el formulario";
-            }
-          })
+          status.innerHTML = "¡Ups! Error al enviar.";
         }
       }).catch(error => {
-        status.innerHTML = "¡Ups! Hubo un problema de conexión";
+        status.innerHTML = "Error de conexión.";
       }).finally(() => {
         button.innerText = "Enviar Mensaje";
         button.disabled = false;
       });
     }
-
     form.addEventListener("submit", handleSubmit)
   </script>
-
-   <footer class="footer-premium">
-        <div class="footer-content">
-
-            <div class="footer-logo-contenedor">
-                <a href="index.html">
-                    <img src="Imagenes/arcos_logo.png" alt="Logo Los Arcos" class="logo-footer-img">
-                </a>
-            </div>
-
-            <div class="footer-copyright">
-                <p>&copy; 2026 Finca Los Arcos. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
 </body>
-
 </html>
