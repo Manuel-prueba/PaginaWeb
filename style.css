@@ -592,3 +592,23 @@ footer h3 {
         height: 350px;
     }
 }
+
+/* Ajustes específicos para móviles */
+@media (max-width: 600px) {
+    body {
+        font-size: 16px; /* Forzamos un tamaño de lectura cómodo */
+    }
+
+    h2 {
+        font-size: 1.8rem !important; /* Hacemos los títulos un poco más pequeños para que no corten */
+    }
+
+    .mosaico-texto p {
+        font-size: 1.1rem !important; /* El texto de las celdas de Monachil se leerá mejor */
+        padding: 0; 
+    }
+    
+    .nav-principal {
+        padding: 15px 5%; /* Estrechamos el menú para que no coma mucha pantalla */
+    }
+}
