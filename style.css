@@ -1,5 +1,5 @@
 /* ============================================================
-   1. VARIABLES Y RESET TOTAL
+   1. VARIABLES Y BASE (INTOCABLES)
    ============================================================ */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Raleway:wght@300;400;600&display=swap');
 
@@ -23,17 +23,17 @@
     box-sizing: border-box;
 }
 
-html,
 body {
-    width: 100%;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
     background-color: var(--fondo);
     font-family: var(--fuente-texto);
+    color: #333;
+    overflow-x: hidden;
+    line-height: 1.6;
+    width: 100%;
 }
 
 /* ============================================================
-   2. NAVEGACIÓN (UNIFICADA)
+   2. MENÚ (NAV) - ELIMINAMOS EL DESCUADRE MÓVIL
    ============================================================ */
 .nav-principal {
     position: fixed;
@@ -41,7 +41,7 @@ body {
     left: 0;
     width: 100%;
     padding: 15px 5%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
@@ -49,23 +49,11 @@ body {
     z-index: 9000;
 }
 
-.logo-central {
-    text-align: center;
-}
-
 .logo-central h1 {
     font-family: var(--fuente-titulos);
     font-size: 1.6rem;
     color: white;
     letter-spacing: 3px;
-    margin: 0;
-}
-
-.sub-logo span {
-    font-size: 8px;
-    color: white;
-    letter-spacing: 4px;
-    text-transform: uppercase;
 }
 
 .nav-bloque {
@@ -79,19 +67,14 @@ body {
     font-size: 0.8rem;
     text-transform: uppercase;
     font-weight: 600;
-    letter-spacing: 1px;
     transition: 0.3s;
-}
-
-.nav-bloque a:hover {
-    color: var(--secundario);
 }
 
 @media (max-width: 900px) {
     .nav-principal {
         flex-direction: column;
         gap: 15px;
-        padding: 15px;
+        padding: 15px 5%;
     }
 
     .nav-bloque {
@@ -102,7 +85,7 @@ body {
 }
 
 /* ============================================================
-   3. HEADERS Y TÍTULOS
+   3. HEADERS (CABECERAS)
    ============================================================ */
 .header-inicio,
 .header-interno {
@@ -123,7 +106,8 @@ body {
 }
 
 .header-interno {
-    height: 45vh;
+    height: 40vh;
+    padding-top: 80px;
 }
 
 .header-servicios {
@@ -141,109 +125,14 @@ body {
 
 .titulo-pagina {
     font-family: var(--fuente-titulos);
-    font-size: clamp(2rem, 7vw, 3.5rem);
+    font-size: clamp(2.2rem, 8vw, 3.5rem);
     color: var(--primario);
-    margin: 50px 0;
+    margin: 40px 0;
     text-align: center;
 }
 
 /* ============================================================
-   4. SISTEMA DE MOSAICOS (FILOSOFÍA, LUGAR, EVENTOS)
-   ============================================================ */
-.seccion-lugar-premium {
-    padding: 40px 0;
-    width: 100%;
-}
-
-.bloque-mosaico {
-    display: flex;
-    flex-wrap: wrap;
-    background: white;
-    width: 100%;
-    min-height: 500px;
-    margin-bottom: 0;
-}
-
-.bloque-mosaico.invertido {
-    flex-direction: row-reverse;
-}
-
-.contenedor-imagen-mosaico,
-.mosaico-texto {
-    flex: 1;
-    min-width: 50%;
-    min-height: 450px;
-}
-
-.mosaico-imagen {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-}
-
-.mosaico-texto {
-    padding: 80px 10%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: white;
-}
-
-.tag {
-    color: var(--secundario);
-    font-weight: 700;
-    letter-spacing: 2px;
-    font-size: 0.8rem;
-    margin-bottom: 15px;
-    display: block;
-}
-
-.divisor {
-    width: 60px;
-    height: 2px;
-    background: var(--secundario);
-    margin: 25px 0;
-}
-
-.puntos-lujo {
-    list-style: none;
-    margin: 20px 0;
-}
-
-.puntos-lujo li {
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
-}
-
-.puntos-lujo li::before {
-    content: "•";
-    color: var(--secundario);
-    position: absolute;
-    left: 0;
-    font-weight: bold;
-}
-
-@media (max-width: 900px) {
-
-    .contenedor-imagen-mosaico,
-    .mosaico-texto {
-        min-width: 100%;
-    }
-
-    .mosaico-texto {
-        padding: 50px 8%;
-        text-align: center;
-    }
-
-    .bloque-mosaico {
-        flex-direction: column !important;
-    }
-}
-
-/* ============================================================
-   5. GALERÍA (MANTENIDA SEGÚN PETICIÓN)
+   4. GALERÍA (MANTENIENDO TU DISEÑO)
    ============================================================ */
 .seccion-mural {
     padding: 40px 5%;
@@ -253,7 +142,7 @@ body {
 
 .grid-mural {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
 }
 
@@ -322,7 +211,87 @@ body {
 }
 
 /* ============================================================
-   6. CONTACTO (GLASSMORPHISM)
+   5. MOSAICOS (EVITAMOS QUE SE SALGAN EN MÓVIL)
+   ============================================================ */
+.seccion-lugar-premium {
+    padding: 40px 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.bloque-mosaico {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background: white;
+}
+
+.bloque-mosaico.invertido {
+    flex-direction: row-reverse;
+}
+
+.contenedor-imagen-mosaico,
+.mosaico-texto {
+    flex: 1;
+    min-width: 50%;
+    min-height: 450px;
+}
+
+.mosaico-imagen {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    min-height: 350px;
+}
+
+.mosaico-texto {
+    padding: 60px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.puntos-lujo {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.puntos-lujo li {
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+    font-size: 1.1rem;
+}
+
+.puntos-lujo li::before {
+    content: "•";
+    color: var(--secundario);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+@media (max-width: 900px) {
+    .bloque-mosaico {
+        flex-direction: column !important;
+    }
+
+    .mosaico-texto {
+        padding: 40px 20px;
+        text-align: center;
+        min-height: auto;
+    }
+
+    .contenedor-imagen-mosaico {
+        min-height: 300px;
+    }
+}
+
+/* ============================================================
+   6. CONTACTO (EL EFECTO CRISTAL)
    ============================================================ */
 .seccion-contacto-foto {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Imagenes/Patio_para_fondo.jpeg');
@@ -341,11 +310,11 @@ body {
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    padding: 50px;
+    padding: 40px;
     border-radius: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
     width: 100%;
     max-width: 1000px;
     box-shadow: var(--sombra);
@@ -358,6 +327,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 8px;
     font-family: inherit;
+    font-size: 1rem;
 }
 
 /* ============================================================
@@ -372,38 +342,15 @@ body {
 }
 
 .logo-footer-img {
-    max-width: 150px;
+    max-width: 140px;
     filter: brightness(0) invert(1);
-    margin-bottom: 25px;
-    transition: 0.3s;
-}
-
-.logo-footer-img:hover {
-    transform: scale(1.05);
-}
-
-.footer-social {
-    margin-bottom: 30px;
-}
-
-.footer-social a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    opacity: 0.8;
-}
-
-.footer-social a:hover {
-    color: var(--secundario);
-    opacity: 1;
+    margin-bottom: 20px;
 }
 
 .footer-copyright {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 25px;
-    font-size: 0.75rem;
+    padding-top: 20px;
+    font-size: 0.8rem;
     opacity: 0.6;
 }
 
@@ -411,7 +358,7 @@ body {
 .btn-dorado,
 .btn-premium {
     display: inline-block;
-    padding: 16px 35px;
+    padding: 15px 35px;
     background: var(--secundario);
     color: white;
     text-decoration: none;
@@ -426,12 +373,9 @@ body {
     text-align: center;
 }
 
-.btn:hover,
-.btn-dorado:hover,
-.btn-premium:hover {
+.btn:hover {
     background: #b0845a;
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* ANIMACIONES */
