@@ -33,35 +33,35 @@ body {
 }
 
 /* ============================================================
-   2. NAVEGACIÓN (AJUSTE: TODO AL CENTRO)
+   2. NAVEGACIÓN (FIX: CENTRADO Y COLOR BLANCO PURO)
    ============================================================ */
 .nav-principal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 10px 5%;
+    padding: 15px 5%;
     background: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
-    /* CAMBIADO: Ahora todo se atrae al centro */
+    /* Trae todo al centro */
     align-items: center;
-    gap: 80px;
-    /* CAMBIADO: Este es el "imán". Ajusta este número (80px) para separar o juntar más los bloques del logo */
+    gap: 60px;
+    /* Espacio entre los bloques y el logo (ajústalo a tu gusto) */
     z-index: 9000;
 }
 
 .logo-central {
     text-align: center;
     flex-shrink: 0;
-    /* Evita que el logo se haga pequeño */
 }
 
 .logo-central h1 {
     font-family: var(--fuente-titulos);
     font-size: 1.8rem;
-    color: white;
+    color: #ffffff !important;
+    /* Forzamos blanco */
     letter-spacing: 4px;
     margin: 0;
     line-height: 1;
@@ -70,26 +70,43 @@ body {
 .sub-logo span {
     font-size: 10px;
     color: #ffffff !important;
-    /* CAMBIADO: Blanco puro e importante para que brille */
     letter-spacing: 5px;
     text-transform: uppercase;
     font-weight: 600;
-    opacity: 1;
-    /* Aseguramos que no sea transparente */
+    display: block;
+    margin-top: 5px;
 }
 
+/* ENLACES: Limpieza de morados y subrayados */
 .nav-bloque {
     display: flex;
-    gap: 30px;
-    /* Espacio entre los 3 enlaces */
+    gap: 25px;
 }
 
-/* AJUSTE PARA MÓVIL (Sigue siendo perfecto) */
+.nav-bloque a,
+.nav-bloque a:visited,
+.nav-bloque a:active {
+    text-decoration: none !important;
+    /* Fuera subrayado */
+    color: #ffffff !important;
+    /* Fuera morado, siempre blanco */
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-bloque a:hover {
+    color: var(--secundario) !important;
+    /* Oro al pasar el ratón */
+}
+
+/* AJUSTE PARA MÓVIL: Para que no se amontone en el centro */
 @media (max-width: 900px) {
     .nav-principal {
         flex-direction: column;
         gap: 15px;
-        /* Menos espacio en móvil para que no ocupe toda la pantalla */
         padding: 15px;
     }
 

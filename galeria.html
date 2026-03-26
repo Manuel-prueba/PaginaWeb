@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galería | Los Arcos</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
 
     <header class="header-interno header-galeria-foto">
@@ -30,7 +34,7 @@
 
     <main class="seccion-mural">
         <h2 class="titulo-pagina animar">Nuestra Finca</h2>
-        
+
         <div class="grid-mural animar">
             <div class="marco-foto">
                 <img src="Imagenes/Atico.jpeg" alt="Ático de la finca">
@@ -48,7 +52,7 @@
                 <img src="Imagenes/Patio_para_fondo.jpeg" alt="Patio exterior">
                 <div class="overlay-foto"><span>Ampliar</span></div>
             </div>
-            </div>
+        </div>
     </main>
 
     <div id="modal-galeria" class="modal">
@@ -76,7 +80,7 @@
         const span = document.getElementsByClassName("cerrar-modal")[0];
 
         fotos.forEach(foto => {
-            foto.onclick = function(){
+            foto.onclick = function () {
                 const img = this.querySelector("img");
                 modal.style.display = "flex";
                 modalImg.src = img.src;
@@ -84,15 +88,16 @@
             }
         });
 
-        span.onclick = function() { 
+        span.onclick = function () {
             modal.style.display = "none";
         }
 
-        modal.onclick = function(event) {
+        modal.onclick = function (event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
         }
     </script>
 </body>
+
 </html>
