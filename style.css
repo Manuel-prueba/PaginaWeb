@@ -627,3 +627,76 @@ body {
     margin-top: 20px;
     display: inline-block !important; /* Asegura que se comporte como botón centrado */
 }
+/* ============================================================
+   REGLAS RESPONSIVE (EL FIX PARA MÓVIL)
+   ============================================================ */
+
+@media (max-width: 768px) {
+    /* 1. Ajuste de Títulos: Que no se corten */
+    .titulo-pagina {
+        font-size: 2.2rem !important;
+        margin: 20px 0;
+        padding: 0 10px;
+    }
+
+    /* 2. Mosaicos: De 2 columnas a 1 columna */
+    .bloque-mosaico, 
+    .bloque-mosaico.invertido {
+        flex-direction: column !important;
+    }
+
+    .contenedor-imagen-mosaico, 
+    .mosaico-texto {
+        width: 100% !important;
+        min-width: 100% !important;
+        padding: 40px 10% !important; /* Menos relleno en los lados */
+    }
+
+    .mosaico-imagen {
+        min-height: 300px !important; /* Más bajitas para que no ocupen todo el scroll */
+    }
+
+    /* 3. Navegación: Ya la teníamos, pero aseguramos el logo */
+    .nav-principal {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .logo-central h1 {
+        font-size: 1.2rem !important;
+    }
+
+    /* 4. Contacto y Gracias: Tarjetas al 100% */
+    .contacto-container, 
+    .tarjeta-cristal-gracias {
+        padding: 30px 20px !important;
+        width: 95% !important;
+        margin-top: 80px !important;
+    }
+
+    .contacto-container {
+        grid-template-columns: 1fr !important; /* Una sola columna en el formulario */
+    }
+
+    /* 5. Mural de fotos: 1 sola foto por línea */
+    .grid-mural {
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+    }
+
+    .marco-foto {
+        height: 250px !important;
+    }
+
+    /* 6. Botones: Que ocupen casi todo el ancho para que sea fácil pulsar con el dedo */
+    .btn-dorado, .btn-blanco, .btn {
+        width: 100% !important;
+        text-align: center;
+        padding: 15px 20px !important;
+    }
+
+    /* 7. Listas de lujo (los checks dorados) */
+    .puntos-lujo li {
+        font-size: 0.95rem !important;
+    }
+}
