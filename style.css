@@ -321,7 +321,7 @@ body {
 }
 
 /* ============================================================
-   5. MOSAICOS (VERSIÓN COLOR Y LUJO REFINADA)
+   5. MOSAICOS (EDICIÓN LUJO SUPREMO)
    ============================================================ */
 .seccion-lugar-premium {
     padding: 60px 0;
@@ -334,7 +334,7 @@ body {
     flex-wrap: wrap;
     width: 100%;
     background: white;
-    align-items: stretch; /* Mantiene la simetría que te gusta */
+    align-items: stretch;
 }
 
 .bloque-mosaico.invertido {
@@ -353,84 +353,64 @@ body {
     min-height: 550px;
     background-size: cover;
     background-position: center;
+    transition: 0.8s ease;
 }
 
 .mosaico-texto {
     padding: 80px 8%; 
     flex-direction: column;
     justify-content: center;
+    position: relative;
 }
 
-/* --- AQUÍ VIENE EL COLOR --- */
+/* --- TRATAMIENTO DE COLORES --- */
 
-/* 1. Títulos en Verde con la línea Dorada que pediste */
+/* Bloque Verde (Estancias) */
+.fondo-verde-lujo {
+    background-color: var(--primario) !important;
+    border-left: 8px solid var(--secundario);
+}
+
+/* Bloque Crema (Eventos/Esencia) */
+.fondo-gris-lujo {
+    background-color: #fdf8f2 !important; 
+    border-left: 8px solid var(--secundario);
+}
+
+/* Tipografías en Mosaicos */
 .mosaico-texto h2 {
-    color: var(--primario) !important;
+    color: var(--primario);
+    font-family: var(--fuente-titulos);
     font-weight: 700;
     margin-bottom: 10px;
-    font-size: 2rem;
+    font-size: 2.4rem;
+    line-height: 1.1;
 }
 
+/* La línea dorada bajo el título */
 .mosaico-texto h2::after {
     content: "";
     display: block;
-    width: 60px;
+    width: 70px;
     height: 3px;
     background-color: var(--secundario);
     margin-top: 15px;
     border-radius: 2px;
 }
 
-/* 2. Categorías en Dorado Arcos */
-.tag-categoria {
-    color: var(--secundario) !important;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.85rem;
-    font-weight: 800;
-    display: block;
-    margin-bottom: 15px;
-}
-
-/* 3. Fondo Crema para el bloque central (el del Billar) */
-.fondo-gris-lujo {
-    background-color: #fdf8f2 !important; /* Tono cálido tipo arena */
-    border-left: 8px solid var(--secundario); /* Franja dorada lateral */
-}
-
-/* 4. Tags (Piscina, Billar, etc.) con Fondo Verde y letra Blanca */
-.usos-finca .tag {
-    background: var(--primario); /* Tu verde bosque */
+/* Forzar blanco en el bloque verde */
+.fondo-verde-lujo h2, 
+.fondo-verde-lujo p,
+.fondo-verde-lujo .tag-categoria {
     color: white !important;
-    padding: 6px 14px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    display: inline-block;
-    margin: 5px 3px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* --- AJUSTES MÓVIL --- */
-@media (max-width: 900px) {
-    .bloque-mosaico {
-        flex-direction: column !important;
-    }
-    .mosaico-texto {
-        padding: 40px 20px;
-        text-align: center;
-        min-height: auto;
-        border-left: none;
-        border-top: 8px solid var(--secundario);
-    }
-    .mosaico-imagen, .contenedor-imagen-mosaico {
-        min-height: 350px;
-    }
-    .mosaico-texto h2::after {
-        margin: 15px auto; /* Centra la línea en móvil */
-    }
+.fondo-verde-lujo h2::after {
+    background-color: white; /* Línea blanca sobre verde para que resalte */
+}
+
+.text-blanco-suave {
+    color: rgba(255, 255, 255, 0.8) !important;
 }
 /* ============================================================
    6. CONTACTO (EL EFECTO CRISTAL)
@@ -473,61 +453,101 @@ body {
 }
 
 /* ============================================================
-   7. FOOTER Y BOTONES (VERSIÓN EQUILIBRADA)
+   7. BOTONES Y FOOTER (CONTROL DE LOGO Y TAMAÑOS)
    ============================================================ */
-.footer-premium {
-    background: var(--primario);
-    color: white;
-    padding: 100px 5% 40px; /* Aumentamos el padding superior para dar aire */
-    text-align: center;
-    width: 100%;
-}
 
-.logo-footer-img {
-    max-width: 200px; /* <--- Subimos de 140px a 200px para que tenga presencia */
-    filter: brightness(0) invert(1);
-    margin-bottom: 40px; /* Más espacio bajo el logo */
-    transition: 0.4s ease;
-}
-
-.logo-footer-img:hover {
-    transform: scale(1.05); /* Un toque de interactividad */
-}
-
-.footer-copyright {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 30px;
-    margin-top: 20px;
-    font-size: 0.75rem; /* Un pelín más pequeña y elegante */
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    opacity: 0.5;
-}
-
-/* BOTONES (Se mantienen igual pero con mejor transición) */
-.btn,
-.btn-dorado,
-.btn-premium {
+/* --- BOTONES --- */
+.boton-dorado-mosaico, .btn-dorado {
     display: inline-block;
-    padding: 15px 35px;
+    padding: 16px 40px;
     background: var(--secundario);
-    color: white;
+    color: white !important;
     text-decoration: none;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     border-radius: 4px;
+    margin-top: 25px;
     transition: all 0.4s ease;
     border: none;
     cursor: pointer;
     text-align: center;
+    box-shadow: 0 4px 15px rgba(212, 163, 115, 0.3);
+    width: fit-content;
 }
 
-.btn:hover {
-    background: #b0845a;
+.boton-blanco-mosaico {
+    display: inline-block;
+    padding: 16px 40px;
+    background: white;
+    color: var(--primario) !important;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    margin-top: 25px;
+    transition: all 0.4s ease;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+}
+
+.boton-dorado-mosaico:hover, .btn-dorado:hover, .boton-blanco-mosaico:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    filter: brightness(1.1);
+}
+
+/* --- FOOTER ESTRUCTURA --- */
+.footer-premium {
+    background: var(--primario);
+    color: white;
+    padding: 60px 5% 40px;
+    text-align: center;
+    width: 100%;
+}
+
+/* --- EL DOMADOR DE LOGOS (Aquí está el truco) --- */
+.logo-footer-img {
+    max-width: 150px; /* Ajusta este número si lo quieres más grande o pequeño */
+    height: auto;
+    margin-bottom: 30px;
+    filter: brightness(0) invert(1); /* Lo pone en blanco si es oscuro */
+    transition: transform 0.3s ease;
+}
+
+.logo-footer-img:hover {
+    transform: scale(1.05);
+}
+
+/* Enlaces del Footer */
+.footer-social {
+    margin-bottom: 30px;
+}
+
+.footer-social a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    color: var(--secundario);
+}
+
+.footer-copyright {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    margin-top: 20px;
 }
 /* ============================================================
    8. NUEVOS ESTILOS PARA ETIQUETAS (TAGS)
@@ -583,4 +603,35 @@ body {
     .usos-finca {
         justify-content: center;
     }
+}
+/* --- ARREGLO ESPECÍFICO PARA LUGAR.HTML --- */
+
+.puntos-lujo {
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+}
+
+.puntos-lujo li {
+    color: white; /* Para que se vea sobre el fondo verde */
+    margin-bottom: 12px;
+    padding-left: 30px;
+    position: relative;
+    font-size: 1.1rem;
+    font-weight: 300;
+    text-align: left;
+}
+
+/* El check dorado de la lista */
+.puntos-lujo li::before {
+    content: "✓"; 
+    position: absolute;
+    left: 0;
+    color: var(--secundario); 
+    font-weight: 900;
+}
+
+/* Ajuste para que el texto no baile en el bloque crema */
+.fondo-gris-lujo .tag-categoria {
+    color: var(--secundario) !important;
 }
