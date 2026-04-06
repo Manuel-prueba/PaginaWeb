@@ -505,3 +505,58 @@ body {
         transform: translateY(0);
     }
 }
+/* ============================================================
+   8. NUEVOS ESTILOS PARA ETIQUETAS (TAGS)
+   ============================================================ */
+
+/* Texto pequeño sobre el título */
+.tag-categoria {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--secundario);
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Contenedor de las etiquetas de uso */
+.usos-finca {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 25px;
+}
+
+/* Las etiquetas individuales */
+.tag {
+    background-color: rgba(212, 163, 115, 0.1); /* Dorado muy suave */
+    color: #555;
+    border: 1px solid rgba(212, 163, 115, 0.3);
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.tag:hover {
+    background-color: var(--secundario);
+    color: white;
+    border-color: var(--secundario);
+}
+
+/* Resaltado en negrita dentro de los párrafos del mosaico */
+.mosaico-texto p b {
+    color: var(--primario);
+    font-weight: 600;
+}
+
+/* Alineación de etiquetas en móvil (centradas si el texto está centrado) */
+@media (max-width: 900px) {
+    .usos-finca {
+        justify-content: center;
+    }
+}
