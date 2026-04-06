@@ -1,5 +1,5 @@
 /* ============================================================
-   1. VARIABLES Y BASE (INTOCABLES)
+   1. VARIABLES Y BASE (Limpio y Optimizado)
    ============================================================ */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Raleway:wght@300;400;600&display=swap');
 
@@ -33,7 +33,7 @@ body {
 }
 
 /* ============================================================
-   2. NAVEGACIÓN (FIX: CENTRADO Y COLOR BLANCO PURO)
+   2. NAVEGACIÓN (Centrado Premium)
    ============================================================ */
 .nav-principal {
     position: fixed;
@@ -45,10 +45,8 @@ body {
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
-    /* Trae todo al centro */
     align-items: center;
     gap: 60px;
-    /* Espacio entre los bloques y el logo (ajústalo a tu gusto) */
     z-index: 9000;
 }
 
@@ -61,7 +59,6 @@ body {
     font-family: var(--fuente-titulos);
     font-size: 1.8rem;
     color: #ffffff !important;
-    /* Forzamos blanco */
     letter-spacing: 4px;
     margin: 0;
     line-height: 1;
@@ -77,19 +74,14 @@ body {
     margin-top: 5px;
 }
 
-/* ENLACES: Limpieza de morados y subrayados */
 .nav-bloque {
     display: flex;
     gap: 25px;
 }
 
-.nav-bloque a,
-.nav-bloque a:visited,
-.nav-bloque a:active {
+.nav-bloque a {
     text-decoration: none !important;
-    /* Fuera subrayado */
     color: #ffffff !important;
-    /* Fuera morado, siempre blanco */
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -99,10 +91,8 @@ body {
 
 .nav-bloque a:hover {
     color: var(--secundario) !important;
-    /* Oro al pasar el ratón */
 }
 
-/* AJUSTE PARA MÓVIL: Para que no se amontone en el centro */
 @media (max-width: 900px) {
     .nav-principal {
         flex-direction: column;
@@ -115,14 +105,10 @@ body {
         flex-wrap: wrap;
         justify-content: center;
     }
-
-    .logo-central h1 {
-        font-size: 1.4rem;
-    }
 }
 
 /* ============================================================
-   3. HEADERS (CABECERAS)
+   3. CABECERAS (HEADERS)
    ============================================================ */
 .header-inicio,
 .header-interno {
@@ -169,7 +155,254 @@ body {
 }
 
 /* ============================================================
-   4. GALERÍA INTERACTIVA (MANTENIENDO DISEÑO + DESCRIPCIÓN)
+   4. MOSAICOS (Lujo Supremo)
+   ============================================================ */
+.seccion-lugar-premium {
+    padding: 60px 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.bloque-mosaico {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background: white;
+    align-items: stretch;
+}
+
+.bloque-mosaico.invertido {
+    flex-direction: row-reverse;
+}
+
+.contenedor-imagen-mosaico,
+.mosaico-texto {
+    flex: 1;
+    min-width: 50%;
+    display: flex;
+}
+
+.mosaico-imagen {
+    width: 100%;
+    min-height: 550px;
+    background-size: cover;
+    background-position: center;
+    transition: 0.8s ease;
+}
+
+.mosaico-texto {
+    padding: 80px 8%;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.fondo-verde-lujo {
+    background-color: var(--primario) !important;
+    border-left: 8px solid var(--secundario);
+}
+
+.fondo-gris-lujo {
+    background-color: #fdf8f2 !important;
+    border-left: 8px solid var(--secundario);
+}
+
+.mosaico-texto h2 {
+    color: var(--primario);
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 2.4rem;
+    line-height: 1.1;
+}
+
+.mosaico-texto h2::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    background-color: var(--secundario);
+    margin-top: 15px;
+    border-radius: 2px;
+}
+
+.fondo-verde-lujo h2,
+.fondo-verde-lujo p,
+.fondo-verde-lujo .tag-categoria {
+    color: white !important;
+}
+
+.fondo-verde-lujo h2::after {
+    background-color: white;
+}
+
+/* Tags y detalles */
+.tag-categoria {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--secundario);
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.usos-finca {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 25px;
+}
+
+.tag {
+    background-color: rgba(212, 163, 115, 0.1);
+    color: #555;
+    border: 1px solid rgba(212, 163, 115, 0.3);
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Arreglo para listas en lugar.html */
+.puntos-lujo {
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+}
+
+.puntos-lujo li {
+    color: white;
+    margin-bottom: 12px;
+    padding-left: 30px;
+    position: relative;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+.puntos-lujo li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--secundario);
+    font-weight: 900;
+}
+
+/* ============================================================
+   5. CONTACTO Y FORMULARIOS
+   ============================================================ */
+.seccion-contacto-foto {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('Imagenes/Patio_para_fondo.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 120px 5% 80px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contacto-container {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 50px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    width: 100%;
+    max-width: 1100px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.form-control {
+    width: 100%;
+    padding: 18px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-family: var(--fuente-texto);
+    background: white;
+    transition: 0.3s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--secundario);
+    box-shadow: 0 0 10px rgba(212, 163, 115, 0.2);
+}
+
+.seccion-contacto-foto .btn {
+    background-color: var(--secundario) !important;
+    color: white !important;
+    padding: 20px;
+    border: none !important;
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 0 5px 15px rgba(212, 163, 115, 0.3);
+    width: 100%;
+}
+
+.seccion-contacto-foto .btn:hover {
+    background-color: #b0845a !important;
+    transform: translateY(-3px);
+}
+
+/* ============================================================
+   6. FOOTER Y LOGOS
+   ============================================================ */
+.footer-premium {
+    background: var(--primario);
+    color: white;
+    padding: 60px 5% 40px;
+    text-align: center;
+    width: 100%;
+}
+
+.logo-footer-img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 30px;
+    filter: brightness(0) invert(1);
+    transition: 0.3s;
+}
+
+.logo-footer-img:hover {
+    transform: scale(1.05);
+}
+
+.footer-social a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    color: var(--secundario);
+}
+
+.footer-copyright {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+/* ============================================================
+   7. GALERÍA (MURAL)
    ============================================================ */
 .seccion-mural {
     padding: 40px 5%;
@@ -220,7 +453,7 @@ body {
     opacity: 1;
 }
 
-/* --- EL MODAL PREMIUM CON TARJETA --- */
+/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -241,9 +474,7 @@ body {
     max-height: 85vh;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
     animation: slideInUp 0.5s ease-out;
-    /* EFECTO CASCADA */
 }
 
 @keyframes slideInUp {
@@ -278,19 +509,6 @@ body {
     background: #fff;
 }
 
-#modal-titulo {
-    font-family: var(--fuente-titulos);
-    color: var(--primario);
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
-
-#modal-descripcion {
-    color: #555;
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
 .cerrar-modal {
     position: absolute;
     top: 20px;
@@ -298,340 +516,114 @@ body {
     color: white;
     font-size: 50px;
     cursor: pointer;
-    z-index: 10001;
-}
-
-/* RESPONSIVO PARA MÓVIL Y TABLET */
-@media (max-width: 850px) {
-    .modal-card {
-        flex-direction: column;
-        max-height: 90vh;
-        overflow-y: auto;
-    }
-
-    .modal-img-container {
-        min-height: 250px;
-        flex: none;
-    }
-
-    .modal-text-container {
-        padding: 30px;
-        text-align: center;
-    }
 }
 
 /* ============================================================
-   5. MOSAICOS (EDICIÓN LUJO SUPREMO)
+   BOTONES GLOBALES (EL FIX)
    ============================================================ */
-.seccion-lugar-premium {
-    padding: 60px 0;
-    width: 100%;
-    overflow: hidden;
-}
 
-.bloque-mosaico {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    background: white;
-    align-items: stretch;
-}
-
-.bloque-mosaico.invertido {
-    flex-direction: row-reverse;
-}
-
-.contenedor-imagen-mosaico,
-.mosaico-texto {
-    flex: 1;
-    min-width: 50%;
-    display: flex;
-}
-
-.mosaico-imagen {
-    width: 100%;
-    min-height: 550px;
-    background-size: cover;
-    background-position: center;
-    transition: 0.8s ease;
-}
-
-.mosaico-texto {
-    padding: 80px 8%; 
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-}
-
-/* --- TRATAMIENTO DE COLORES --- */
-
-/* Bloque Verde (Estancias) */
-.fondo-verde-lujo {
-    background-color: var(--primario) !important;
-    border-left: 8px solid var(--secundario);
-}
-
-/* Bloque Crema (Eventos/Esencia) */
-.fondo-gris-lujo {
-    background-color: #fdf8f2 !important; 
-    border-left: 8px solid var(--secundario);
-}
-
-/* Tipografías en Mosaicos */
-.mosaico-texto h2 {
-    color: var(--primario);
-    font-family: var(--fuente-titulos);
-    font-weight: 700;
-    margin-bottom: 10px;
-    font-size: 2.4rem;
-    line-height: 1.1;
-}
-
-/* La línea dorada bajo el título */
-.mosaico-texto h2::after {
-    content: "";
-    display: block;
-    width: 70px;
-    height: 3px;
-    background-color: var(--secundario);
-    margin-top: 15px;
-    border-radius: 2px;
-}
-
-/* Forzar blanco en el bloque verde */
-.fondo-verde-lujo h2, 
-.fondo-verde-lujo p,
-.fondo-verde-lujo .tag-categoria {
+/* Esto afectará a cualquier enlace que quieras que parezca un botón */
+.btn-dorado,
+.btn,
+.boton-dorado-mosaico {
+    display: inline-block !important;
+    padding: 16px 40px !important;
+    background-color: var(--secundario) !important;
     color: white !important;
-}
-
-.fondo-verde-lujo h2::after {
-    background-color: white; /* Línea blanca sobre verde para que resalte */
-}
-
-.text-blanco-suave {
-    color: rgba(255, 255, 255, 0.8) !important;
-}
-/* ============================================================
-   6. CONTACTO (EL EFECTO CRISTAL)
-   ============================================================ */
-.seccion-contacto-foto {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Imagenes/Patio_para_fondo.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    padding: 100px 5%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.contacto-container {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 40px;
-    border-radius: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    width: 100%;
-    max-width: 1000px;
-    box-shadow: var(--sombra);
-}
-
-.form-control {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 1rem;
-}
-
-/* ============================================================
-   7. BOTONES Y FOOTER (CONTROL DE LOGO Y TAMAÑOS)
-   ============================================================ */
-
-/* --- BOTONES --- */
-.boton-dorado-mosaico, .btn-dorado {
-    display: inline-block;
-    padding: 16px 40px;
-    background: var(--secundario);
-    color: white !important;
-    text-decoration: none;
+    text-decoration: none !important;
+    /* Quita el subrayado morado */
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 0.85rem;
     border-radius: 4px;
-    margin-top: 25px;
     transition: all 0.4s ease;
     border: none;
     cursor: pointer;
-    text-align: center;
+    margin-top: 20px;
     box-shadow: 0 4px 15px rgba(212, 163, 115, 0.3);
-    width: fit-content;
 }
 
+.btn-dorado:hover,
+.btn:hover,
+.boton-dorado-mosaico:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.1);
+    color: white !important;
+}
+
+/* Fix específico para el botón blanco (si lo usas en el bloque verde) */
+.btn-blanco,
 .boton-blanco-mosaico {
-    display: inline-block;
-    padding: 16px 40px;
-    background: white;
+    display: inline-block !important;
+    padding: 16px 40px !important;
+    background-color: white !important;
     color: var(--primario) !important;
-    text-decoration: none;
+    text-decoration: none !important;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 0.85rem;
     border-radius: 4px;
-    margin-top: 25px;
-    transition: all 0.4s ease;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: fit-content;
-}
-
-.boton-dorado-mosaico:hover, .btn-dorado:hover, .boton-blanco-mosaico:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    filter: brightness(1.1);
-}
-
-/* --- FOOTER ESTRUCTURA --- */
-.footer-premium {
-    background: var(--primario);
-    color: white;
-    padding: 60px 5% 40px;
-    text-align: center;
-    width: 100%;
-}
-
-/* --- EL DOMADOR DE LOGOS (Aquí está el truco) --- */
-.logo-footer-img {
-    max-width: 150px; /* Ajusta este número si lo quieres más grande o pequeño */
-    height: auto;
-    margin-bottom: 30px;
-    filter: brightness(0) invert(1); /* Lo pone en blanco si es oscuro */
-    transition: transform 0.3s ease;
-}
-
-.logo-footer-img:hover {
-    transform: scale(1.05);
-}
-
-/* Enlaces del Footer */
-.footer-social {
-    margin-bottom: 30px;
-}
-
-.footer-social a {
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: 0.3s;
-}
-
-.footer-social a:hover {
-    color: var(--secundario);
-}
-
-.footer-copyright {
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.4);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
+    transition: 0.4s;
     margin-top: 20px;
 }
 /* ============================================================
-   8. NUEVOS ESTILOS PARA ETIQUETAS (TAGS)
+   FIX PÁGINA DE GRACIAS (CENTRADO Y ALTURA)
    ============================================================ */
 
-/* Texto pequeño sobre el título */
-.tag-categoria {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: var(--secundario);
-    font-weight: 700;
-    margin-bottom: 10px;
-    display: block;
-}
-
-/* Contenedor de las etiquetas de uso */
-.usos-finca {
+.seccion-gracias-premium {
+    min-height: 100vh; /* Ocupa todo el alto de la pantalla */
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('Imagenes/Patio_para_fondo.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efecto elegante al mover */
+    
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 25px;
+    align-items: center;  /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    padding: 100px 20px; /* Espacio para que el menú no tape nada */
+    box-sizing: border-box;
 }
 
-/* Las etiquetas individuales */
-.tag {
-    background-color: rgba(212, 163, 115, 0.1); /* Dorado muy suave */
-    color: #555;
-    border: 1px solid rgba(212, 163, 115, 0.3);
-    padding: 5px 12px;
-    border-radius: 4px;
-    font-size: 0.65rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: 0.3s;
+.tarjeta-cristal-gracias {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    padding: 50px 40px;
+    border-radius: 15px;
+    max-width: 650px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.3);
+    margin-top: 50px; /* Empuja la tarjeta hacia abajo para que no la tape el nav */
 }
 
-.tag:hover {
-    background-color: var(--secundario);
-    color: white;
-    border-color: var(--secundario);
-}
-
-/* Resaltado en negrita dentro de los párrafos del mosaico */
-.mosaico-texto p b {
+.tarjeta-cristal-gracias h2 {
+    font-family: var(--fuente-titulos);
     color: var(--primario);
-    font-weight: 600;
+    font-size: 3rem !important;
+    margin-bottom: 20px;
 }
 
-/* Alineación de etiquetas en móvil (centradas si el texto está centrado) */
-@media (max-width: 900px) {
-    .usos-finca {
-        justify-content: center;
-    }
-}
-/* --- ARREGLO ESPECÍFICO PARA LUGAR.HTML --- */
-
-.puntos-lujo {
-    list-style: none;
-    padding: 0;
-    margin-top: 25px;
-}
-
-.puntos-lujo li {
-    color: white; /* Para que se vea sobre el fondo verde */
-    margin-bottom: 12px;
-    padding-left: 30px;
-    position: relative;
+.tarjeta-cristal-gracias p {
+    color: #333;
     font-size: 1.1rem;
-    font-weight: 300;
-    text-align: left;
+    margin-bottom: 15px;
+    line-height: 1.6;
 }
 
-/* El check dorado de la lista */
-.puntos-lujo li::before {
-    content: "✓"; 
-    position: absolute;
-    left: 0;
-    color: var(--secundario); 
-    font-weight: 900;
+.divisor-dorado {
+    width: 80px;
+    height: 2px;
+    background: var(--secundario);
+    margin: 25px auto;
 }
 
-/* Ajuste para que el texto no baile en el bloque crema */
-.fondo-gris-lujo .tag-categoria {
-    color: var(--secundario) !important;
+/* Para que el botón no salga pegado a la izquierda */
+.tarjeta-cristal-gracias .btn-dorado {
+    margin-top: 20px;
+    display: inline-block !important; /* Asegura que se comporte como botón centrado */
 }
