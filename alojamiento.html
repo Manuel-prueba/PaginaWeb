@@ -30,4 +30,51 @@
                 <a href="contacto.html">Contacto</a>
             </div>
         </nav>
-    </header>
+    <footer class="footer-premium">
+        <div class="footer-content">
+            <div class="footer-logo-contenedor">
+                <a href="index.html">
+                    <img src="Imagenes/arcos_logo.png" alt="Logo Los Arcos" class="logo-footer-img">
+                    <h2 class="footer-logo-texto">LOS ARCOS</h2>
+                </a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2026 Finca Los Arcos. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="redes-flotantes-container">
+        <div class="redes-lista" id="menu-redes">
+            <a href="https://wa.me/34600000000" target="_blank" class="icono-red" title="WhatsApp">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            </a>
+            <a href="https://instagram.com/tufinca" target="_blank" class="icono-red" title="Instagram">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram">
+            </a>
+        </div>
+        <button class="btn-flotante-main" id="btn-toggle-redes" style="font-family: Arial, sans-serif;">
+            <span id="icono-abrir" style="font-size: 32px; font-weight: 300; transition: all 0.3s;">+</span>
+        </button>
+    </div>
+
+    <script>
+        const btnRedes = document.getElementById('btn-toggle-redes');
+        const menuRedes = document.getElementById('menu-redes');
+        const iconoAbrir = document.getElementById('icono-abrir');
+
+        btnRedes.addEventListener('click', () => {
+            menuRedes.classList.toggle('mostrar-redes');
+
+            if (menuRedes.classList.contains('mostrar-redes')) {
+                iconoAbrir.innerHTML = '✕';
+                iconoAbrir.style.fontSize = '24px';
+            } else {
+                iconoAbrir.innerHTML = '+';
+                iconoAbrir.style.fontSize = '32px';
+            }
+        });
+    </script>
+</body>
+
+</html>
