@@ -699,4 +699,19 @@ body {
     .puntos-lujo li {
         font-size: 0.95rem !important;
     }
+
+    /* 8. Modal Galería */
+    .modal-card {
+        flex-direction: column !important;
+        overflow-y: auto !important;
+    }
+
+    .modal-img-container {
+        flex: none !important;
+        height: 250px;
+    }
+
+    .modal-text-container {
+        padding: 20px !important;
+    }
 }
