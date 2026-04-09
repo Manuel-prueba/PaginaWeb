@@ -568,23 +568,29 @@ body {
     transition: 0.4s;
     margin-top: 20px;
 }
+
 /* ============================================================
    FIX PÁGINA DE GRACIAS (CENTRADO Y ALTURA)
    ============================================================ */
 
 .seccion-gracias-premium {
-    min-height: 100vh; /* Ocupa todo el alto de la pantalla */
+    min-height: 100vh;
+    /* Ocupa todo el alto de la pantalla */
     width: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                url('Imagenes/Patio_para_fondo.jpeg'); 
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('Imagenes/Patio_para_fondo.jpeg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Efecto elegante al mover */
-    
+    background-attachment: fixed;
+    /* Efecto elegante al mover */
+
     display: flex;
-    align-items: center;  /* Centra verticalmente */
-    justify-content: center; /* Centra horizontalmente */
-    padding: 100px 20px; /* Espacio para que el menú no tape nada */
+    align-items: center;
+    /* Centra verticalmente */
+    justify-content: center;
+    /* Centra horizontalmente */
+    padding: 100px 20px;
+    /* Espacio para que el menú no tape nada */
     box-sizing: border-box;
 }
 
@@ -596,9 +602,10 @@ body {
     max-width: 650px;
     width: 100%;
     text-align: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    border: 1px solid rgba(255,255,255,0.3);
-    margin-top: 50px; /* Empuja la tarjeta hacia abajo para que no la tape el nav */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin-top: 50px;
+    /* Empuja la tarjeta hacia abajo para que no la tape el nav */
 }
 
 .tarjeta-cristal-gracias h2 {
@@ -625,13 +632,16 @@ body {
 /* Para que el botón no salga pegado a la izquierda */
 .tarjeta-cristal-gracias .btn-dorado {
     margin-top: 20px;
-    display: inline-block !important; /* Asegura que se comporte como botón centrado */
+    display: inline-block !important;
+    /* Asegura que se comporte como botón centrado */
 }
+
 /* ============================================================
    REGLAS RESPONSIVE (EL FIX PARA MÓVIL)
    ============================================================ */
 
 @media (max-width: 768px) {
+
     /* 1. Ajuste de Títulos: Que no se corten */
     .titulo-pagina {
         font-size: 2.2rem !important;
@@ -640,20 +650,22 @@ body {
     }
 
     /* 2. Mosaicos: De 2 columnas a 1 columna */
-    .bloque-mosaico, 
+    .bloque-mosaico,
     .bloque-mosaico.invertido {
         flex-direction: column !important;
     }
 
-    .contenedor-imagen-mosaico, 
+    .contenedor-imagen-mosaico,
     .mosaico-texto {
         width: 100% !important;
         min-width: 100% !important;
-        padding: 40px 10% !important; /* Menos relleno en los lados */
+        padding: 40px 10% !important;
+        /* Menos relleno en los lados */
     }
 
     .mosaico-imagen {
-        min-height: 300px !important; /* Más bajitas para que no ocupen todo el scroll */
+        min-height: 300px !important;
+        /* Más bajitas para que no ocupen todo el scroll */
     }
 
     /* 3. Navegación: Ya la teníamos, pero aseguramos el logo */
@@ -667,7 +679,7 @@ body {
     }
 
     /* 4. Contacto y Gracias: Tarjetas al 100% */
-    .contacto-container, 
+    .contacto-container,
     .tarjeta-cristal-gracias {
         padding: 30px 20px !important;
         width: 95% !important;
@@ -675,7 +687,8 @@ body {
     }
 
     .contacto-container {
-        grid-template-columns: 1fr !important; /* Una sola columna en el formulario */
+        grid-template-columns: 1fr !important;
+        /* Una sola columna en el formulario */
     }
 
     /* 5. Mural de fotos: 1 sola foto por línea */
@@ -689,7 +702,9 @@ body {
     }
 
     /* 6. Botones: Que ocupen casi todo el ancho para que sea fácil pulsar con el dedo */
-    .btn-dorado, .btn-blanco, .btn {
+    .btn-dorado,
+    .btn-blanco,
+    .btn {
         width: 100% !important;
         text-align: center;
         padding: 15px 20px !important;
@@ -713,5 +728,104 @@ body {
 
     .modal-text-container {
         padding: 20px !important;
+    }
+}
+
+/* --- CONTENEDOR DEL MENÚ FLOTANTE --- */
+.redes-flotantes-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* --- LISTA DE ICONOS (OCULTA INICIALMENTE) --- */
+.redes-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    /* Empieza un poco más abajo */
+    transition: all 0.3s ease;
+}
+
+/* Clase que se activa con el click (hace la magia) */
+.redes-lista.mostrar-redes {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    /* Sube a su sitio */
+}
+
+/* --- ESTILO DE CADA RED SOCIAL --- */
+.icono-red {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease;
+    text-decoration: none;
+}
+
+.icono-red img {
+    width: 28px;
+    height: 28px;
+}
+
+.email-icon {
+    font-size: 22px;
+    color: #1a2f23;
+}
+
+.icono-red:hover {
+    transform: scale(1.15);
+    /* Se agranda un poco al pasar el ratón */
+}
+
+/* --- BOTÓN PRINCIPAL (EL DE ABRIR) --- */
+.btn-flotante-main {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #1a2f23;
+    /* Verde oscuro elegante */
+    color: white;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-flotante-main:hover {
+    background-color: #b08d57;
+    /* Se pone dorado al pasar el ratón */
+    transform: scale(1.05);
+}
+
+/* --- AJUSTE PARA EL MÓVIL --- */
+@media (max-width: 768px) {
+    .redes-flotantes-container {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .btn-flotante-main {
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
     }
 }

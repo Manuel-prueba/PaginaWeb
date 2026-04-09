@@ -110,16 +110,46 @@
                     <img src="Imagenes/arcos_logo.png" alt="Logo Los Arcos" class="logo-footer-img">
                 </a>
             </div>
-            <div class="footer-social">
-                <a href="#">Instagram</a>
-                <a href="#">Facebook</a>
-                <a href="mailto:info@fincalosarcos.com">Email</a>
-            </div>
             <div class="footer-copyright">
                 <p>&copy; 2026 Finca Los Arcos. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
+
+    <div class="redes-flotantes-container">
+
+        <div class="redes-lista" id="menu-redes">
+            <a href="https://wa.me/34600000000" target="_blank" class="icono-red" title="WhatsApp">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            </a>
+            <a href="https://instagram.com/tufinca" target="_blank" class="icono-red" title="Instagram">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram">
+            </a>
+            <a href="mailto:info@fincalosarcos.com" class="icono-red email-icon" title="Email">
+                ✉️
+            </a>
+        </div>
+
+        <button class="btn-flotante-main" id="btn-toggle-redes">
+            💬
+        </button>
+    </div>
+
+    <script>
+        const btnRedes = document.getElementById('btn-toggle-redes');
+        const menuRedes = document.getElementById('menu-redes');
+
+        btnRedes.addEventListener('click', () => {
+            menuRedes.classList.toggle('mostrar-redes');
+
+            // Cambiamos el icono cuando está abierto (X) y cerrado (Mensaje)
+            if (menuRedes.classList.contains('mostrar-redes')) {
+                btnRedes.innerHTML = '✖';
+            } else {
+                btnRedes.innerHTML = '💬';
+            }
+        });
+    </script>
 
 </body>
 
