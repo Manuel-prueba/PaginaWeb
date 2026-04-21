@@ -34,29 +34,52 @@
         <h2 class="titulo-pagina animar" style="color: white;">Nuestra Finca</h2>
     </header>
 
+    <div class="contenedor-filtros-premium">
+        <a href="#exteriores" class="btn-seccion">Exteriores</a>
+        <a href="#interiores" class="btn-seccion">Salones y Ocio</a>
+        <a href="#habitaciones" class="btn-seccion">Habitaciones</a>
+    </div>
+
     <main class="seccion-mural">
-        <div class="grid-mural animar">
-            <div class="marco-foto">
-                <img src="Imagenes/Atico.jpeg" alt="Suite Ático"
-                    data-description="Nuestra suite principal ofrece calidez y vistas privilegiadas. Un espacio diseñado con madera y piedra para un descanso total.">
-                <div class="overlay-foto"><span>Ver detalle</span></div>
-            </div>
-            <div class="marco-foto">
-                <img src="Imagenes/Salon_con_vista.jpeg" alt="Salón Principal"
-                    data-description="Un salón acogedor con grandes ventanales. La luz de Granada inunda cada rincón, creando el ambiente perfecto para reuniones íntimas.">
-                <div class="overlay-foto"><span>Ver detalle</span></div>
-            </div>
-            <div class="marco-foto">
-                <img src="Imagenes/Billar.jpeg" alt="Zona de Ocio"
-                    data-description="Diversión garantizada en nuestro salón de juegos. Equipado con billar, air hockey y una decoración rústica impecable.">
-                <div class="overlay-foto"><span>Ver detalle</span></div>
-            </div>
-            <div class="marco-foto">
-                <img src="Imagenes/Patio_para_fondo.jpeg" alt="Exteriores y Piscina"
-                    data-description="Más de 400m² de jardín con piscina privada. El escenario idílico para barbacoas al aire libre y eventos bajo el sol granadino.">
-                <div class="overlay-foto"><span>Ver detalle</span></div>
+
+        <div id="exteriores" style="margin-bottom: 80px;">
+            <h3 class="titulo-seccion-galeria">Exteriores y Entorno</h3>
+            <div class="grid-mural">
+                <div class="marco-foto">
+                    <img src="Imagenes/Patio_para_fondo.jpeg" alt="Piscina y Jardín"
+                        data-description="Más de 400m² de jardín con piscina privada.">
+                    <div class="overlay-foto"><span>Ver detalle</span></div>
+                </div>
             </div>
         </div>
+
+        <div id="interiores" style="margin-bottom: 80px;">
+            <h3 class="titulo-seccion-galeria">Salones y Zonas de Ocio</h3>
+            <div class="grid-mural">
+                <div class="marco-foto">
+                    <img src="Imagenes/Salon_con_vista.jpeg" alt="Salón Principal"
+                        data-description="Luz natural y confort en el corazón de la finca.">
+                    <div class="overlay-foto"><span>Ver detalle</span></div>
+                </div>
+                <div class="marco-foto">
+                    <img src="Imagenes/Billar.jpeg" alt="Zona de Juegos"
+                        data-description="Billar y ocio en un ambiente rústico.">
+                    <div class="overlay-foto"><span>Ver detalle</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="habitaciones" style="margin-bottom: 80px;">
+            <h3 class="titulo-seccion-galeria">Descanso y Habitaciones</h3>
+            <div class="grid-mural">
+                <div class="marco-foto">
+                    <img src="Imagenes/Atico.jpeg" alt="Suite Principal"
+                        data-description="Vistas a la sierra y calidez máxima.">
+                    <div class="overlay-foto"><span>Ver detalle</span></div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <div id="modal-galeria" class="modal">
