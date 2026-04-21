@@ -4,11 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios | La Finca</title>
+    <title>Alojamiento | La Finca</title>
     <link rel="stylesheet" href="style.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -30,18 +28,14 @@
                 <a href="contacto.html">Contacto</a>
             </div>
         </nav>
-
+        <h1 class="titulo-pagina" style="color: white; margin-top: 50px;">Alojamiento</h1>
+    </header> <main>
         <section class="seccion-lugar-premium">
             <div class="bloque-mosaico">
                 <div class="mosaico-texto animar">
                     <span class="tag-categoria">ZONAS COMUNES</span>
                     <h2>El Corazón de la Casa</h2>
-                    <p>Nuestra estancia principal integra un salón cálido y una cocina totalmente equipada. Un espacio
-                        donde la arquitectura rústica se encuentra con el confort moderno para que te sientas como en tu
-                        propio hogar.</p>
-                    <br>
-                    <p>Diseñada para convivir, es el lugar ideal para compartir momentos y cenas inolvidables con la
-                        mejor compañía.</p>
+                    <p>Nuestra estancia principal integra un salón cálido y una cocina totalmente equipada. Un espacio donde la arquitectura rústica se encuentra con el confort moderno.</p>
                 </div>
                 <div class="contenedor-imagen-mosaico animar">
                     <div class="mosaico-imagen" style="background-image: url('Imagenes/salon.jpg');"></div>
@@ -54,12 +48,7 @@
                 <div class="mosaico-texto animar fondo-verde-lujo">
                     <span class="tag-categoria">EL DESCANSO</span>
                     <h2 class="text-blanco">Tres Estancias de Paz</h2>
-                    <p class="text-blanco-suave">Disponemos de tres amplias habitaciones diseñadas para el silencio
-                        absoluto. Un refugio privado donde el respeto por los materiales originales y la calma son la
-                        prioridad.</p>
-                    <br>
-                    <p class="text-blanco">Desconecta del ruido y reencuéntrate con el descanso real en una atmósfera
-                        íntima y pensada exclusivamente para tu bienestar.</p>
+                    <p class="text-blanco-suave">Disponemos de tres amplias habitaciones diseñadas para el silencio absoluto. Un refugio privado donde el respeto por los materiales originales es la prioridad.</p>
                 </div>
                 <div class="contenedor-imagen-mosaico animar">
                     <div class="mosaico-imagen" style="background-image: url('Imagenes/habitacion.jpg');"></div>
@@ -72,11 +61,8 @@
                 <div class="mosaico-texto animar fondo-gris-lujo">
                     <span class="tag-categoria">EXTERIOR PRIVADO</span>
                     <h2>Vistas al Horizonte</h2>
-                    <p>La terraza de la casa es el nexo de unión con el entorno. Un rincón íntimo para disfrutar del
-                        primer café del día o contemplar el atardecer con la Sierra como testigo silencioso.</p>
+                    <p>La terraza de la casa es el nexo de unión con el entorno. Un rincón íntimo para disfrutar del primer café del día o contemplar el atardecer.</p>
                     <br>
-                    <p>Explora cada detalle de nuestra finca y descubre por qué cada rincón cuenta una historia única.
-                    </p>
                     <a href="galeria.html" class="boton-dorado-mosaico">Ver Galería Completa</a>
                 </div>
                 <div class="contenedor-imagen-mosaico animar">
@@ -84,53 +70,27 @@
                 </div>
             </div>
         </section>
+    </main>
 
-        <footer class="footer-premium">
-            <div class="footer-content">
-                <div class="footer-logo-contenedor">
-                    <a href="index.html">
-                        <img src="Imagenes/arcos_logo.png" alt="Logo Los Arcos" class="logo-footer-img">
-                        <h2 class="footer-logo-texto">LOS ARCOS</h2>
-                    </a>
-                </div>
-                <div class="footer-copyright">
-                    <p>&copy; 2026 Finca Los Arcos. Todos los derechos reservados.</p>
-                </div>
-            </div>
-        </footer>
-
-        <div class="redes-flotantes-container">
-            <div class="redes-lista" id="menu-redes">
-                <a href="https://wa.me/34600000000" target="_blank" class="icono-red" title="WhatsApp">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                </a>
-                <a href="https://instagram.com/tufinca" target="_blank" class="icono-red" title="Instagram">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
-                        alt="Instagram">
+    <footer class="footer-premium">
+        <div class="footer-content">
+            <div class="footer-logo-contenedor">
+                <a href="index.html">
+                    <img src="Imagenes/arcos_logo.png" alt="Logo Los Arcos" class="logo-footer-img">
+                    <h2 class="footer-logo-texto">LOS ARCOS</h2>
                 </a>
             </div>
-            <button class="btn-flotante-main" id="btn-toggle-redes" style="font-family: Arial, sans-serif;">
-                <span id="icono-abrir" style="font-size: 32px; font-weight: 300; transition: all 0.3s;">+</span>
-            </button>
+            <div class="footer-copyright">
+                <p>&copy; 2026 Finca Los Arcos. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="redes-flotantes-container">
         </div>
 
-        <script>
-            const btnRedes = document.getElementById('btn-toggle-redes');
-            const menuRedes = document.getElementById('menu-redes');
-            const iconoAbrir = document.getElementById('icono-abrir');
-
-            btnRedes.addEventListener('click', () => {
-                menuRedes.classList.toggle('mostrar-redes');
-
-                if (menuRedes.classList.contains('mostrar-redes')) {
-                    iconoAbrir.innerHTML = '✕';
-                    iconoAbrir.style.fontSize = '24px';
-                } else {
-                    iconoAbrir.innerHTML = '+';
-                    iconoAbrir.style.fontSize = '32px';
-                }
-            });
-        </script>
+    <script>
+        // ... tu script ...
+    </script>
 </body>
-
 </html>
