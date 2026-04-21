@@ -8,7 +8,8 @@
     /* Verde Bosque */
     --secundario: #d4a373;
     /* Dorado Arcos */
-    --fondo: #ffffff; /* Blanco puro para que solo destaque el header */
+    --fondo: #ffffff;
+    /* Blanco puro para que solo destaque el header */
     --blanco: #ffffff;
     --fuente-titulos: 'Playfair Display', serif;
     --fuente-texto: 'Raleway', sans-serif;
@@ -41,7 +42,8 @@ body {
     left: 0;
     width: 100%;
     padding: 15px 5%;
-    background: rgba(245, 245, 220, 0.9); /* Mantenemos el header beige solicitado */
+    background: rgba(245, 245, 220, 0.9);
+    /* Mantenemos el header beige solicitado */
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
@@ -368,7 +370,8 @@ body {
     text-align: center;
     width: 100%;
     display: block;
-    clear: both; /* Evita que se monte en otros elementos */
+    clear: both;
+    /* Evita que se monte en otros elementos */
 }
 
 /* Contenedor del enlace para que no herede estilos de texto */
@@ -387,20 +390,23 @@ body {
 
 .footer-logo-texto {
     font-family: var(--fuente-titulos);
-    font-size: 2.2rem; /* Un poco más de presencia */
+    font-size: 2.2rem;
+    /* Un poco más de presencia */
     color: #ffffff !important;
-    letter-spacing: 7px; /* Estilo muy premium */
+    letter-spacing: 7px;
+    /* Estilo muy premium */
     text-transform: uppercase;
-    
+
     /* Matamos la línea morada y ponemos la dorada */
-    text-decoration: none !important; 
+    text-decoration: none !important;
     margin: 0 auto;
     display: block;
-    
+
     /* El "Coso": línea dorada */
-    border-bottom: 2px solid var(--secundario); 
+    border-bottom: 2px solid var(--secundario);
     padding-bottom: 15px;
-    width: fit-content; /* Para que la línea mida lo mismo que el texto */
+    width: fit-content;
+    /* Para que la línea mida lo mismo que el texto */
 }
 
 .footer-logo-contenedor a:hover .logo-footer-img {
@@ -415,6 +421,7 @@ body {
     margin-top: 40px;
     letter-spacing: 1px;
 }
+
 /* ============================================================
    7. GALERÍA (MURAL)
    ============================================================ */
@@ -848,9 +855,12 @@ body {
 .contenedor-filtros-premium {
     text-align: center;
     padding: 40px 0;
-    background: #fdfdfd; /* Un gris casi blanco para separarlo sutilmente */
-    position: sticky;    /* Opcional: para que se quede arriba al bajar */
-    top: 80px;           /* Se queda debajo del menú principal */
+    background: #fdfdfd;
+    /* Un gris casi blanco para separarlo sutilmente */
+    position: sticky;
+    /* Opcional: para que se quede arriba al bajar */
+    top: 80px;
+    /* Se queda debajo del menú principal */
     z-index: 10;
     margin-bottom: 40px;
 }
@@ -866,17 +876,22 @@ body {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #1b4332;         /* Tu verde oscuro */
+    color: #1b4332;
+    /* Tu verde oscuro */
     border: 1px solid #1b4332;
     background: transparent;
     transition: all 0.4s ease;
-    border-radius: 2px;     /* Casi cuadrado, más elegante */
+    border-radius: 2px;
+    /* Casi cuadrado, más elegante */
 }
 
 /* El efecto al pasar el ratón (Hover) */
 .btn-seccion:hover {
-    background: #1b4332;    /* Se rellena de verde */
-    color: #fff;            /* Letra blanca */
-    transform: translateY(-3px); /* Pequeño salto hacia arriba */
+    background: #1b4332;
+    /* Se rellena de verde */
+    color: #fff;
+    /* Letra blanca */
+    transform: translateY(-3px);
+    /* Pequeño salto hacia arriba */
     box-shadow: 0 5px 15px rgba(27, 67, 50, 0.2);
 }
