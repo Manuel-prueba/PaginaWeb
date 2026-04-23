@@ -213,9 +213,49 @@ body {
     color: var(--primario);
     font-family: var(--fuente-titulos);
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     font-size: 2.4rem;
     line-height: 1.1;
+}
+
+/* Nueva fila para título y botón en mosaicos */
+.mosaico-cabecera {
+    display: flex;
+    align-items: baseline;
+    gap: 25px;
+    margin-bottom: 10px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.mosaico-cabecera h2 {
+    margin-bottom: 0 !important;
+}
+
+.mosaico-cabecera h2::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: var(--secundario);
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+.mosaico-cabecera .boton-dorado-mosaico {
+    margin-top: 0 !important;
+    flex-shrink: 0;
+    padding: 10px 22px !important;
+    font-size: 0.8rem !important;
+    border-radius: 50px; /* Un toque más moderno/circular para diferenciarlo */
+}
+
+@media (max-width: 900px) {
+    .mosaico-cabecera {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
 }
 
 .mosaico-texto h2::after {
@@ -423,27 +463,93 @@ body {
 }
 
 /* ============================================================
-   7. GALERÍA (MURAL)
+   7. GALERÍA (MURAL) - Versión Corregida
    ============================================================ */
 .seccion-mural {
-    padding: 40px 5%;
+    padding: 60px 5%;
     max-width: 1400px;
     margin: 0 auto;
 }
 
 .grid-mural {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    display: grid !important;
+    /* 3 columnas en PC */
+    grid-template-columns: repeat(3, 1fr) !important; 
+    gap: 30px !important;
+    margin-top: 30px !important;
 }
 
 .marco-foto {
     position: relative;
-    height: 300px;
-    border-radius: 12px;
+    height: 400px;
+    border-radius: 15px;
     overflow: hidden;
     cursor: pointer;
-    box-shadow: var(--sombra);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.marco-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.marco-foto:hover img {
+    transform: scale(1.1);
+}
+
+.overlay-foto {
+    position: absolute;
+    inset: 0;
+    background: rgba(27, 67, 50, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.3s;
+    color: white;
+    font-weight: bold;
+}
+
+.marco-foto:hover .overlay-foto {
+    opacity: 1;
+}
+/* --- EL MURAL (FORZADO) --- */
+.grid-mural {
+    display: grid !important;
+    /* Forzamos 3 columnas en PC pase lo que pase */
+    grid-template-columns: repeat(3, 1fr) !important; 
+    gap: 30px !important;
+    margin-top: 30px !important;
+}
+
+/* --- EL AJUSTE PARA MÓVIL (FORZADO) --- */
+@media (max-width: 768px) {
+    .grid-mural {
+        /* En móvil se ponen de 2 en 2 */
+        grid-template-columns: repeat(2, 1fr) !important;
+        display: grid !important;
+    }
+
+    .marco-foto {
+        height: 250px !important; 
+    }
+}
+    .titulo-seccion-galeria {
+        font-size: 1.5rem;
+    }
+
+
+.marco-foto {
+    position: relative;
+    height: 400px;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .marco-foto img {
@@ -561,7 +667,7 @@ body {
     transition: all 0.4s ease;
     border: none;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 15px;
     box-shadow: 0 4px 15px rgba(212, 163, 115, 0.3);
 }
 
@@ -587,7 +693,7 @@ body {
     letter-spacing: 2px;
     border-radius: 4px;
     transition: 0.4s;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 /* ============================================================
@@ -712,10 +818,12 @@ body {
         /* Una sola columna en el formulario */
     }
 
-    /* 5. Mural de fotos: 1 sola foto por línea */
-    .grid-mural {
-        grid-template-columns: 1fr !important;
-        gap: 15px;
+    .mosaico-cabecera {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 20px;
     }
 
     .marco-foto {
@@ -725,7 +833,10 @@ body {
     /* 6. Botones: Que ocupen casi todo el ancho para que sea fácil pulsar con el dedo */
     .btn-dorado,
     .btn-blanco,
-    .btn {
+    .btn,
+    .boton-dorado-mosaico,
+    .boton-blanco-mosaico,
+    .btn-seccion {
         width: 100% !important;
         text-align: center;
         padding: 15px 20px !important;
@@ -894,4 +1005,32 @@ body {
     transform: translateY(-3px);
     /* Pequeño salto hacia arriba */
     box-shadow: 0 5px 15px rgba(27, 67, 50, 0.2);
+}
+
+/* ============================================================
+   AJUSTE DE NAVEGACIÓN INTERNA (GALERÍA)
+   ============================================================ */
+
+/* 1. Movimiento suave para toda la página */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 2. El "freno" para que el Nav y los filtros no tapen el título */
+#exteriores, 
+#interiores, 
+#habitaciones {
+    /* Ajustamos el margen para que la sección frene 
+       donde terminan los botones de filtro */
+    scroll-margin-top: 280px; 
+}
+
+/* 3. Estilo extra para los títulos de sección (opcional si no los tenías) */
+.titulo-seccion-galeria {
+    font-family: var(--fuente-titulos);
+    font-size: 2rem;
+    color: var(--primario);
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 2px;
 }
