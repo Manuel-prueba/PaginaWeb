@@ -114,7 +114,7 @@ body {
 
 .header-inicio {
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('Imagenes/Patio_para_fondo.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('Imagenes/foto_principal_piscina.jpg');
 }
 
 .header-interno {
