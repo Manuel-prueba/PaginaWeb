@@ -60,7 +60,7 @@ body {
 .logo-central h1 {
     font-family: var(--fuente-titulos);
     font-size: 1.8rem;
-    color: #000000 !important;
+    color: #000000;
     letter-spacing: 4px;
     margin: 0;
     line-height: 1;
@@ -68,7 +68,7 @@ body {
 
 .sub-logo span {
     font-size: 10px;
-    color: #000000 !important;
+    color: #000000;
     letter-spacing: 5px;
     text-transform: uppercase;
     font-weight: 600;
@@ -82,8 +82,8 @@ body {
 }
 
 .nav-bloque a {
-    text-decoration: none !important;
-    color: #000000 !important;
+    text-decoration: none;
+    color: #000000;
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -92,22 +92,9 @@ body {
 }
 
 .nav-bloque a:hover {
-    color: var(--primario) !important;
+    color: var(--primario);
 }
 
-@media (max-width: 900px) {
-    .nav-principal {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px;
-    }
-
-    .nav-bloque {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-}
 
 /* ============================================================
    3. CABECERAS (HEADERS)
@@ -200,14 +187,15 @@ body {
 }
 
 .fondo-verde-lujo {
-    background-color: var(--primario) !important;
+    background-color: var(--primario);
     border-left: 8px solid var(--secundario);
 }
 
 .fondo-gris-lujo {
-    background-color: #fdf8f2 !important;
+    background-color: #fdf8f2;
     border-left: 8px solid var(--secundario);
 }
+
 
 .mosaico-texto h2 {
     color: var(--primario);
@@ -247,7 +235,8 @@ body {
     flex-shrink: 0;
     padding: 10px 22px !important;
     font-size: 0.8rem !important;
-    border-radius: 50px; /* Un toque más moderno/circular para diferenciarlo */
+    border-radius: 50px;
+    /* Un toque más moderno/circular para diferenciarlo */
 }
 
 @media (max-width: 900px) {
@@ -271,8 +260,9 @@ body {
 .fondo-verde-lujo h2,
 .fondo-verde-lujo p,
 .fondo-verde-lujo .tag-categoria {
-    color: white !important;
+    color: white;
 }
+
 
 .fondo-verde-lujo h2::after {
     background-color: white;
@@ -431,23 +421,17 @@ body {
 .footer-logo-texto {
     font-family: var(--fuente-titulos);
     font-size: 2.2rem;
-    /* Un poco más de presencia */
-    color: #ffffff !important;
+    color: #ffffff;
     letter-spacing: 7px;
-    /* Estilo muy premium */
     text-transform: uppercase;
-
-    /* Matamos la línea morada y ponemos la dorada */
-    text-decoration: none !important;
+    text-decoration: none;
     margin: 0 auto;
     display: block;
-
-    /* El "Coso": línea dorada */
     border-bottom: 2px solid var(--secundario);
     padding-bottom: 15px;
     width: fit-content;
-    /* Para que la línea mida lo mismo que el texto */
 }
+
 
 .footer-logo-contenedor a:hover .logo-footer-img {
     transform: scale(1.05);
@@ -463,7 +447,7 @@ body {
 }
 
 /* ============================================================
-   7. GALERÍA (MURAL) - Versión Corregida
+   7. GALERÍA (MURAL) - Versión Optimizada
    ============================================================ */
 .seccion-mural {
     padding: 60px 5%;
@@ -472,75 +456,11 @@ body {
 }
 
 .grid-mural {
-    display: grid !important;
-    /* 3 columnas en PC */
-    grid-template-columns: repeat(3, 1fr) !important; 
-    gap: 30px !important;
-    margin-top: 30px !important;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 30px;
 }
-
-.marco-foto {
-    position: relative;
-    height: 400px;
-    border-radius: 15px;
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.marco-foto img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: 0.5s;
-}
-
-.marco-foto:hover img {
-    transform: scale(1.1);
-}
-
-.overlay-foto {
-    position: absolute;
-    inset: 0;
-    background: rgba(27, 67, 50, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: 0.3s;
-    color: white;
-    font-weight: bold;
-}
-
-.marco-foto:hover .overlay-foto {
-    opacity: 1;
-}
-/* --- EL MURAL (FORZADO) --- */
-.grid-mural {
-    display: grid !important;
-    /* Forzamos 3 columnas en PC pase lo que pase */
-    grid-template-columns: repeat(3, 1fr) !important; 
-    gap: 30px !important;
-    margin-top: 30px !important;
-}
-
-/* --- EL AJUSTE PARA MÓVIL (FORZADO) --- */
-@media (max-width: 768px) {
-    .grid-mural {
-        /* En móvil se ponen de 2 en 2 */
-        grid-template-columns: repeat(2, 1fr) !important;
-        display: grid !important;
-    }
-
-    .marco-foto {
-        height: 250px !important; 
-    }
-}
-    .titulo-seccion-galeria {
-        font-size: 1.5rem;
-    }
-
 
 .marco-foto {
     position: relative;
@@ -645,20 +565,19 @@ body {
     cursor: pointer;
 }
 
-/* ============================================================
-   BOTONES GLOBALES (EL FIX)
-   ============================================================ */
 
-/* Esto afectará a cualquier enlace que quieras que parezca un botón */
-.btn-dorado,
+/* ============================================================
+   8. BOTONES GLOBALES (Optimizados)
+   ============================================================ */
 .btn,
-.boton-dorado-mosaico {
-    display: inline-block !important;
-    padding: 16px 40px !important;
-    background-color: var(--secundario) !important;
-    color: white !important;
-    text-decoration: none !important;
-    /* Quita el subrayado morado */
+.btn-dorado,
+.boton-dorado-mosaico,
+.btn-blanco,
+.boton-blanco-mosaico,
+.btn-seccion {
+    display: inline-block;
+    padding: 16px 40px;
+    text-decoration: none;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -668,33 +587,50 @@ body {
     border: none;
     cursor: pointer;
     margin-top: 15px;
+    text-align: center;
+}
+
+/* Variantes de Color */
+.btn,
+.btn-dorado,
+.boton-dorado-mosaico {
+    background-color: var(--secundario);
+    color: white;
     box-shadow: 0 4px 15px rgba(212, 163, 115, 0.3);
 }
 
-.btn-dorado:hover,
+.btn-blanco,
+.boton-blanco-mosaico {
+    background-color: var(--blanco);
+    color: var(--primario);
+}
+
+.btn-seccion {
+    padding: 12px 28px;
+    background: transparent;
+    color: var(--primario);
+    border: 1px solid var(--primario);
+    border-radius: 2px;
+}
+
+/* Efectos Hover */
 .btn:hover,
-.boton-dorado-mosaico:hover {
+.btn-dorado:hover,
+.boton-dorado-mosaico:hover,
+.btn-blanco:hover,
+.boton-blanco-mosaico:hover,
+.btn-seccion:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     filter: brightness(1.1);
-    color: white !important;
 }
 
-/* Fix específico para el botón blanco (si lo usas en el bloque verde) */
-.btn-blanco,
-.boton-blanco-mosaico {
-    display: inline-block !important;
-    padding: 16px 40px !important;
-    background-color: var(--blanco) !important;
-    color: var(--primario) !important;
-    text-decoration: none !important;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border-radius: 4px;
-    transition: 0.4s;
-    margin-top: 15px;
+.btn-seccion:hover {
+    background: var(--primario);
+    color: white;
+    box-shadow: 0 5px 15px rgba(27, 67, 50, 0.2);
 }
+
 
 /* ============================================================
    FIX PÁGINA DE GRACIAS (CENTRADO Y ALTURA)
@@ -767,55 +703,69 @@ body {
    REGLAS RESPONSIVE (EL FIX PARA MÓVIL)
    ============================================================ */
 
+/* ============================================================
+   9. REGLAS RESPONSIVE (Optimizadas)
+   ============================================================ */
+
+@media (max-width: 900px) {
+    .nav-principal {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .nav-bloque {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
 @media (max-width: 768px) {
 
-    /* 1. Ajuste de Títulos: Que no se corten */
+    /* Ajuste de Títulos */
     .titulo-pagina {
-        font-size: 2.2rem !important;
+        font-size: 2.2rem;
         margin: 20px 0;
         padding: 0 10px;
     }
 
-    /* 2. Mosaicos: De 2 columnas a 1 columna */
+    /* Mosaicos */
     .bloque-mosaico,
     .bloque-mosaico.invertido {
-        flex-direction: column !important;
+        flex-direction: column;
     }
 
     .contenedor-imagen-mosaico,
     .mosaico-texto {
-        width: 100% !important;
-        min-width: 100% !important;
-        padding: 40px 10% !important;
-        /* Menos relleno en los lados */
+        width: 100%;
+        min-width: 100%;
+        padding: 40px 10%;
     }
 
     .mosaico-imagen {
-        min-height: 300px !important;
-        /* Más bajitas para que no ocupen todo el scroll */
+        min-height: 300px;
     }
 
-    /* 3. Navegación: Ya la teníamos, pero aseguramos el logo */
     .nav-principal {
         padding: 10px;
         gap: 10px;
     }
 
     .logo-central h1 {
-        font-size: 1.2rem !important;
+        font-size: 1.2rem;
     }
 
-    /* 4. Contacto y Gracias: Tarjetas al 100% */
+    /* Contacto y Gracias */
     .contacto-container,
     .tarjeta-cristal-gracias {
-        padding: 30px 20px !important;
-        width: 95% !important;
-        margin-top: 80px !important;
+        padding: 30px 20px;
+        width: 95%;
+        margin-top: 80px;
     }
 
     .contacto-container {
-        grid-template-columns: 1fr !important;
-        /* Una sola columna en el formulario */
+        grid-template-columns: 1fr;
     }
 
     .mosaico-cabecera {
@@ -826,42 +776,46 @@ body {
         margin-bottom: 20px;
     }
 
-    .marco-foto {
-        height: 250px !important;
+    .grid-mural {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    /* 6. Botones: Que ocupen casi todo el ancho para que sea fácil pulsar con el dedo */
+    .marco-foto {
+        height: 250px;
+    }
+
+    /* Botones */
+    .btn,
     .btn-dorado,
     .btn-blanco,
-    .btn,
+    .btn-seccion,
     .boton-dorado-mosaico,
-    .boton-blanco-mosaico,
-    .btn-seccion {
-        width: 100% !important;
-        text-align: center;
-        padding: 15px 20px !important;
+    .boton-blanco-mosaico {
+        width: 100%;
+        padding: 15px 20px;
     }
 
-    /* 7. Listas de lujo (los checks dorados) */
+    /* Listas */
     .puntos-lujo li {
-        font-size: 0.95rem !important;
+        font-size: 0.95rem;
     }
 
-    /* 8. Modal Galería */
+    /* Modal Galería */
     .modal-card {
-        flex-direction: column !important;
-        overflow-y: auto !important;
+        flex-direction: column;
+        overflow-y: auto;
     }
 
     .modal-img-container {
-        flex: none !important;
+        flex: none;
         height: 250px;
     }
 
     .modal-text-container {
-        padding: 20px !important;
+        padding: 20px;
     }
 }
+
 
 /* --- CONTENEDOR DEL MENÚ FLOTANTE --- */
 .redes-flotantes-container {
@@ -977,35 +931,8 @@ body {
 }
 
 /* El nuevo botón */
-.btn-seccion {
-    display: inline-block;
-    padding: 12px 28px;
-    margin: 5px 10px;
-    text-decoration: none;
-    font-family: 'Raleway', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #1b4332;
-    /* Tu verde oscuro */
-    border: 1px solid #1b4332;
-    background: transparent;
-    transition: all 0.4s ease;
-    border-radius: 2px;
-    /* Casi cuadrado, más elegante */
-}
+/* Los estilos de .btn-seccion ya están en la sección de Botones Globales */
 
-/* El efecto al pasar el ratón (Hover) */
-.btn-seccion:hover {
-    background: #1b4332;
-    /* Se rellena de verde */
-    color: #fff;
-    /* Letra blanca */
-    transform: translateY(-3px);
-    /* Pequeño salto hacia arriba */
-    box-shadow: 0 5px 15px rgba(27, 67, 50, 0.2);
-}
 
 /* ============================================================
    AJUSTE DE NAVEGACIÓN INTERNA (GALERÍA)
@@ -1017,12 +944,12 @@ html {
 }
 
 /* 2. El "freno" para que el Nav y los filtros no tapen el título */
-#exteriores, 
-#interiores, 
+#exteriores,
+#interiores,
 #habitaciones {
     /* Ajustamos el margen para que la sección frene 
        donde terminan los botones de filtro */
-    scroll-margin-top: 280px; 
+    scroll-margin-top: 280px;
 }
 
 /* 3. Estilo extra para los títulos de sección (opcional si no los tenías) */
