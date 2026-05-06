@@ -123,7 +123,8 @@ body {
 }
 
 .header-servicios {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Imagenes/mesa_elegante.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Imagenes/foto_evento_cumple.jpg');
+    background-position: center 48%;
 }
 
 .header-galeria-foto,
