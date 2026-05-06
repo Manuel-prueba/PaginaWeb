@@ -129,11 +129,13 @@ body {
 
 .header-galeria-foto,
 .header-contacto {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Imagenes/Atico.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Imagenes/flores_lilas.JPG');
+    background-position: center 40%;
 }
 
 .header-lugar {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Imagenes/Patio_para_fondo_2.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Imagenes/flores4.JPG');
+    background-position: center 40%;
 }
 
 .titulo-pagina {
