@@ -124,7 +124,7 @@ body {
 
 .header-servicios {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Imagenes/foto_evento_cumple.jpg');
-    background-position: center 48%;
+    background-position: center 49%;
 }
 
 .header-galeria-foto,
@@ -136,6 +136,11 @@ body {
 .header-lugar {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Imagenes/flores4.JPG');
     background-position: center 40%;
+}
+
+.header-alojamiento {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Imagenes/Cuarto_con_aire2.JPG   ');
+    background-position: center 35%; 
 }
 
 .titulo-pagina {
