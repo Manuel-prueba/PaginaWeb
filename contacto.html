@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacto | Los Arcos</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Raleway:wght@300;400;600&display=swap"
     rel="stylesheet">
@@ -30,22 +31,23 @@
   </nav>
 
   <section class="seccion-contacto-foto">
-    <h2 class="titulo-pagina animar" style="color: white; margin-top: 0;">Contacto</h2>
-    <div class="contacto-container animar">
-      <div class="contacto-info">
+    <h2 class="titulo-pagina" data-aos="fade-up" style="color: white; margin-top: 0;">Contacto</h2>
+    
+    <div class="contacto-container">
+      <div class="contacto-info" data-aos="fade-right" data-aos-delay="200">
         <h2 style="color: var(--primario); margin-bottom: 20px;">Hablemos</h2>
         <p>¿Quieres reservar una fecha? Ayudamos a organizar tu evento ideal.</p>
         <br>
-        <p><strong>📞 +34 685 15 27 30</strong></p>
-        <p><strong>✉️ villalosarcos@gmail.com</strong></p>
+        <p style="font-size: 1.2rem;"><strong>📞 +34 685 15 27 30</strong></p>
+        <p style="font-size: 1.2rem;"><strong>✉️ villalosarcos@gmail.com</strong></p>
       </div>
 
-      <form id="my-form" action="https://formspree.io/f/xvzdqwdk" method="POST" class="contacto-form">
+      <form id="my-form" action="https://formspree.io/f/xvzdqwdk" method="POST" class="contacto-form" data-aos="fade-left" data-aos-delay="400">
         <input type="text" name="Nombre" class="form-control" placeholder="Nombre" required>
         <input type="email" name="Email" class="form-control" placeholder="Email" required>
         <textarea name="Mensaje" class="form-control" rows="4" placeholder="Tu mensaje" required></textarea>
         <button id="my-form-button" type="submit" class="btn" style="width: 100%;">Enviar Mensaje</button>
-        <p id="my-form-status" style="margin-top:15px;"></p>
+        <p id="my-form-status" style="margin-top:15px; text-align: center; color: var(--primario); font-weight: 600;"></p>
       </form>
     </div>
   </section>
@@ -64,30 +66,7 @@
     </div>
   </footer>
 
-  <script>
-    var form = document.getElementById("my-form");
-    async function handleSubmit(event) {
-      event.preventDefault();
-      var status = document.getElementById("my-form-status");
-      var data = new FormData(event.target);
-      var button = document.getElementById("my-form-button");
-      button.innerText = "Enviando...";
-      button.disabled = true;
-      fetch(event.target.action, {
-        method: form.method,
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      }).then(response => {
-        if (response.ok) { window.location.href = "gracias.html"; }
-        else { status.innerHTML = "Error al enviar"; }
-      }).catch(error => { status.innerHTML = "Error de conexión"; })
-        .finally(() => { button.innerText = "Enviar Mensaje"; button.disabled = false; });
-    }
-    form.addEventListener("submit", handleSubmit)
-  </script>
-
   <div class="redes-flotantes-container">
-
     <div class="redes-lista" id="menu-redes">
       <a href="https://wa.me/34685152730?text=Hola!%20Me%20gustaría%20pedir%20información%20sobre%20la%20finca."
         target="_blank" class="icono-red" title="WhatsApp">
@@ -97,20 +76,56 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram">
       </a>
     </div>
-
     <button class="btn-flotante-main" id="btn-toggle-redes" style="font-family: Arial, sans-serif;">
       <span id="icono-abrir" style="font-size: 32px; font-weight: 300; transition: all 0.3s;">+</span>
     </button>
   </div>
 
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
+    // Inicializar Animaciones
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100
+    });
+
+    // Lógica Formspree (Envío de formulario)
+    var form = document.getElementById("my-form");
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("my-form-status");
+      var data = new FormData(event.target);
+      var button = document.getElementById("my-form-button");
+      button.innerText = "Enviando...";
+      button.disabled = true;
+      
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) { 
+          window.location.href = "gracias.html"; 
+        } else { 
+          status.innerHTML = "Hubo un problema. Inténtalo de nuevo."; 
+        }
+      }).catch(error => { 
+        status.innerHTML = "Error de conexión. Revisa tu internet."; 
+      }).finally(() => { 
+        button.innerText = "Enviar Mensaje"; 
+        button.disabled = false; 
+      });
+    }
+    form.addEventListener("submit", handleSubmit);
+
+    // Lógica Menú de Redes Flotantes
     const btnRedes = document.getElementById('btn-toggle-redes');
     const menuRedes = document.getElementById('menu-redes');
     const iconoAbrir = document.getElementById('icono-abrir');
 
     btnRedes.addEventListener('click', () => {
       menuRedes.classList.toggle('mostrar-redes');
-
       if (menuRedes.classList.contains('mostrar-redes')) {
         iconoAbrir.innerHTML = '✕';
         iconoAbrir.style.fontSize = '24px';
@@ -121,5 +136,4 @@
     });
   </script>
 </body>
-
 </html>

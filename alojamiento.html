@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alojamiento | La Finca</title>
     <link rel="stylesheet" href="style.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -30,18 +29,19 @@
                 <a href="contacto.html">Contacto</a>
             </div>
         </nav>
-
+        <h1 class="titulo-pagina" data-aos="fade-up" style="color: white; position: relative; z-index: 1;"></h1>
     </header>
+
     <main>
         <section class="seccion-lugar-premium">
             <div class="bloque-mosaico">
-                <div class="mosaico-texto animar">
+                <div class="mosaico-texto animar" data-aos="fade-right">
                     <span class="tag-categoria">ZONAS COMUNES</span>
                     <h2>El Corazón de la Casa</h2>
                     <p>Nuestra estancia principal integra un salón cálido y una cocina totalmente equipada. Un espacio
                         donde la arquitectura rústica se encuentra con el confort moderno.</p>
                 </div>
-                <div class="contenedor-imagen-mosaico animar">
+                <div class="contenedor-imagen-mosaico animar" data-aos="fade-left">
                     <div class="mosaico-imagen" style="background-image: url('Imagenes/salon.jpg');"></div>
                 </div>
             </div>
@@ -49,13 +49,13 @@
 
         <section class="seccion-lugar-premium" style="padding-top: 0;">
             <div class="bloque-mosaico invertido">
-                <div class="mosaico-texto animar fondo-verde-lujo">
+                <div class="mosaico-texto animar fondo-verde-lujo" data-aos="fade-left">
                     <span class="tag-categoria">EL DESCANSO</span>
                     <h2 class="text-blanco">Tres Estancias de Paz</h2>
                     <p class="text-blanco-suave">Disponemos de tres amplias habitaciones diseñadas para el silencio
                         absoluto. Un refugio privado donde el respeto por los materiales originales es la prioridad.</p>
                 </div>
-                <div class="contenedor-imagen-mosaico animar">
+                <div class="contenedor-imagen-mosaico animar" data-aos="fade-right">
                     <div class="mosaico-imagen" style="background-image: url('Imagenes/Cama.JPG');"></div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
 
         <section class="seccion-lugar-premium" style="padding-top: 0;">
             <div class="bloque-mosaico">
-                <div class="mosaico-texto animar fondo-gris-lujo">
+                <div class="mosaico-texto animar fondo-gris-lujo" data-aos="fade-right">
                     <span class="tag-categoria">EXTERIOR PRIVADO</span>
                     <div class="mosaico-cabecera">
                         <h2>Vistas al Horizonte</h2>
@@ -72,7 +72,7 @@
                     <p>La terraza de la casa es el nexo de unión con el entorno. Un rincón íntimo para disfrutar del
                         primer café del día o contemplar el atardecer.</p>
                 </div>
-                <div class="contenedor-imagen-mosaico animar">
+                <div class="contenedor-imagen-mosaico animar" data-aos="fade-left">
                     <div class="mosaico-imagen" style="background-image: url('Imagenes/terraza2.jpg');"></div>
                 </div>
             </div>
@@ -93,11 +93,13 @@
         </div>
     </footer>
 
-    <div class="redes-flotantes-container">
-    </div>
-
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        // ... tu script ...
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 150
+        });
     </script>
 </body>
 

@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finca Los Arcos | Inicio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Raleway:wght@300;400;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -18,7 +17,7 @@
     <nav class="nav-principal">
         <div class="nav-bloque">
             <a href="index.html">Inicio</a>
-            <a href="eventos.html">Eventos</a>
+            <a href="eventos.html">Events</a>
             <a href="alojamiento.html">Alojamiento</a>
         </div>
 
@@ -35,7 +34,7 @@
     </nav>
 
     <header class="header-inicio">
-        <div class="animar"
+        <div class="animar" data-aos="fade-up" data-aos-duration="1200"
             style="text-align: center; background: rgba(0,0,0,0.3); padding: 40px; backdrop-filter: blur(5px); border-radius: 15px; width: 90%; max-width: 600px;">
             <p style="font-size: 1.1rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px;">Un
                 entorno único para momentos inolvidables</p>
@@ -45,7 +44,7 @@
 
     <section class="seccion-lugar-premium">
         <div class="bloque-mosaico">
-            <div class="mosaico-texto animar">
+            <div class="mosaico-texto animar" data-aos="fade-right">
                 <span class="tag-categoria">FILOSOFÍA</span>
                 <h2>Un Refugio con Alma</h2>
                 <p>En Finca Los Arcos, el lujo no es algo material, sino el silencio, el aire puro y la privacidad
@@ -55,7 +54,7 @@
                     convertir tus momentos especiales en recuerdos eternos, con la Sierra como testigo silencioso.</p>
                 <a href="lugar.html" class="boton-dorado-mosaico">Explorar el lugar</a>
             </div>
-            <div class="contenedor-imagen-mosaico animar">
+            <div class="contenedor-imagen-mosaico animar" data-aos="fade-left">
                 <div class="mosaico-imagen" style="background-image: url('Imagenes/Patio_para_fondo_2.jpeg');"></div>
             </div>
         </div>
@@ -63,7 +62,7 @@
 
     <section class="seccion-lugar-premium" style="padding-top: 0;">
         <div class="bloque-mosaico invertido">
-            <div class="mosaico-texto animar fondo-verde-lujo">
+            <div class="mosaico-texto animar fondo-verde-lujo" data-aos="fade-left">
                 <span class="tag-categoria">CONFORT</span>
                 <h2 class="text-blanco">El Arte del Descanso</h2>
                 <p class="text-blanco-suave">Nuestras suites han sido diseñadas como un refugio de paz, respetando la
@@ -73,7 +72,7 @@
                     exclusivamente para tu bienestar.</p>
                 <a href="alojamiento.html" class="boton-blanco-mosaico">Descubrir Suites</a>
             </div>
-            <div class="contenedor-imagen-mosaico animar">
+            <div class="contenedor-imagen-mosaico animar" data-aos="fade-right">
                 <div class="mosaico-imagen" style="background-image: url('Imagenes/Salon_con_vista.jpeg');"></div>
             </div>
         </div>
@@ -81,7 +80,7 @@
 
     <section class="seccion-lugar-premium" style="padding-top: 0;">
         <div class="bloque-mosaico">
-            <div class="mosaico-texto animar fondo-gris-lujo">
+            <div class="mosaico-texto animar fondo-gris-lujo" data-aos="fade-right">
                 <span class="tag-categoria">MOMENTOS ÚNICOS</span>
                 <h2>El Escenario de tu Historia</h2>
                 <p>Hay días que merecen un lugar a la altura de lo que se celebra. En Finca Los Arcos, transformamos
@@ -89,7 +88,7 @@
                     detalle del montaje..</p>
                 <a href="contacto.html" class="boton-dorado-mosaico">Reservar Evento</a>
             </div>
-            <div class="contenedor-imagen-mosaico animar">
+            <div class="contenedor-imagen-mosaico animar" data-aos="fade-left">
                 <div class="mosaico-imagen"
                     style="background-image: url('Imagenes/Billar.jpeg'); background-position: center bottom;"></div>
             </div>
@@ -111,7 +110,6 @@
     </footer>
 
     <div class="redes-flotantes-container">
-
         <div class="redes-lista" id="menu-redes">
             <a href="https://wa.me/34685152730?text=Hola!%20Me%20gustaría%20pedir%20información%20sobre%20la%20finca."
                 target="_blank" class="icono-red" title="WhatsApp">
@@ -121,20 +119,27 @@
                 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram">
             </a>
         </div>
-
         <button class="btn-flotante-main" id="btn-toggle-redes" style="font-family: Arial, sans-serif;">
             <span id="icono-abrir" style="font-size: 32px; font-weight: 300; transition: all 0.3s;">+</span>
         </button>
     </div>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
+        // Inicializar animaciones
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 120
+        });
+
+        // Script del botón de redes
         const btnRedes = document.getElementById('btn-toggle-redes');
         const menuRedes = document.getElementById('menu-redes');
         const iconoAbrir = document.getElementById('icono-abrir');
 
         btnRedes.addEventListener('click', () => {
             menuRedes.classList.toggle('mostrar-redes');
-
             if (menuRedes.classList.contains('mostrar-redes')) {
                 iconoAbrir.innerHTML = '✕';
                 iconoAbrir.style.fontSize = '24px';
@@ -144,7 +149,6 @@
             }
         });
     </script>
-
 </body>
 
 </html>

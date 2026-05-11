@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventos | Los Arcos</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Raleway:wght@300;400;600&display=swap"
         rel="stylesheet">
@@ -32,75 +33,73 @@
         </nav>
     </header>
 
-    <section class="seccion-lugar-premium">
-        <h2 class="titulo-pagina animar" style="text-align: center; margin-bottom: 20px;">Experiencias inolvidables en
-            Los Arcos</h2>
-        <p style="text-align: center; max-width: 850px; margin: 0 auto 60px auto; color: #666; font-size: 1.1rem; line-height: 1.8;"
-            class="animar">
-            Un oasis íntimo y tranquilo a solo 15 minutos de Granada. Más de 1.000 m² de exterior con jardines cuidados,
-            vistas panorámicas y todo lo necesario para crear recuerdos inolvidables en plena naturaleza.
-        </p>
+    <main>
+        <section class="seccion-lugar-premium">
+            <h2 class="titulo-pagina" data-aos="fade-up" style="text-align: center; margin-bottom: 20px;">Experiencias inolvidables en Los Arcos</h2>
+            <p style="text-align: center; max-width: 850px; margin: 0 auto 60px auto; color: #666; font-size: 1.1rem; line-height: 1.8;"
+                data-aos="fade-up" data-aos-delay="200">
+                Un oasis íntimo y tranquilo a solo 15 minutos de Granada. Más de 1.000 m² de exterior con jardines cuidados,
+                vistas panorámicas y todo lo necesario para crear recuerdos inolvidables en plena naturaleza.
+            </p>
 
-        <!-- BLOQUE 1: EXTERIORES Y FAMILIAS -->
-        <div class="bloque-mosaico animar">
-            <div class="contenedor-imagen-mosaico">
-                <div class="mosaico-imagen" style="background-image: url('Imagenes/Patio_para_fondo.jpeg');"></div>
-            </div>
-            <div class="mosaico-texto">
-                <span class="tag-categoria">Exterior & Relax</span>
-                <h2>Celebraciones al Aire Libre</h2>
-                <p>Disfruta de una <b>zona de cocina exterior</b> totalmente equipada: BBQ, horno de leña, paellera y
-                    barra de bar. Un jardín mágico con rosales y árboles que brindan una sombra ideal para encuentros
-                    familiares bajo el sol de Granada.</p>
-                <div class="usos-finca">
-                    <span class="tag">Piscina</span>
-                    <span class="tag">Pista Multideporte</span>
-                    <span class="tag">Iluminación Nocturna</span>
-                    <span class="tag">Plaza de aparcamiento</span>
+            <div class="bloque-mosaico">
+                <div class="contenedor-imagen-mosaico" data-aos="fade-right">
+                    <div class="mosaico-imagen" style="background-image: url('Imagenes/Patio_para_fondo.jpeg');"></div>
+                </div>
+                <div class="mosaico-texto" data-aos="fade-left">
+                    <span class="tag-categoria">Exterior & Relax</span>
+                    <h2>Celebraciones al Aire Libre</h2>
+                    <p>Disfruta de una <b>zona de cocina exterior</b> totalmente equipada: BBQ, horno de leña, paellera y
+                        barra de bar. Un jardín mágico con rosales y árboles que brindan una sombra ideal para encuentros
+                        familiares bajo el sol de Granada.</p>
+                    <div class="usos-finca">
+                        <span class="tag">Piscina</span>
+                        <span class="tag">Pista Multideporte</span>
+                        <span class="tag">Iluminación Nocturna</span>
+                        <span class="tag">Plaza de aparcamiento</span>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- BLOQUE 2: OCIO Y JUEGOS (FONDO GRIS DE CONTRASTE) -->
-        <div class="bloque-mosaico invertido animar">
-            <div class="contenedor-imagen-mosaico">
-                <div class="mosaico-imagen" style="background-image: url('Imagenes/Salon_con_billar.jpeg');"></div>
-            </div>
-            <div class="mosaico-texto fondo-gris-lujo">
-                <span class="tag-categoria">Diversión Premium</span>
-                <h2>Salón de Juegos y Ocio</h2>
-                <p>Marca la diferencia en tu evento con nuestro <b>salón de juegos privado</b>. Equipado con mesa de
-                    billar, ping pong, futbolín y diana. El espacio perfecto para que mayores y pequeños disfruten de
-                    una experiencia exclusiva.</p>
-                <div class="usos-finca">
-                    <span class="tag">Billar & Ping Pong</span>
-                    <span class="tag">Karaoke & Proyector</span>
-                    <span class="tag">Altavoces Pro</span>
-                    <span class="tag">Dardos</span>
+            <div class="bloque-mosaico invertido">
+                <div class="contenedor-imagen-mosaico" data-aos="fade-left">
+                    <div class="mosaico-imagen" style="background-image: url('Imagenes/Salon_con_billar.jpeg');"></div>
+                </div>
+                <div class="mosaico-texto fondo-gris-lujo" data-aos="fade-right">
+                    <span class="tag-categoria">Diversión Premium</span>
+                    <h2>Salón de Juegos y Ocio</h2>
+                    <p>Marca la diferencia en tu evento con nuestro <b>salón de juegos privado</b>. Equipado con mesa de
+                        billar, ping pong, futbolín y diana. El espacio perfecto para que mayores y pequeños disfruten de
+                        una experiencia exclusiva.</p>
+                    <div class="usos-finca">
+                        <span class="tag">Billar & Ping Pong</span>
+                        <span class="tag">Karaoke & Proyector</span>
+                        <span class="tag">Altavoces Pro</span>
+                        <span class="tag">Dardos</span>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- BLOQUE 3: INVIERNO Y EMPRESAS -->
-        <div class="bloque-mosaico animar">
-            <div class="contenedor-imagen-mosaico">
-                <div class="mosaico-imagen" style="background-image: url('Imagenes/Chimenea.jpeg');"></div>
-            </div>
-            <div class="mosaico-texto">
-                <span class="tag-categoria">Eventos Todo el Año</span>
-                <h2>Comedor de Invierno & Catering</h2>
-                <p>Que el tiempo no arruine tu plan. Disponemos de un <b>espacio interior con chimenea</b> para 25
-                    personas. Además, ofrecemos servicio de catering especializado en <b>paellas gigantes</b> para
-                    grupos grandes y empresas.</p>
-                <div class="usos-finca">
-                    <span class="tag">Chimenea</span>
-                    <span class="tag">Paellas Gigantes</span>
-                    <span class="tag">Team Building</span>
-                    <span class="tag">Reuniones</span>
+            <div class="bloque-mosaico">
+                <div class="contenedor-imagen-mosaico" data-aos="fade-right">
+                    <div class="mosaico-imagen" style="background-image: url('Imagenes/Chimenea.jpeg');"></div>
+                </div>
+                <div class="mosaico-texto" data-aos="fade-left">
+                    <span class="tag-categoria">Eventos Todo el Año</span>
+                    <h2>Comedor de Invierno & Catering</h2>
+                    <p>Que el tiempo no arruine tu plan. Disponemos de un <b>espacio interior con chimenea</b> para 25
+                        personas. Además, ofrecemos servicio de catering especializado en <b>paellas gigantes</b> para
+                        grupos grandes y empresas.</p>
+                    <div class="usos-finca">
+                        <span class="tag">Chimenea</span>
+                        <span class="tag">Paellas Gigantes</span>
+                        <span class="tag">Team Building</span>
+                        <span class="tag">Reuniones</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="footer-premium">
         <div class="footer-content">
@@ -117,7 +116,6 @@
     </footer>
 
     <div class="redes-flotantes-container">
-
         <div class="redes-lista" id="menu-redes">
             <a href="https://wa.me/34685152730?text=Hola!%20Me%20gustaría%20pedir%20información%20sobre%20la%20finca."
                 target="_blank" class="icono-red" title="WhatsApp">
@@ -127,23 +125,28 @@
                 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram">
             </a>
         </div>
-
         <button class="btn-flotante-main" id="btn-toggle-redes" style="font-family: Arial, sans-serif;">
             <span id="icono-abrir" style="font-size: 32px; font-weight: 300; transition: all 0.3s;">+</span>
         </button>
     </div>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 150
+        });
+
         const btnRedes = document.getElementById('btn-toggle-redes');
         const menuRedes = document.getElementById('menu-redes');
         const iconoAbrir = document.getElementById('icono-abrir');
 
         btnRedes.addEventListener('click', () => {
             menuRedes.classList.toggle('mostrar-redes');
-
             if (menuRedes.classList.contains('mostrar-redes')) {
                 iconoAbrir.innerHTML = '✕';
-                iconoAbrir.style.fontSize = '24px'; // La X un poco más pequeña para que quede fina
+                iconoAbrir.style.fontSize = '24px';
             } else {
                 iconoAbrir.innerHTML = '+';
                 iconoAbrir.style.fontSize = '32px';
