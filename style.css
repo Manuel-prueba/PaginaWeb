@@ -1,15 +1,10 @@
-/* ============================================================
-   1. VARIABLES Y BASE (Limpio y Optimizado)
-   ============================================================ */
+/* 1. VARIABLES Y BASE*/
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Raleway:wght@300;400;600&display=swap');
 
 :root {
     --primario: #1b4332;
-    /* Verde Bosque */
     --secundario: #d4a373;
-    /* Dorado Arcos */
     --fondo: #ffffff;
-    /* Blanco puro para que solo destaque el header */
     --blanco: #ffffff;
     --fuente-titulos: 'Playfair Display', serif;
     --fuente-texto: 'Raleway', sans-serif;
@@ -33,9 +28,7 @@ body {
     width: 100%;
 }
 
-/* ============================================================
-   2. NAVEGACIÓN (Centrado Premium)
-   ============================================================ */
+/* 2. NAVEGACIÓN*/
 .nav-principal {
     position: fixed;
     top: 0;
@@ -43,7 +36,6 @@ body {
     width: 100%;
     padding: 15px 5%;
     background: rgba(245, 245, 220, 0.9);
-    /* Mantenemos el header beige solicitado */
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
@@ -95,10 +87,7 @@ body {
     color: var(--primario);
 }
 
-
-/* ============================================================
-   3. CABECERAS (HEADERS)
-   ============================================================ */
+/* 3. HEADERS*/
 .header-inicio,
 .header-interno {
     width: 100%;
@@ -151,9 +140,7 @@ body {
     text-align: center;
 }
 
-/* ============================================================
-   4. MOSAICOS (Lujo Supremo)
-   ============================================================ */
+/* 4. MOSAICOS*/
 .seccion-lugar-premium {
     padding: 60px 0;
     width: 100%;
@@ -214,7 +201,6 @@ body {
     line-height: 1.1;
 }
 
-/* Nueva fila para título y botón en mosaicos */
 .mosaico-cabecera {
     display: flex;
     align-items: baseline;
@@ -244,7 +230,6 @@ body {
     padding: 10px 22px !important;
     font-size: 0.8rem !important;
     border-radius: 50px;
-    /* Un toque más moderno/circular para diferenciarlo */
 }
 
 @media (max-width: 900px) {
@@ -306,7 +291,6 @@ body {
     letter-spacing: 1px;
 }
 
-/* Arreglo para listas en lugar.html */
 .puntos-lujo {
     list-style: none;
     padding: 0;
@@ -330,9 +314,7 @@ body {
     font-weight: 900;
 }
 
-/* ============================================================
-   5. CONTACTO Y FORMULARIOS
-   ============================================================ */
+/* 5. CONTACTO Y FORMULARIOS*/
 .seccion-contacto-foto {
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('Imagenes/Patio_para_fondo.jpeg');
     background-size: cover;
@@ -400,9 +382,7 @@ body {
     transform: translateY(-3px);
 }
 
-/* ============================================================
-   6. FOOTER Y LOGOS (VERSIÓN FINAL Y LIMPIA)
-   ============================================================ */
+/* 6. FOOTER Y LOGOS*/
 .footer-premium {
     background: var(--primario);
     color: white;
@@ -411,10 +391,8 @@ body {
     width: 100%;
     display: block;
     clear: both;
-    /* Evita que se monte en otros elementos */
 }
 
-/* Contenedor del enlace para que no herede estilos de texto */
 .footer-logo-contenedor a {
     text-decoration: none !important;
     display: inline-block;
@@ -456,9 +434,7 @@ body {
     letter-spacing: 1px;
 }
 
-/* ============================================================
-   7. GALERÍA (MURAL) - Versión Optimizada
-   ============================================================ */
+/* 7. GALERÍA*/
 .seccion-mural {
     padding: 60px 5%;
     max-width: 1400px;
@@ -510,7 +486,6 @@ body {
     opacity: 1;
 }
 
-/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -576,9 +551,7 @@ body {
 }
 
 
-/* ============================================================
-   8. BOTONES GLOBALES (Optimizados)
-   ============================================================ */
+/* 8. BOTONES*/
 .btn,
 .btn-dorado,
 .boton-dorado-mosaico,
@@ -600,7 +573,6 @@ body {
     text-align: center;
 }
 
-/* Variantes de Color */
 .btn,
 .btn-dorado,
 .boton-dorado-mosaico {
@@ -623,7 +595,6 @@ body {
     border-radius: 2px;
 }
 
-/* Efectos Hover */
 .btn:hover,
 .btn-dorado:hover,
 .boton-dorado-mosaico:hover,
@@ -642,28 +613,21 @@ body {
 }
 
 
-/* ============================================================
-   FIX PÁGINA DE GRACIAS (CENTRADO Y ALTURA)
-   ============================================================ */
+/* 9. PÁGINA DE GRACIAS*/
 
 .seccion-gracias-premium {
     min-height: 100vh;
-    /* Ocupa todo el alto de la pantalla */
     width: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url('Imagenes/Patio_para_fondo.jpeg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    /* Efecto elegante al mover */
 
     display: flex;
     align-items: center;
-    /* Centra verticalmente */
     justify-content: center;
-    /* Centra horizontalmente */
     padding: 100px 20px;
-    /* Espacio para que el menú no tape nada */
     box-sizing: border-box;
 }
 
@@ -678,7 +642,6 @@ body {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.3);
     margin-top: 50px;
-    /* Empuja la tarjeta hacia abajo para que no la tape el nav */
 }
 
 .tarjeta-cristal-gracias h2 {
@@ -702,20 +665,12 @@ body {
     margin: 25px auto;
 }
 
-/* Para que el botón no salga pegado a la izquierda */
 .tarjeta-cristal-gracias .btn-dorado {
     margin-top: 20px;
     display: inline-block !important;
-    /* Asegura que se comporte como botón centrado */
 }
 
-/* ============================================================
-   REGLAS RESPONSIVE (EL FIX PARA MÓVIL)
-   ============================================================ */
-
-/* ============================================================
-   9. REGLAS RESPONSIVE (Optimizadas)
-   ============================================================ */
+/* 9. REGLAS RESPONSIVE*/
 
 @media (max-width: 900px) {
     .nav-principal {
@@ -733,14 +688,12 @@ body {
 
 @media (max-width: 768px) {
 
-    /* Ajuste de Títulos */
     .titulo-pagina {
         font-size: 2.2rem;
         margin: 20px 0;
         padding: 0 10px;
     }
 
-    /* Mosaicos */
     .bloque-mosaico,
     .bloque-mosaico.invertido {
         flex-direction: column;
@@ -766,7 +719,6 @@ body {
         font-size: 1.2rem;
     }
 
-    /* Contacto y Gracias */
     .contacto-container,
     .tarjeta-cristal-gracias {
         padding: 30px 20px;
@@ -794,7 +746,7 @@ body {
         height: 250px;
     }
 
-    /* Botones */
+    /*Botones*/
     .btn,
     .btn-dorado,
     .btn-blanco,
@@ -805,12 +757,10 @@ body {
         padding: 15px 20px;
     }
 
-    /* Listas */
     .puntos-lujo li {
         font-size: 0.95rem;
     }
 
-    /* Modal Galería */
     .modal-card {
         flex-direction: column;
         overflow-y: auto;
@@ -826,8 +776,6 @@ body {
     }
 }
 
-
-/* --- CONTENEDOR DEL MENÚ FLOTANTE --- */
 .redes-flotantes-container {
     position: fixed;
     bottom: 30px;
@@ -839,7 +787,6 @@ body {
     gap: 15px;
 }
 
-/* --- LISTA DE ICONOS (OCULTA INICIALMENTE) --- */
 .redes-lista {
     display: flex;
     flex-direction: column;
@@ -851,7 +798,6 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Clase que se activa con el click (hace la magia) */
 .redes-lista.mostrar-redes {
     opacity: 1;
     visibility: visible;
@@ -859,7 +805,6 @@ body {
     /* Sube a su sitio */
 }
 
-/* --- ESTILO DE CADA RED SOCIAL --- */
 .icono-red {
     width: 45px;
     height: 45px;
@@ -885,16 +830,13 @@ body {
 
 .icono-red:hover {
     transform: scale(1.15);
-    /* Se agranda un poco al pasar el ratón */
 }
 
-/* --- BOTÓN PRINCIPAL (EL DE ABRIR) --- */
 .btn-flotante-main {
     width: 60px;
     height: 60px;
     border-radius: 50%;
     background-color: #1a2f23;
-    /* Verde oscuro elegante */
     color: white;
     border: none;
     font-size: 26px;
@@ -908,11 +850,10 @@ body {
 
 .btn-flotante-main:hover {
     background-color: #b08d57;
-    /* Se pone dorado al pasar el ratón */
     transform: scale(1.05);
 }
 
-/* --- AJUSTE PARA EL MÓVIL --- */
+/* AJUSTE PARA EL MÓVIL*/
 @media (max-width: 768px) {
     .redes-flotantes-container {
         bottom: 20px;
@@ -926,43 +867,31 @@ body {
     }
 }
 
-/* Contenedor centralizado */
 .contenedor-filtros-premium {
     text-align: center;
     padding: 40px 0;
     background: #fdfdfd;
-    /* Un gris casi blanco para separarlo sutilmente */
     position: sticky;
-    /* Opcional: para que se quede arriba al bajar */
     top: 80px;
-    /* Se queda debajo del menú principal */
     z-index: 10;
     margin-bottom: 40px;
 }
 
-/* El nuevo botón */
-/* Los estilos de .btn-seccion ya están en la sección de Botones Globales */
+/*AJUSTE DE NAVEGACIÓN INTERNA (GALERÍA)*/
 
-
-/* ============================================================
-   AJUSTE DE NAVEGACIÓN INTERNA (GALERÍA)
-   ============================================================ */
-
-/* 1. Movimiento suave para toda la página */
+/* 1. Movimiento suave para toda la página*/
 html {
     scroll-behavior: smooth;
 }
 
-/* 2. El "freno" para que el Nav y los filtros no tapen el título */
+/* 2. El "freno" para que el Nav y los filtros no tapen el título*/
 #exteriores,
 #interiores,
 #habitaciones {
-    /* Ajustamos el margen para que la sección frene 
-       donde terminan los botones de filtro */
     scroll-margin-top: 280px;
 }
 
-/* 3. Estilo extra para los títulos de sección (opcional si no los tenías) */
+/* 3. Estilo extra para los títulos*/
 .titulo-seccion-galeria {
     font-family: var(--fuente-titulos);
     font-size: 2rem;
