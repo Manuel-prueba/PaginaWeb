@@ -32,7 +32,7 @@
 
   <section class="seccion-contacto-foto">
     <h2 class="titulo-pagina" data-aos="fade-up" style="color: white; margin-top: 0;">Contacto</h2>
-    
+
     <div class="contacto-container">
       <div class="contacto-info" data-aos="fade-right" data-aos-delay="200">
         <h2 style="color: var(--primario); margin-bottom: 20px; font-size: 2.8rem;">Hablemos</h2>
@@ -42,12 +42,14 @@
         <p style="font-size: 1.4rem;"><strong>✉️ villalosarcos@gmail.com</strong></p>
       </div>
 
-      <form id="my-form" action="https://formspree.io/f/xvzdqwdk" method="POST" class="contacto-form" data-aos="fade-left" data-aos-delay="400">
+      <form id="my-form" action="https://formspree.io/f/xvzdqwdk" method="POST" class="contacto-form"
+        data-aos="fade-left" data-aos-delay="400">
         <input type="text" name="Nombre" class="form-control" placeholder="Nombre" required>
         <input type="email" name="Email" class="form-control" placeholder="Email" required>
         <textarea name="Mensaje" class="form-control" rows="4" placeholder="Tu mensaje" required></textarea>
         <button id="my-form-button" type="submit" class="btn" style="width: 100%;">Enviar Mensaje</button>
-        <p id="my-form-status" style="margin-top:15px; text-align: center; color: var(--primario); font-weight: 600;"></p>
+        <p id="my-form-status" style="margin-top:15px; text-align: center; color: var(--primario); font-weight: 600;">
+        </p>
       </form>
     </div>
   </section>
@@ -99,22 +101,22 @@
       var button = document.getElementById("my-form-button");
       button.innerText = "Enviando...";
       button.disabled = true;
-      
+
       fetch(event.target.action, {
         method: form.method,
         body: data,
         headers: { 'Accept': 'application/json' }
       }).then(response => {
-        if (response.ok) { 
-          window.location.href = "gracias.html"; 
-        } else { 
-          status.innerHTML = "Hubo un problema. Inténtalo de nuevo."; 
+        if (response.ok) {
+          window.location.href = "gracias.html";
+        } else {
+          status.innerHTML = "Hubo un problema. Inténtalo de nuevo.";
         }
-      }).catch(error => { 
-        status.innerHTML = "Error de conexión. Revisa tu internet."; 
-      }).finally(() => { 
-        button.innerText = "Enviar Mensaje"; 
-        button.disabled = false; 
+      }).catch(error => {
+        status.innerHTML = "Error de conexión. Revisa tu internet.";
+      }).finally(() => {
+        button.innerText = "Enviar Mensaje";
+        button.disabled = false;
       });
     }
     form.addEventListener("submit", handleSubmit);
@@ -136,4 +138,5 @@
     });
   </script>
 </body>
+
 </html>
