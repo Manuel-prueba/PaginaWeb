@@ -128,7 +128,7 @@ body {
 }
 
 .header-alojamiento {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Imagenes/Cuarto_con_aire2.JPG   ');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Imagenes/Cuarto_con_aire2.JPG');
     background-position: center 35%;
 }
 
@@ -699,15 +699,22 @@ body {
         flex-direction: column;
     }
 
-    .contenedor-imagen-mosaico,
     .mosaico-texto {
         width: 100%;
         min-width: 100%;
         padding: 40px 10%;
     }
 
+    .contenedor-imagen-mosaico {
+        width: 100%;
+        min-width: 100%;
+        padding: 0;
+    }
+
     .mosaico-imagen {
-        min-height: 300px;
+        min-height: 350px;
+        display: block;
+        width: 100%;
     }
 
     .nav-principal {
@@ -794,7 +801,6 @@ body {
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
-    /* Empieza un poco más abajo */
     transition: all 0.3s ease;
 }
 
@@ -802,7 +808,6 @@ body {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-    /* Sube a su sitio */
 }
 
 .icono-red {
@@ -876,8 +881,6 @@ body {
     z-index: 10;
     margin-bottom: 40px;
 }
-
-/*AJUSTE DE NAVEGACIÓN INTERNA (GALERÍA)*/
 
 /* 1. Movimiento suave para toda la página*/
 html {
